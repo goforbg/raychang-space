@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap")
+
+$red: #FB7560
+$yellow: #F6CB1D
+$white: #F9F9F9
+$lightGrey: #E0E0E0
+$black: #333333
+
+@mixin size($w, $h:$w)
+  width: $w
+  height: $h
+
+@mixin flexLeft
+  display: flex
+  justify-content: flex-start
+  align-items: center
+
+@mixin flexRight
+  display: flex
+  justify-content: flex-end
+  align-items: center
+
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+
+@mixin fixed($l, $t)
+  position: fixed
+  left: $l
+  top: $t
+
+::-webkit-scrollbar
+  width: 0.6%
+::-webkit-scrollbar-track // Track
+  background-color: transparent
+::-webkit-scrollbar-thumb // Handle
+  background-color: $black
+
+::selection
+  background-color: $lightGrey
+  
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  outline: none
+  appearance: none
+  user-select: none
+  cursor: default
+
+html, body
+  height: 9999px
+  // font-family: 'Roboto', sans-serif
+  background-color: $white
+  scroll-behavior: smooth
+
+.project
+  &:hover
+    cursor: url(./img/arrow.svg),auto
+  img
+    +size(100%)
+    // 暗化
+    &:hover

@@ -1,14 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Playfair+Display:wght@500;600;700;800;900&display=swap");
 ::-webkit-scrollbar {
-  width: 0.6%;
-}
-
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #333333;
+  width: 0;
 }
 
 ::-moz-selection {
@@ -36,9 +28,133 @@
 }
 
 html, body {
-  height: 9999px;
+  width: 100%;
+  font-family: 'Merriweather', serif;
+  font-size: 1.16vw;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  color: #333333;
   background-color: #F9F9F9;
   scroll-behavior: smooth;
+}
+
+body {
+  padding: 4.6rem 5.2rem;
+}
+
+a {
+  font-size: 1rem;
+  color: #333333;
+}
+
+a:active {
+  color: #333333;
+}
+
+a:visited {
+  color: #333333;
+}
+
+nav {
+  padding: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .line {
+  margin-left: 1.15rem;
+  width: 11rem;
+  border: 0.05rem solid grey;
+}
+
+nav .about {
+  margin-left: auto;
+  margin-right: 2.6rem;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 46rem;
+  position: relative;
+}
+
+main [class^="circle"] {
+  position: absolute;
+  border-radius: 50%;
+}
+
+main .circle-yellow {
+  margin-left: -14rem;
+  margin-top: 13rem;
+  width: 17rem;
+  height: 17rem;
+  background-color: #F6CB1D;
+}
+
+main .circle-red {
+  width: 20rem;
+  height: 20rem;
+  background-color: #FB7560;
+}
+
+main .cover {
+  position: absolute;
+  width: 57.8rem;
+  height: auto;
+  margin-top: -11.8rem;
+}
+
+main article {
+  position: absolute;
+  top: 18.35rem;
+}
+
+main article.left {
+  left: 0;
+  width: 19.4rem;
+}
+
+main article.right {
+  right: 0;
+  width: 19.2rem;
+}
+
+main article p {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.56;
+  margin-bottom: 0.25rem;
+}
+
+main article h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  margin-bottom: 0.78rem;
+}
+
+main .name {
+  position: absolute;
+  top: 1.4rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 8.36rem;
+  font-weight: 900;
 }
 
 .project:hover {

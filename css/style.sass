@@ -58,84 +58,83 @@ $black: #333333
 html, body
   width: 100%
   font-family: 'Merriweather', serif
-  // font-size: 16px
-  font-size: 1.16vw
+  font-size: 1.168vw
   font-weight: 700
   letter-spacing: 0.05rem
   color: $black
   background-color: $white
   scroll-behavior: smooth
 body
-  padding: 2.8rem 5.3rem
+  padding: 2.78rem 5.26rem
 
 a
   font-size: 1rem
   color: $black
+  cursor: pointer
   &:active
     color: $black
   &:visited
     color: $black
-    
-hr
-  margin-bottom: 2rem 0
+img
+  pointer-events: none
 
 nav
   padding: 1rem 0
   +flexLeft
   .line
-    margin-left: 1.15rem
-    width: 11rem
-    border: 0.05rem solid grey
+    margin-left: 1.04rem
+    width: 11.3rem
+    border: 0.0345rem solid grey
   .about
     margin-left: auto
     margin-right: 2.6rem
 
 main
   +verticalCenter
-  height: 47.4rem
+  height: 47.425rem
   position: relative
   [class^="circle"]
     position: absolute
     border-radius: 50%
   .circle-yellow
-    margin-left: -15.2rem
+    margin-left: -14.9rem
     margin-top: 17.2rem
-    +size(16.95rem)
+    +size(16.893rem)
     background-color: $yellow
   .circle-red
-    margin-left: 12.1rem
-    margin-top: -1.76rem
-    +size(21.2rem)
+    margin-left: 12rem
+    margin-top: -1.8rem
+    +size(21.1rem)
     background-color: $red
   .cover
     position: absolute
-    +size(57.5rem, auto)
-    margin-top: -10rem
+    +size(57.327rem, auto)
+    margin-top: -9.9rem
   article
     position: absolute
-    top: 20.8rem
+    top: 20.65rem
+    width: 19.16rem
     &.left
       left: 0
-      width: 19.16rem
     &.right
       right: 0
-      width: 19.16rem
     p
       font-size: 0.94rem
       font-weight: 700
-      line-height: 1.58
+      line-height: 1.568
     h1
-      font-size: 2.4rem
+      font-size: 2.392rem
       font-weight: 700
       letter-spacing: 0.15rem
-      margin-top: 0.25rem
+      margin-top: 0.248rem
       margin-bottom: 0.78rem
   .name
     position: absolute
     top: 3.2rem
     font-family: 'Playfair Display', serif
-    font-size: 8.28rem
+    font-size: 8.35rem
     font-weight: 900
+    letter-spacing: 0
 
 .project
   &:hover

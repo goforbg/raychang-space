@@ -39,7 +39,7 @@ html, body {
 }
 
 body {
-  padding: 4.6rem 5.2rem;
+  padding: 2.8rem 5.3rem;
 }
 
 a {
@@ -53,6 +53,10 @@ a:active {
 
 a:visited {
   color: #333333;
+}
+
+hr {
+  margin-bottom: 2rem 0;
 }
 
 nav {
@@ -90,7 +94,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 46rem;
+  height: 47.4rem;
   position: relative;
 }
 
@@ -100,60 +104,62 @@ main [class^="circle"] {
 }
 
 main .circle-yellow {
-  margin-left: -14rem;
-  margin-top: 13rem;
-  width: 17rem;
-  height: 17rem;
+  margin-left: -15.2rem;
+  margin-top: 17.2rem;
+  width: 16.95rem;
+  height: 16.95rem;
   background-color: #F6CB1D;
 }
 
 main .circle-red {
-  width: 20rem;
-  height: 20rem;
+  margin-left: 12.1rem;
+  margin-top: -1.76rem;
+  width: 21.2rem;
+  height: 21.2rem;
   background-color: #FB7560;
 }
 
 main .cover {
   position: absolute;
-  width: 57.8rem;
+  width: 57.5rem;
   height: auto;
-  margin-top: -11.8rem;
+  margin-top: -10rem;
 }
 
 main article {
   position: absolute;
-  top: 18.35rem;
+  top: 20.8rem;
 }
 
 main article.left {
   left: 0;
-  width: 19.4rem;
+  width: 19.16rem;
 }
 
 main article.right {
   right: 0;
-  width: 19.2rem;
+  width: 19.16rem;
 }
 
 main article p {
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   font-weight: 700;
-  line-height: 1.56;
-  margin-bottom: 0.25rem;
+  line-height: 1.58;
 }
 
 main article h1 {
   font-size: 2.4rem;
   font-weight: 700;
   letter-spacing: 0.15rem;
+  margin-top: 0.25rem;
   margin-bottom: 0.78rem;
 }
 
 main .name {
   position: absolute;
-  top: 1.4rem;
+  top: 3.2rem;
   font-family: 'Playfair Display', serif;
-  font-size: 8.36rem;
+  font-size: 8.28rem;
   font-weight: 900;
 }
 

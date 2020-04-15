@@ -65,9 +65,8 @@ html, body
   color: $black
   background-color: $white
   scroll-behavior: smooth
-
 body
-  padding: 4.6rem 5.2rem
+  padding: 2.8rem 5.3rem
 
 a
   font-size: 1rem
@@ -77,6 +76,9 @@ a
   &:visited
     color: $black
     
+hr
+  margin-bottom: 2rem 0
+
 nav
   padding: 1rem 0
   +flexLeft
@@ -90,52 +92,54 @@ nav
 
 main
   +verticalCenter
-  height: 46rem
+  height: 47.4rem
   position: relative
   [class^="circle"]
     position: absolute
     border-radius: 50%
   .circle-yellow
-    margin-left: -14rem
-    margin-top: 13rem
-    +size(17rem)
+    margin-left: -15.2rem
+    margin-top: 17.2rem
+    +size(16.95rem)
     background-color: $yellow
   .circle-red
-    +size(20rem)
+    margin-left: 12.1rem
+    margin-top: -1.76rem
+    +size(21.2rem)
     background-color: $red
   .cover
     position: absolute
-    +size(57.8rem, auto)
-    margin-top: -11.8rem
+    +size(57.5rem, auto)
+    margin-top: -10rem
   article
     position: absolute
-    top: 18.35rem
+    top: 20.8rem
     &.left
       left: 0
-      width: 19.4rem
+      width: 19.16rem
     &.right
       right: 0
-      width: 19.2rem
+      width: 19.16rem
     p
-      font-size: 0.95rem
+      font-size: 0.94rem
       font-weight: 700
-      line-height: 1.56
-      margin-bottom: 0.25rem
+      line-height: 1.58
     h1
       font-size: 2.4rem
       font-weight: 700
       letter-spacing: 0.15rem
+      margin-top: 0.25rem
       margin-bottom: 0.78rem
   .name
     position: absolute
-    top: 1.4rem
+    top: 3.2rem
     font-family: 'Playfair Display', serif
-    font-size: 8.36rem
+    font-size: 8.28rem
     font-weight: 900
 
 .project
   &:hover
-    cursor: url(./img/arrow.svg),auto
+    cursor: url(./img/arrow.svg), auto
   img
     +size(100%)
     // 暗化

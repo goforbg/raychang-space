@@ -83,15 +83,17 @@ nav
   +flexLeft
   .line
     margin-left: 1.04rem
+    margin-top: 0.1rem
     width: 11.3rem
-    border: 0.0345rem solid grey
+    border-bottom: 0.1rem solid $black
   .about
     margin-left: auto
     margin-right: 2.6rem
 
 main
   +verticalCenter
-  height: 47.425rem
+  height: 47.54rem
+  border-bottom: 0.1rem solid grey
   position: relative
   [class^="circle"]
     position: absolute
@@ -128,6 +130,11 @@ main
       letter-spacing: 0.15rem
       margin-top: 0.248rem
       margin-bottom: 0.78rem
+    img
+      display: none
+      +size(100%, auto)
+      mix-blend-mode: multiply // 利用混合模式去背 https://developer.mozilla.org/zh-CN/docs/Web/CSS/mix-blend-mode
+      
   .name
     position: absolute
     top: 3.2rem
@@ -143,3 +150,13 @@ main
     +size(100%)
     // 暗化
     &:hover
+
+// 為解決最小字體影響完美縮放，在小尺寸設備上以圖片代替文字
+@media screen and (max-width: 1280px) // size < 1280px
+  main
+    height: 47.49rem
+    article
+      p, h1
+        display: none
+      img
+        display: block

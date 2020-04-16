@@ -39,7 +39,7 @@ html, body {
 }
 
 body {
-  padding: 2.78rem 5.26rem;
+  padding: 3.18rem 5.6rem;
 }
 
 a {
@@ -57,6 +57,8 @@ a:visited {
 }
 
 img {
+  width: 100%;
+  height: auto;
   pointer-events: none;
 }
 
@@ -76,13 +78,13 @@ nav {
 nav .line {
   margin-left: 1.04rem;
   margin-top: 0.1rem;
-  width: 11.3rem;
+  width: 11rem;
   border-bottom: 0.1rem solid #333333;
 }
 
 nav .about {
   margin-left: auto;
-  margin-right: 2.6rem;
+  margin-right: 2.49rem;
 }
 
 main {
@@ -96,7 +98,8 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 47.54rem;
+  width: 100%;
+  height: 46.85rem;
   border-bottom: 0.1rem solid grey;
   position: relative;
 }
@@ -107,31 +110,31 @@ main [class^="circle"] {
 }
 
 main .circle-yellow {
-  margin-left: -14.9rem;
+  margin-left: -14.65rem;
   margin-top: 17.2rem;
-  width: 16.893rem;
-  height: 16.893rem;
+  width: 16.73rem;
+  height: 16.73rem;
   background-color: #F6CB1D;
 }
 
 main .circle-red {
-  margin-left: 12rem;
+  margin-left: 11.9rem;
   margin-top: -1.8rem;
-  width: 21.1rem;
-  height: 21.1rem;
+  width: 20.9rem;
+  height: 20.9rem;
   background-color: #FB7560;
 }
 
-main .cover {
+main .building {
   position: absolute;
-  width: 57.327rem;
+  width: 57rem;
   height: auto;
-  margin-top: -9.9rem;
+  margin-top: -10.3rem;
 }
 
 main article {
   position: absolute;
-  top: 20.65rem;
+  top: 20.5rem;
   width: 19.16rem;
 }
 
@@ -146,21 +149,19 @@ main article.right {
 main article p {
   font-size: 0.94rem;
   font-weight: 700;
-  line-height: 1.568;
+  line-height: 1.54;
 }
 
 main article h1 {
-  font-size: 2.392rem;
+  font-size: 2.35rem;
   font-weight: 700;
   letter-spacing: 0.15rem;
-  margin-top: 0.248rem;
-  margin-bottom: 0.78rem;
+  margin-top: 0.26rem;
+  margin-bottom: 0.95rem;
 }
 
 main article img {
   display: none;
-  width: 100%;
-  height: auto;
   mix-blend-mode: multiply;
 }
 
@@ -168,23 +169,33 @@ main .name {
   position: absolute;
   top: 3.2rem;
   font-family: 'Playfair Display', serif;
-  font-size: 8.35rem;
+  font-size: 8.3rem;
   font-weight: 900;
   letter-spacing: 0;
+}
+
+.design-guide {
+  margin-top: 6.53rem;
+  width: 99%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.design-guide img {
+  opacity: 0.3;
+  margin-top: -6rem;
 }
 
 .project:hover {
   cursor: url(./img/arrow.svg), auto;
 }
 
-.project img {
-  width: 100%;
-  height: 100%;
-}
-
 @media screen and (max-width: 1280px) {
   main {
-    height: 47.49rem;
+    height: 46.8rem;
   }
   main article p, main article h1 {
     display: none;

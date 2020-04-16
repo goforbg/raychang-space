@@ -105,6 +105,7 @@ main {
   width: 100%;
   height: 46.85rem;
   border-bottom: 0.1rem solid grey;
+  margin-bottom: 8.5rem;
   position: relative;
 }
 
@@ -193,8 +194,67 @@ main .name {
   margin-top: -6rem;
 }
 
-.project:hover {
-  cursor: url(./img/arrow.svg), auto;
+.works .work {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 74.4rem;
+  height: 33.48rem;
+  margin-bottom: 8.5rem;
+}
+
+.works .work a {
+  width: 44.64rem;
+  height: 33.48rem;
+  background-color: #E0E0E0;
+}
+
+.works .work a:hover {
+  cursor: url("../img/arrow.svg"), auto;
+}
+
+.works .work a:hover img {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.works .work a img {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
+}
+
+.works .work section {
+  margin-left: auto;
+  margin-top: -7rem;
+  width: 27.4rem;
+}
+
+.works .work section .number {
+  font-size: 13.5rem;
+  font-weight: normal;
+  color: #E0E0E0;
+  margin-left: 10rem;
+  margin-bottom: -1.8rem;
+}
+
+.works .work section .title {
+  font-size: 1.62rem;
+  margin-bottom: 0.58rem;
+}
+
+.works .work section .subtitle {
+  font-size: 1.12rem;
+  color: #9E9E9E;
 }
 
 @media screen and (max-width: 1280px) {

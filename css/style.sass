@@ -4,6 +4,7 @@ $red: #FB7560
 $yellow: #F6CB1D
 $white: #F9F9F9
 $lightGrey: #E0E0E0
+$mediumGrey: #9E9E9E
 $black: #333333
 
 @mixin size($w, $h:$w)
@@ -96,6 +97,7 @@ main
   +verticalCenter
   +size(100%, 46.85rem)
   border-bottom: 0.1rem solid grey
+  margin-bottom: 8.5rem
   position: relative
   [class^="circle"]
     position: absolute
@@ -155,12 +157,41 @@ main
 // nav, main
 //   display: none
 
-.project
-  &:hover
-    cursor: url(./img/arrow.svg), auto
-  img
-    &:hover
-      // 暗化
+.works
+  .work
+    +flexLeft
+    +size(74.4rem, 33.48rem)
+    margin-bottom: 8.5rem
+    a
+      +size(44.64rem, 33.48rem) // width: 60%
+      background-color: $lightGrey
+      &:hover
+        cursor: url('../img/arrow.svg'), auto
+        img
+          filter: grayscale(0%)
+          transition: 0.6s
+      img
+        filter: grayscale(100%)
+        transition: 1.2s
+    section
+      margin-left: auto
+      margin-top: -7rem
+      width: 27.4rem
+      .number
+        font-size: 13.5rem
+        font-weight: normal
+        color: $lightGrey
+        margin-left: 10rem
+        margin-bottom: -1.8rem
+      .title
+        font-size: 1.62rem
+        margin-bottom: 0.58rem
+      .subtitle
+        font-size: 1.12rem
+        color: $mediumGrey
+
+#contact
+
 
 // // Screenshot setting
 // @media screen and (max-width: 1280px) // size < 1280px

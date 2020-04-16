@@ -59,6 +59,7 @@ html, body
   width: 100%
   font-family: 'Merriweather', serif
   font-size: 1.168vw
+  text-size-adjust: none
   font-weight: 700
   letter-spacing: 0.05rem
   color: $black
@@ -161,8 +162,17 @@ main
     &:hover
       // 暗化
 
-// 為解決最小字體影響完美縮放，在小尺寸設備上以圖片代替文字
-@media screen and (max-width: 1280px) // size < 1280px
+// // Screenshot setting
+// @media screen and (max-width: 1280px) // size < 1280px
+//   body
+//     background-color: white
+//   .circle-yellow
+//     display: none
+//   article
+//       border: 0.05rem solid grey
+
+// 為解決小尺寸設備文章形變，在小尺寸設備上以圖片代替文字
+@media screen and (max-width: 1280px) // ≤ 1280px
   main
     height: 46.8rem
     article
@@ -170,3 +180,18 @@ main
         display: none
       img
         display: block
+        
+// 瀏覽器最小字體為 12px，在小尺寸的設備上以 px 和 transform: scale() 代替 rem
+@media screen and (max-width: 768px) // ≤ 768px
+  body
+    margin-top: -6px
+@media screen and (max-width: 598px) // ≤ 598px
+  nav > *
+    transform: scale(0.8)
+  nav
+    .line
+      width: 78px
+      margin-left: -10px
+      margin-top: 3px
+    .about
+      margin-right: 0

@@ -31,6 +31,10 @@ html, body {
   width: 100%;
   font-family: 'Merriweather', serif;
   font-size: 1.168vw;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+          text-size-adjust: none;
   font-weight: 700;
   letter-spacing: 0.05rem;
   color: #333333;
@@ -202,5 +206,26 @@ main .name {
   }
   main article img {
     display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin-top: -6px;
+  }
+}
+
+@media screen and (max-width: 598px) {
+  nav > * {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  nav .line {
+    width: 78px;
+    margin-left: -10px;
+    margin-top: 3px;
+  }
+  nav .about {
+    margin-right: 0;
   }
 }

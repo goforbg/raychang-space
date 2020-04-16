@@ -53,8 +53,8 @@ class Portfolio {
 				destination: 'https://codepen.io/raychang2017/full/EqjXJN'
 			},
 			{
-				title: 'Draggable LocalStorage To-do List',
-				subtitle: '',
+				title: 'Draggable To-do List',
+				subtitle: 'And LocalStorage Of Course',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6757018/_____2019-07-09___11.03.44.png',
 				destination: 'https://raychang2017.github.io/draggable-localStorage-todoList/'
 			},
@@ -114,13 +114,13 @@ class Portfolio {
 
 			workEl.innerHTML = `
       <article class="work">
-        <a href="${this.works[i].destination}">
+        <a href="${this.works[i].destination}" target="_blank">
           <img src="${this.works[i].cover}" alt="${this.works[i].title}">
         </a>
         <section>
+          <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>
           <div class="title">${this.works[i].title}</div>
           <div class="subtitle">${this.works[i].subtitle}</div>
-          <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>
         </section>
       </article>`;
 

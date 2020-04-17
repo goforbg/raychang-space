@@ -12,13 +12,13 @@ class Portfolio {
 			// },
 			{
 				title: 'Horizontal Scrolling Theater',
-				subtitle: 'Built with Vue.js and GSAP animation',
+				subtitle: 'Built with Vue.js and GSAP',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',
 				destination: 'https://raychang2017.github.io/horizontal-scrolling-theater/'
 			},
 			{
-				title: 'Let’s Make A Linktree Clone',
-				subtitle: 'Make the only link I need on Instagram',
+				title: 'Linktree Clone',
+				subtitle: 'The only link I need on Instagram',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/10724954/media/529252d97de31baf1548bd817ad6bc1a.png',
 				destination: 'https://raychang2017.github.io/linktree-clone/'
 			},
@@ -29,8 +29,8 @@ class Portfolio {
 				destination: 'https://codepen.io/raychang2017/full/XWWEvKj'
 			},
 			{
-				title: 'Vue.js Coffee Menu Editor',
-				subtitle: '',
+				title: 'Coffee Menu Editor',
+				subtitle: 'Built with Vue.js',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/7101781/media/cbab08496ca35c2f443aa01bbd0d4d31.png',
 				destination: 'https://codepen.io/raychang2017/full/MWgOMEL'
 			},
@@ -48,7 +48,7 @@ class Portfolio {
 			},
 			{
 				title: 'JavaScript Click Game',
-				subtitle: 'How many times can you click in a minute?',
+				subtitle: 'How many scores can you get?',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6827214/_____2019-07-21___5.25.09.png',
 				destination: 'https://codepen.io/raychang2017/full/EqjXJN'
 			},
@@ -60,7 +60,7 @@ class Portfolio {
 			},
 			{
 				title: 'Day/Night Transition Postcard',
-				subtitle: 'Toggle animation with CSS keyframes',
+				subtitle: 'Animated with CSS keyframes',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6754986/_____2019-07-05___2.28.36.gif',
 				destination: 'https://codepen.io/raychang2017/full/EBGaZQ'
 			},
@@ -78,7 +78,7 @@ class Portfolio {
 			},
 			{
 				title: 'Where Is My Cake!?',
-				subtitle: 'Interaction based on CSS animation',
+				subtitle: 'Interacted with CSS animation',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736735/_____2019-07-05___5.34.58.gif',
 				destination: 'https://codepen.io/raychang2017/full/VJqZeY'
 			},

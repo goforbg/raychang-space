@@ -97,7 +97,7 @@ nav
 main
   +verticalCenter
   +size(100%, 46.85rem)
-  border-bottom: 0.1rem solid grey
+  border-bottom: 0.1rem solid $mediumGrey
   margin-bottom: $gapSize
   position: relative
   [class^="circle"]
@@ -159,6 +159,7 @@ main
 //   display: none
 
 .works
+  border-bottom: 0.1rem solid $mediumGrey
   li
     list-style: none
     display: flex
@@ -169,6 +170,9 @@ main
       section
         margin-left: 0
         margin-right: auto
+        .number
+          margin-left: 0
+          margin-right: 10rem
     a
       +size(44.64rem, 33.48rem) // width: 60%
       background-color: $lightGrey
@@ -215,6 +219,7 @@ main
 // 為解決小尺寸設備文章形變，在小尺寸設備上以圖片代替文字
 @media screen and (max-width: 1280px) // ≤ 1280px
   main
+    height: 46.8rem
     article
       p, h1
         display: none

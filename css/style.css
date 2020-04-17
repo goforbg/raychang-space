@@ -104,8 +104,8 @@ main {
           align-items: center;
   width: 100%;
   height: 46.85rem;
-  border-bottom: 0.1rem solid grey;
-  margin-bottom: 8.5rem;
+  border-bottom: 0.1rem solid #9E9E9E;
+  margin-bottom: 9rem;
   position: relative;
 }
 
@@ -194,6 +194,10 @@ main .name {
   margin-top: -6rem;
 }
 
+.works {
+  border-bottom: 0.1rem solid #9E9E9E;
+}
+
 .works li {
   list-style: none;
   display: -webkit-box;
@@ -214,6 +218,11 @@ main .name {
 .works li:nth-of-type(2n) section {
   margin-left: 0;
   margin-right: auto;
+}
+
+.works li:nth-of-type(2n) section .number {
+  margin-left: 0;
+  margin-right: 10rem;
 }
 
 .works li a {
@@ -275,6 +284,9 @@ main .name {
 }
 
 @media screen and (max-width: 1280px) {
+  main {
+    height: 46.8rem;
+  }
   main article p, main article h1 {
     display: none;
   }

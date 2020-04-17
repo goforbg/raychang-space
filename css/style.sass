@@ -6,6 +6,7 @@ $white: #F9F9F9
 $lightGrey: #E0E0E0
 $mediumGrey: #9E9E9E
 $black: #333333
+$gapSize: 9rem
 
 @mixin size($w, $h:$w)
   width: $w
@@ -54,7 +55,7 @@ $black: #333333
   outline: none
   appearance: none
   user-select: none
-  cursor: default
+  cursor: url('../img/icn-arrow.png'), auto
 
 html, body
   width: 100%
@@ -72,7 +73,7 @@ body
 a
   font-size: 1rem
   color: $black
-  cursor: pointer
+  cursor: url('../img/icn-hover.png'), pointer
   &:active
     color: $black
   &:visited
@@ -97,7 +98,7 @@ main
   +verticalCenter
   +size(100%, 46.85rem)
   border-bottom: 0.1rem solid grey
-  margin-bottom: 8.5rem
+  margin-bottom: $gapSize
   position: relative
   [class^="circle"]
     position: absolute
@@ -114,8 +115,8 @@ main
     background-color: $red
   .building
     position: absolute
+    bottom: 0
     +size(57rem, auto)
-    margin-top: -10.3rem
   article
     position: absolute
     top: 20.5rem
@@ -158,31 +159,40 @@ main
 //   display: none
 
 .works
-  .work
-    +flexLeft
-    +size(74.4rem, 33.48rem)
-    margin-bottom: 8.5rem
+  li
+    list-style: none
+    display: flex
+    +size(74.4rem, 33.5rem)
+    margin-bottom: $gapSize
+    &:nth-of-type(2n)
+      flex-direction: row-reverse
+      section
+        margin-left: 0
+        margin-right: auto
     a
       +size(44.64rem, 33.48rem) // width: 60%
       background-color: $lightGrey
+      cursor: url('../img/arrow.svg') 50 50, pointer
       &:hover
-        cursor: url('../img/arrow.svg'), auto
         img
+          animation-play-state: running
           filter: grayscale(0%)
-          transition: 0.6s
+          transition: 0.5s
       img
+        animation-play-state: paused
         filter: grayscale(100%)
-        transition: 1.2s
+        transition: 0.5s
     section
       margin-left: auto
-      margin-top: -7rem
+      margin-top: 3.04rem
       width: 27.4rem
       .number
+        +flexCenter
         font-size: 13.5rem
         font-weight: normal
         color: $lightGrey
         margin-left: 10rem
-        margin-bottom: -1.8rem
+        margin-bottom: -1.58rem
       .title
         font-size: 1.62rem
         margin-bottom: 0.58rem
@@ -205,7 +215,6 @@ main
 // 為解決小尺寸設備文章形變，在小尺寸設備上以圖片代替文字
 @media screen and (max-width: 1280px) // ≤ 1280px
   main
-    height: 46.8rem
     article
       p, h1
         display: none

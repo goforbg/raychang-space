@@ -2,6 +2,7 @@
 
 class Portfolio {
 	constructor() {
+		this.loadingEl = document.querySelector('.loading');
 		this.worksEl = document.querySelector('.works');
 		this.works = [
 			// {
@@ -13,31 +14,36 @@ class Portfolio {
 			{
 				title: 'Horizontal Scrolling Theater',
 				subtitle: 'Built with Vue.js and GSAP',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',
+				cover:
+					'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',
 				destination: 'https://raychang2017.github.io/horizontal-scrolling-theater/'
 			},
 			{
 				title: 'Linktree Clone',
 				subtitle: 'The only link I need on Instagram',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/10724954/media/529252d97de31baf1548bd817ad6bc1a.png',
+				cover:
+					'https://cdn.dribbble.com/users/3800131/screenshots/10724954/media/529252d97de31baf1548bd817ad6bc1a.png',
 				destination: 'https://raychang2017.github.io/linktree-clone/'
 			},
 			{
 				title: 'Vue.js Find Card Game',
 				subtitle: '',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/8192733/media/af0a6f22cb41c347f1c78de1e92b2c3e.png',
+				cover:
+					'https://cdn.dribbble.com/users/3800131/screenshots/8192733/media/af0a6f22cb41c347f1c78de1e92b2c3e.png',
 				destination: 'https://codepen.io/raychang2017/full/XWWEvKj'
 			},
 			{
 				title: 'Coffee Menu Editor',
 				subtitle: 'Built with Vue.js',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/7101781/media/cbab08496ca35c2f443aa01bbd0d4d31.png',
+				cover:
+					'https://cdn.dribbble.com/users/3800131/screenshots/7101781/media/cbab08496ca35c2f443aa01bbd0d4d31.png',
 				destination: 'https://codepen.io/raychang2017/full/MWgOMEL'
 			},
 			{
 				title: 'JS Block Memory Game',
 				subtitle: 'How many levels can you achieve?',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/10000193/media/5a5acc6684a86a5f46a9b4cd34f4df8e.gif',
+				cover:
+					'https://cdn.dribbble.com/users/3800131/screenshots/10000193/media/5a5acc6684a86a5f46a9b4cd34f4df8e.gif',
 				destination: 'https://codepen.io/raychang2017/full/eYNmMZe'
 			},
 			{
@@ -89,6 +95,8 @@ class Portfolio {
 				destination: 'https://codepen.io/raychang2017/full/ZdmgMr'
 			}
 		];
+		// this.workEls = document.querySelectorAll('.work');
+		this.isTouchDevice = false;
 		this.events();
 	}
 
@@ -103,15 +111,31 @@ class Portfolio {
 			return false;
 		};
 
-		window.onload = () => {
-			this.updateWorks();
+		this.updateWorks();
+
+		// DOM Tree load finished
+		document.onload = () => {
+			this.detectTouchDevice();
+			if (this.isTouchDevice) this.cancelHoverInteraction();
 		};
+
+		// All HTML elements load finished
+		window.onload = () => {
+			setTimeout(() => {
+				this.hideLoadingEl();
+			}, 1000);
+		};
+	}
+
+	hideLoadingEl() {
+		this.loadingEl.classList.add('hide');
 	}
 
 	updateWorks() {
 		for (let i = 0; i < this.works.length; i++) {
 			const listEl = document.createElement('li');
 
+			listEl.classList.add('work');
 			listEl.innerHTML = `
 				<a href="${this.works[i].destination}" target="_blank">
           <img src="${this.works[i].cover}" alt="${this.works[i].title}">
@@ -128,6 +152,19 @@ class Portfolio {
 
 	addZeroToNumberUnderTen(num) {
 		return num < 10 ? '0' + num : '' + num;
+	}
+
+	detectTouchDevice() {
+		try {
+			document.createEvent('TouchEvent');
+			this.isTouchDevice = true;
+		} catch (e) {
+			this.isTouchDevice = false;
+		}
+	}
+
+	cancelHoverInteraction() {
+		this.worksEl.classList.add('no-hover-interaction');
 	}
 }
 

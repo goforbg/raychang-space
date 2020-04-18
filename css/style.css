@@ -66,6 +66,34 @@ img {
   pointer-events: none;
 }
 
+.loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #333333;
+}
+
+.loading.hide {
+  display: none;
+}
+
+.loading .loading-animation {
+  width: 50%;
+  pointer-events: none;
+}
+
 nav {
   padding: 1rem 0;
   display: -webkit-box;
@@ -196,9 +224,15 @@ main .name {
 
 .works {
   border-bottom: 0.1rem solid #9E9E9E;
+  margin-bottom: 9rem;
 }
 
-.works li {
+.works.no-hover-interaction .work a img {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.works .work {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -208,31 +242,31 @@ main .name {
   margin-bottom: 9rem;
 }
 
-.works li:nth-of-type(2n) {
+.works .work:nth-of-type(2n) {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
 }
 
-.works li:nth-of-type(2n) section {
+.works .work:nth-of-type(2n) section {
   margin-left: 0;
   margin-right: auto;
 }
 
-.works li:nth-of-type(2n) section .number {
+.works .work:nth-of-type(2n) section .number {
   margin-left: 0;
   margin-right: 10rem;
 }
 
-.works li a {
+.works .work a {
   width: 44.64rem;
   height: 33.48rem;
   background-color: #E0E0E0;
   cursor: url("../img/arrow.svg") 50 50, pointer;
 }
 
-.works li a:hover img {
+.works .work a:hover img {
   -webkit-animation-play-state: running;
           animation-play-state: running;
   -webkit-filter: grayscale(0%);
@@ -241,7 +275,7 @@ main .name {
   transition: 0.5s;
 }
 
-.works li a img {
+.works .work a img {
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
   -webkit-filter: grayscale(100%);
@@ -250,13 +284,13 @@ main .name {
   transition: 0.5s;
 }
 
-.works li section {
+.works .work section {
   margin-left: auto;
   margin-top: 3.04rem;
   width: 27.4rem;
 }
 
-.works li section .number {
+.works .work section .number {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -273,12 +307,12 @@ main .name {
   margin-bottom: -1.58rem;
 }
 
-.works li section .title {
+.works .work section .title {
   font-size: 1.62rem;
   margin-bottom: 0.58rem;
 }
 
-.works li section .subtitle {
+.works .work section .subtitle {
   font-size: 1.12rem;
   color: #9E9E9E;
 }

@@ -82,6 +82,18 @@ img
   +size(100%, auto)
   pointer-events: none
 
+.loading
+  +fixed(0, 0)
+  z-index: 999
+  +size(100%, 100%)
+  +flexCenter
+  background-color: $black
+  &.hide
+    display: none
+  .loading-animation
+    width: 50%
+    pointer-events: none
+
 nav
   padding: 1rem 0
   +flexLeft
@@ -160,7 +172,11 @@ main
 
 .works
   border-bottom: 0.1rem solid $mediumGrey
-  li
+  margin-bottom: $gapSize
+  &.no-hover-interaction
+    .work a img
+      filter: grayscale(0%)
+  .work
     list-style: none
     display: flex
     +size(74.4rem, 33.5rem)

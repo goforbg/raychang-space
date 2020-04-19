@@ -66,6 +66,15 @@ img {
   pointer-events: none;
 }
 
+input, button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background-color: transparent;
+  font-family: 'Merriweather', serif;
+}
+
 .loading {
   position: fixed;
   left: 0;
@@ -315,6 +324,113 @@ main .name {
 .works .work section .subtitle {
   font-size: 1.12rem;
   color: #9E9E9E;
+}
+
+#contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 9rem;
+}
+
+#contact figure, #contact section {
+  width: 42.5%;
+}
+
+#contact section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 7.5rem;
+}
+
+#contact section .title {
+  font-size: 4.8rem;
+  font-weight: 400;
+}
+
+#contact section .star {
+  color: #EFB530;
+  font-size: 1.1rem;
+}
+
+#contact section .note {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#contact section .note p {
+  font-size: 1.17rem;
+  font-weight: 300;
+  color: #9E9E9E;
+  margin-left: 0.3rem;
+}
+
+#contact section form {
+  font-size: 1.22rem;
+  font-weight: 300;
+  letter-spacing: normal;
+}
+
+#contact section form .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #9E9E9E;
+  margin-bottom: 1.66rem;
+}
+
+#contact section form .row input {
+  font-size: 1.2rem;
+  color: #9E9E9E;
+  width: 100%;
+  padding: 0.55rem;
+}
+
+footer:hover p {
+  display: none;
+}
+
+footer:hover a {
+  display: block;
+}
+
+footer p, footer a {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+footer p {
+  display: block;
+}
+
+footer a {
+  display: none;
 }
 
 @media screen and (max-width: 1280px) {

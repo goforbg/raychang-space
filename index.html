@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <audio src="./audio/peaceful_piano.mp3" preload="metadata" autoplay loop volume="0.3" muted></audio>
+  <!-- <audio src="./audio/peaceful_piano.mp3" preload="metadata" autoplay loop volume="0.3"></audio> -->
 
   <section class="loading">
     <div class="loading-animation">
@@ -19,9 +19,10 @@
   <nav>
     <div class="date"></div>
     <div class="line"></div>
-    <a href="" class="about">ABOUT ME</a>
+    <a href="#" class="about">ABOUT ME</a>
     <a href="#contact" class="contact">CONTACT</a>
   </nav>
+
   <main>
     <div class="circle-yellow"></div>
     <div class="circle-red"></div>
@@ -41,10 +42,33 @@
     <div class="name">Ray Chang Space</div>
   </main>
   <!-- <div class="design-guide"><img src="./img/raychang-space.png" alt=""></div> -->
-  <section class="works">
-  </section>
-  <section id="contact">
-  </section>
+
+  <section class="works"></section>
+
+  <article id="contact">
+    <figure><img src="./img/ray_js_round_800px.png" alt=""></figure>
+    <section>
+      <h1 class="title">Say Hello</h1>
+      <div class="note">
+        <div class="star">*</div><p>is a required input.</p>
+      </div>
+      <form action="mailto:raychang2017@gmail.com" method="post" enctype="text/plain">
+        <div class="row">Name<div class="star">*</div><input type="text" name="name"></div>
+        <div class="row">Company <input type="text" name="company"></div>
+        <div class="row">Email<div class="star">*</div><input type="text" name="email"></div>
+        <div class="row">Topic<div class="star">*</div><input type="text" name="topic"></div>
+        <div class="row">Message<div class="star">*</div>
+        <div class="row"><input type="text" name="message"></div></div>
+        <!-- <input type="submit" value="Send"> -->
+        <button class="send">Send</button>
+      </form>
+    </section>
+  </article>
+
+  <footer>
+    <p class="message">You've reach the end</p>
+    <a href="#">To the top ⌃</a>
+  </footer>
 
   <script src="./js/script.js"></script>
 </body>

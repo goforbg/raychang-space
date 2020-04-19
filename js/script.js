@@ -3,6 +3,7 @@
 class Portfolio {
 	constructor() {
 		this.loadingEl = document.querySelector('.loading');
+		this.dateEl = document.querySelector('.date');
 		this.worksEl = document.querySelector('.works');
 		this.works = [
 			// {
@@ -111,6 +112,7 @@ class Portfolio {
 			return false;
 		};
 
+		this.updateDate();
 		this.updateWorks();
 
 		// DOM Tree load finished
@@ -121,14 +123,34 @@ class Portfolio {
 
 		// All HTML elements load finished
 		window.onload = () => {
+			this.scrollToTop();
+
 			setTimeout(() => {
 				this.hideLoadingEl();
 			}, 1000);
 		};
 	}
 
+	scrollToTop() {
+		window.scrollTo(0, 0);
+	}
+
 	hideLoadingEl() {
 		this.loadingEl.classList.add('hide');
+	}
+	
+	updateDate() {
+		const today = new Date();
+		const date = `${this.convertNumToMonth(today.getMonth() + 1)} ${today.getDate()}, ${today.getFullYear()}`;
+
+		this.dateEl.textContent = date;
+	}
+
+	convertNumToMonth(num) {
+		const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+		'July', 'August', 'September', 'October', 'November', 'December'];
+
+		return months[num - 1];
 	}
 
 	updateWorks() {

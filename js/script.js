@@ -14,7 +14,7 @@ class Portfolio {
 			// },
 			{
 				title: 'Horizontal Scrolling Theater',
-				subtitle: 'Built with Vue.js and GSAP',
+				subtitle: 'Built with Vue.js and animated with GSAP',
 				cover:'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',
 				destination: 'https://raychang2017.github.io/horizontal-scrolling-theater/'
 			},
@@ -38,7 +38,7 @@ class Portfolio {
 			},
 			{
 				title: 'Coffee Menu Editor',
-				subtitle: 'Built with Vue.js',
+				subtitle: 'Editing ingredients is no longer difficult',
 				cover:'https://cdn.dribbble.com/users/3800131/screenshots/7101781/media/cbab08496ca35c2f443aa01bbd0d4d31.png',
 				destination: 'https://codepen.io/raychang2017/full/MWgOMEL'
 			},
@@ -62,7 +62,7 @@ class Portfolio {
 			},
 			{
 				title: 'Elegant Vanilla JS Calculator',
-				subtitle: 'Which shows the result immediately',
+				subtitle: 'Why not shows the result immediately?',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6901484/_____2019-08-02___4.01.34.png',
 				destination: 'https://codepen.io/raychang2017/full/jgLppK'
 			},
@@ -104,19 +104,13 @@ class Portfolio {
 			},
 			{
 				title: 'Apple Magic Keyboard',
-				subtitle: 'Built with pure codes of course',
+				subtitle: 'Made by pure codes of course',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736810/_____2019-07-05___2.06.35.png',
 				destination: 'https://codepen.io/raychang2017/full/ZdVzmZ'
 			},
 			{
-				title: 'Where Is My Cake!?',
-				subtitle: 'Interacted with CSS animation',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736735/_____2019-07-05___5.34.58.gif',
-				destination: 'https://codepen.io/raychang2017/full/VJqZeY'
-			},
-			{
 				title: 'Interactive Chocolate Cake',
-				subtitle: 'Made with animate.css',
+				subtitle: 'Animated with animate.css',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736602/_____2019-07-05___1.51.04.gif',
 				destination: 'https://codepen.io/raychang2017/full/ZdmgMr'
 			}

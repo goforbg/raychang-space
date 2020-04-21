@@ -4,7 +4,9 @@ class Portfolio {
 	constructor() {
 		this.loadingEl = document.querySelector('.loading');
 		this.dateEl = document.querySelector('.date');
+		this.nameEl = document.querySelector('.name');
 		this.worksEl = document.querySelector('.works');
+		this.textareaEl = document.querySelector('textarea');
 		this.works = [
 			// {
 			// 	title: 'Ray Chang Space',
@@ -130,19 +132,15 @@ class Portfolio {
 		document.oncontextmenu = () => {
 			return false;
 		};
+		document.onmousemove = (e) => {
+			this.antiMouseMove(e, this.nameEl, 80)
+		};
 
 		this.updateDate();
 		this.updateWorks();
 
-		// DOM Tree load finished
-		document.onload = () => {
-			this.detectTouchDevice();
-			if (this.isTouchDevice) this.cancelHoverInteraction();
-		};
-
 		// All HTML elements load finished
 		window.onload = () => {
-			// this.scrollToTop();
 
 			setTimeout(() => {
 				this.hideLoadingEl();
@@ -172,6 +170,23 @@ class Portfolio {
 		return months[num - 1];
 	}
 
+	antiMouseMove(e, item, max=20) {
+		const x = e.clientX;
+    const y = e.clientY;
+    //console.log(x);
+    const winWidth = window.innerWidth;
+    const winHeight = window.innerHeight;
+    const halfWidth = winWidth / 2;
+    const halfHeight = winHeight / 2;
+    const rx = x - halfWidth;
+    const ry = y - halfHeight;
+
+		const dx = (item.getBoundingClientRect().width / max) * (rx / -halfWidth);
+		const dy = (item.getBoundingClientRect().height / max) * (ry / -halfHeight);
+		
+		item.style['transform'] = item.style['-webkit-transform'] = 'translate('+dx+'px,'+dy+'px)';
+	}
+
 	updateWorks() {
 		for (let i = 0; i < this.works.length; i++) {
 			const listEl = document.createElement('li');
@@ -193,19 +208,6 @@ class Portfolio {
 
 	addZeroToNumberUnderTen(num) {
 		return num < 10 ? '0' + num : '' + num;
-	}
-
-	detectTouchDevice() {
-		try {
-			document.createEvent('TouchEvent');
-			this.isTouchDevice = true;
-		} catch (e) {
-			this.isTouchDevice = false;
-		}
-	}
-
-	cancelHoverInteraction() {
-		this.worksEl.classList.add('no-hover-interaction');
 	}
 }
 

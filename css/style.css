@@ -298,9 +298,31 @@ main .name {
   margin-bottom: 4.5rem;
 }
 
-.works.no-hover-interaction .work a img {
+.works.hover-interaction .work a {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.works.hover-interaction .work a:hover {
+  background-color: #C2C2C2;
+}
+
+.works.hover-interaction .work a:hover img {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
   -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.works.hover-interaction .work img {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .works .work {
@@ -335,30 +357,6 @@ main .name {
   height: 33.48rem;
   background-color: #E0E0E0;
   cursor: url("../img/arrow.svg") 50 50, pointer;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.works .work a:hover {
-  background-color: #C2C2C2;
-}
-
-.works .work a:hover img {
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-  -webkit-filter: grayscale(0%);
-          filter: grayscale(0%);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.works .work a img {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
 }
 
 .works .work section {

@@ -204,9 +204,20 @@ main
 .works
   border-bottom: 0.1rem solid $mediumGrey
   margin-bottom: $gapSize / 2
-  &.no-hover-interaction
-    .work a img
-      filter: grayscale(0%)
+  &.hover-interaction
+    .work
+      a
+        transition: $transitionTime
+        &:hover
+          background-color: $lightGrey2
+          img
+            animation-play-state: running
+            filter: grayscale(0%)
+            transition: $transitionTime
+      img
+        animation-play-state: paused
+        filter: grayscale(100%)
+        transition: $transitionTime
   .work
     list-style: none
     display: flex
@@ -224,17 +235,6 @@ main
       +size(44.64rem, 33.48rem) // width: 60%
       background-color: $lightGrey
       cursor: url('../img/arrow.svg') 50 50, pointer
-      transition: $transitionTime
-      &:hover
-        background-color: $lightGrey2
-        img
-          animation-play-state: running
-          filter: grayscale(0%)
-          transition: $transitionTime
-      img
-        animation-play-state: paused
-        filter: grayscale(100%)
-        transition: $transitionTime
     section
       margin-left: auto
       margin-top: 3.04rem

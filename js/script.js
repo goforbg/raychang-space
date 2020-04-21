@@ -138,10 +138,11 @@ class Portfolio {
 
 		this.updateDate();
 		this.updateWorks();
+		this.detectTouchDevice();
+		if (!this.isTouchDevice) this.addHoverInteraction();
 
 		// All HTML elements load finished
 		window.onload = () => {
-
 			setTimeout(() => {
 				this.hideLoadingEl();
 			}, 1000);
@@ -208,6 +209,14 @@ class Portfolio {
 
 	addZeroToNumberUnderTen(num) {
 		return num < 10 ? '0' + num : '' + num;
+	}
+
+	detectTouchDevice() {
+		return ("ontouchstart" in document.documentElement) ? this.isTouchDevice = true : this.isTouchDevice = false;
+	}
+
+	addHoverInteraction() {
+		this.worksEl.classList.add('hover-interaction');
 	}
 }
 

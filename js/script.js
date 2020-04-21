@@ -15,15 +15,13 @@ class Portfolio {
 			{
 				title: 'Horizontal Scrolling Theater',
 				subtitle: 'Built with Vue.js and GSAP',
-				cover:
-					'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',
+				cover:'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',
 				destination: 'https://raychang2017.github.io/horizontal-scrolling-theater/'
 			},
 			{
 				title: 'Linktree Clone',
-				subtitle: 'The only link I need on Instagram',
-				cover:
-					'https://cdn.dribbble.com/users/3800131/screenshots/10724954/media/529252d97de31baf1548bd817ad6bc1a.png',
+				subtitle: 'Resizable social media link-share page',
+				cover:'https://cdn.dribbble.com/users/3800131/screenshots/10724954/media/529252d97de31baf1548bd817ad6bc1a.png',
 				destination: 'https://raychang2017.github.io/linktree-clone/'
 			},
 			{
@@ -41,8 +39,7 @@ class Portfolio {
 			{
 				title: 'Coffee Menu Editor',
 				subtitle: 'Built with Vue.js',
-				cover:
-					'https://cdn.dribbble.com/users/3800131/screenshots/7101781/media/cbab08496ca35c2f443aa01bbd0d4d31.png',
+				cover:'https://cdn.dribbble.com/users/3800131/screenshots/7101781/media/cbab08496ca35c2f443aa01bbd0d4d31.png',
 				destination: 'https://codepen.io/raychang2017/full/MWgOMEL'
 			},
 			{
@@ -54,8 +51,7 @@ class Portfolio {
 			{
 				title: 'JS Block Memory Game',
 				subtitle: 'How many levels can you achieve?',
-				cover:
-					'https://cdn.dribbble.com/users/3800131/screenshots/10000193/media/5a5acc6684a86a5f46a9b4cd34f4df8e.gif',
+				cover:'https://cdn.dribbble.com/users/3800131/screenshots/10000193/media/5a5acc6684a86a5f46a9b4cd34f4df8e.gif',
 				destination: 'https://codepen.io/raychang2017/full/eYNmMZe'
 			},
 			{

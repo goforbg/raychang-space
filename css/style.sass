@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Playfair+Display:wght@500;600;700;800;900&display=swap")
 
 $red: #FB7560
-$orange: #EFB530
 $yellow: #F6CB1D
+$darkYellow: #EFB530
 $white: #F9F9F9
 $lightGrey: #E0E0E0
+$lightGrey2: #C2C2C2
 $mediumGrey: #9E9E9E
 $black: #333333
 $gapSize: 9rem
+$transitionTime: 0.5s
 
 @mixin size($w, $h:$w)
   width: $w
@@ -88,6 +90,8 @@ input, button
   border: none
   background-color: transparent
   font-family: 'Merriweather', serif
+button
+  cursor: url('../img/icn-hover.png'), pointer
   
 .loading
   +fixed(0, 0)
@@ -115,7 +119,7 @@ nav
 
 main
   +verticalCenter
-  +size(100%, 46.85rem)
+  +size(100%, 47.13rem)
   border-bottom: 0.1rem solid $mediumGrey
   margin-bottom: $gapSize
   position: relative
@@ -135,7 +139,7 @@ main
   .building
     position: absolute
     bottom: 0
-    +size(57rem, auto)
+    +size(57.28rem, auto)
   article
     position: absolute
     top: 20.5rem
@@ -179,7 +183,7 @@ main
 
 .works
   border-bottom: 0.1rem solid $mediumGrey
-  margin-bottom: $gapSize
+  margin-bottom: $gapSize / 2
   &.no-hover-interaction
     .work a img
       filter: grayscale(0%)
@@ -200,15 +204,17 @@ main
       +size(44.64rem, 33.48rem) // width: 60%
       background-color: $lightGrey
       cursor: url('../img/arrow.svg') 50 50, pointer
+      transition: $transitionTime
       &:hover
+        background-color: $lightGrey2
         img
           animation-play-state: running
           filter: grayscale(0%)
-          transition: 0.5s
+          transition: $transitionTime
       img
         animation-play-state: paused
         filter: grayscale(100%)
-        transition: 0.5s
+        transition: $transitionTime
     section
       margin-left: auto
       margin-top: 3.04rem
@@ -229,6 +235,7 @@ main
 
 #contact
   +flexLeft
+  padding-top: $gapSize / 2
   margin-bottom: $gapSize
   figure, section
     width: 42.5%
@@ -240,7 +247,7 @@ main
       font-size: 4.8rem
       font-weight: 400
     .star
-      color: $orange
+      color: $darkYellow
       font-size: 1.1rem
     .note
       display: flex
@@ -267,15 +274,12 @@ main
           padding: 0.55rem
   
 footer
+  +flexCenter
   &:hover
     p
       display: none
     a
       display: block
-  p, a
-    position: absolute
-    left: 50%
-    transform: translateX(-50%)
   p
     display: block
   a
@@ -293,7 +297,6 @@ footer
 // 為解決小尺寸設備文章形變，在小尺寸設備上以圖片代替文字
 @media screen and (max-width: 1280px) // ≤ 1280px
   main
-    height: 46.8rem
     article
       p, h1
         display: none

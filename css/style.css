@@ -75,6 +75,10 @@ input, button {
   font-family: 'Merriweather', serif;
 }
 
+button {
+  cursor: url("../img/icn-hover.png"), pointer;
+}
+
 .loading {
   position: fixed;
   left: 0;
@@ -140,7 +144,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 46.85rem;
+  height: 47.13rem;
   border-bottom: 0.1rem solid #9E9E9E;
   margin-bottom: 9rem;
   position: relative;
@@ -170,7 +174,7 @@ main .circle-red {
 main .building {
   position: absolute;
   bottom: 0;
-  width: 57rem;
+  width: 57.28rem;
   height: auto;
 }
 
@@ -233,7 +237,7 @@ main .name {
 
 .works {
   border-bottom: 0.1rem solid #9E9E9E;
-  margin-bottom: 9rem;
+  margin-bottom: 4.5rem;
 }
 
 .works.no-hover-interaction .work a img {
@@ -273,6 +277,12 @@ main .name {
   height: 33.48rem;
   background-color: #E0E0E0;
   cursor: url("../img/arrow.svg") 50 50, pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.works .work a:hover {
+  background-color: #C2C2C2;
 }
 
 .works .work a:hover img {
@@ -336,6 +346,7 @@ main .name {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 4.5rem;
   margin-bottom: 9rem;
 }
 
@@ -410,19 +421,24 @@ main .name {
   padding: 0.55rem;
 }
 
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 footer:hover p {
   display: none;
 }
 
 footer:hover a {
   display: block;
-}
-
-footer p, footer a {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
 }
 
 footer p {
@@ -434,9 +450,6 @@ footer a {
 }
 
 @media screen and (max-width: 1280px) {
-  main {
-    height: 46.8rem;
-  }
   main article p, main article h1 {
     display: none;
   }

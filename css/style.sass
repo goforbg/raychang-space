@@ -85,8 +85,9 @@ img
   +size(100%, auto)
   pointer-events: none
 
-input, button
+input, textarea, button
   appearance: none
+  resize: none
   border: none
   background-color: transparent
   font-family: 'Merriweather', serif
@@ -236,45 +237,51 @@ main
 #contact
   +flexLeft
   padding-top: $gapSize / 2
-  margin-bottom: $gapSize
+  margin-bottom: $gapSize / 1.5
   figure, section
     width: 42.5%
   section
-    display: flex
-    flex-direction: column
     margin-left: 7.5rem
     .title
       font-size: 4.8rem
       font-weight: 400
-    .star
-      color: $darkYellow
-      font-size: 1.1rem
     .note
       display: flex
       flex-direction: row
-      margin-top: 1.5rem
-      margin-bottom: 2rem
+      margin: 1.6rem 0
       p
         font-size: 1.17rem
         font-weight: 300
         color: $mediumGrey
         margin-left: 0.3rem
+    .star
+      color: $darkYellow
+      font-size: 1.1rem
     form
       font-size: 1.22rem
-      font-weight: 300
+      font-weight: 400
       letter-spacing: normal
       .row
         +flexLeft
-        border-bottom: 1px solid $mediumGrey
-        margin-bottom: 1.66rem
-        input
+        border-bottom: 0.1rem solid $mediumGrey
+        margin-bottom: 2.3rem
+        &:nth-of-type(5) // textarea
+          border: none
+          margin-bottom: 0
+        input, textarea
           font-size: 1.2rem
           color: $mediumGrey
           width: 100%
-          padding: 0.55rem
+          word-break: break-all // input 為單行元件
+          padding: 0.55rem 0
+        input
+          margin-left: 0.55rem
+        textarea
+          line-height: 1.45
   
 footer
   +flexCenter
+  font-size: 1.1rem
   &:hover
     p
       display: none
@@ -283,6 +290,7 @@ footer
   p
     display: block
   a
+    font-size: 1.1rem
     display: none
 
 // // Screenshot setting

@@ -66,10 +66,11 @@ img {
   pointer-events: none;
 }
 
-input, button {
+input, textarea, button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  resize: none;
   border: none;
   background-color: transparent;
   font-family: 'Merriweather', serif;
@@ -347,7 +348,7 @@ main .name {
       -ms-flex-align: center;
           align-items: center;
   padding-top: 4.5rem;
-  margin-bottom: 9rem;
+  margin-bottom: 6rem;
 }
 
 #contact figure, #contact section {
@@ -355,24 +356,12 @@ main .name {
 }
 
 #contact section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   margin-left: 7.5rem;
 }
 
 #contact section .title {
   font-size: 4.8rem;
   font-weight: 400;
-}
-
-#contact section .star {
-  color: #EFB530;
-  font-size: 1.1rem;
 }
 
 #contact section .note {
@@ -383,8 +372,7 @@ main .name {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
+  margin: 1.6rem 0;
 }
 
 #contact section .note p {
@@ -394,9 +382,14 @@ main .name {
   margin-left: 0.3rem;
 }
 
+#contact section .star {
+  color: #EFB530;
+  font-size: 1.1rem;
+}
+
 #contact section form {
   font-size: 1.22rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: normal;
 }
 
@@ -410,15 +403,29 @@ main .name {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid #9E9E9E;
-  margin-bottom: 1.66rem;
+  border-bottom: 0.1rem solid #9E9E9E;
+  margin-bottom: 2.3rem;
 }
 
-#contact section form .row input {
+#contact section form .row:nth-of-type(5) {
+  border: none;
+  margin-bottom: 0;
+}
+
+#contact section form .row input, #contact section form .row textarea {
   font-size: 1.2rem;
   color: #9E9E9E;
   width: 100%;
-  padding: 0.55rem;
+  word-break: break-all;
+  padding: 0.55rem 0;
+}
+
+#contact section form .row input {
+  margin-left: 0.55rem;
+}
+
+#contact section form .row textarea {
+  line-height: 1.45;
 }
 
 footer {
@@ -431,6 +438,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 1.1rem;
 }
 
 footer:hover p {
@@ -446,6 +454,7 @@ footer p {
 }
 
 footer a {
+  font-size: 1.1rem;
   display: none;
 }
 

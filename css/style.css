@@ -1,4 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Playfair+Display:wght@500;600;700;800;900&display=swap");
+@-webkit-keyframes vanishUp {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    display: block;
+  }
+  100% {
+    -webkit-transform: translateY(-100vh);
+            transform: translateY(-100vh);
+    display: none;
+  }
+}
+@keyframes vanishUp {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    display: block;
+  }
+  100% {
+    -webkit-transform: translateY(-100vh);
+            transform: translateY(-100vh);
+    display: none;
+  }
+}
+
+@-webkit-keyframes vanishDown {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    display: block;
+  }
+  100% {
+    -webkit-transform: translateY(18vh);
+            transform: translateY(18vh);
+    display: none;
+  }
+}
+
+@keyframes vanishDown {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    display: block;
+  }
+  100% {
+    -webkit-transform: translateY(18vh);
+            transform: translateY(18vh);
+    display: none;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -100,7 +151,13 @@ button {
 }
 
 .loading.hide {
-  display: none;
+  -webkit-animation: vanishUp 1.5s both;
+          animation: vanishUp 1.5s both;
+}
+
+.loading.hide .loading-animation {
+  -webkit-animation: vanishDown 1.5s;
+          animation: vanishDown 1.5s;
 }
 
 .loading .loading-animation {
@@ -164,7 +221,7 @@ main .circle-yellow {
   background-color: #F6CB1D;
 }
 
-main .circle-red {
+main .circle-orange {
   margin-left: 11.9rem;
   margin-top: -1.8rem;
   width: 20.9rem;
@@ -341,9 +398,9 @@ main .name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -409,6 +466,10 @@ main .name {
 
 #contact section form .row:nth-of-type(5) {
   border: none;
+  margin-bottom: 0;
+}
+
+#contact section form .row:nth-of-type(6) {
   margin-bottom: 0;
 }
 

@@ -151,8 +151,8 @@ button {
 }
 
 .loading.hide {
-  -webkit-animation: vanishUp 1.5s both;
-          animation: vanishUp 1.5s both;
+  -webkit-animation: vanishUp 1.5s ease-in-out both;
+          animation: vanishUp 1.5s ease-in-out both;
 }
 
 .loading.hide .loading-animation {

@@ -118,7 +118,7 @@ button
   +flexCenter
   background-color: $black
   &.hide
-    animation: vanishUp $transitionTime * 3 both // Stop at the final frame
+    animation: vanishUp $transitionTime * 3 ease-in-out both // Stop at the final frame
     .loading-animation
       animation: vanishDown $transitionTime * 3
   .loading-animation

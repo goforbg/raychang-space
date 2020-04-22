@@ -15,13 +15,13 @@ class Portfolio {
 			// },
 			{
 				title: 'Horizontal Scrolling Theater',
-				subtitle: 'Built with Vue.js and animated with GSAP',
+				subtitle: 'Make purchasing more comfortable',
 				cover:'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',
 				destination: 'https://raychang2017.github.io/horizontal-scrolling-theater/'
 			},
 			{
 				title: 'Linktree Clone',
-				subtitle: 'Resizable social media link-share page',
+				subtitle: 'Resizable social media link-sharing page',
 				cover:'https://cdn.dribbble.com/users/3800131/screenshots/10724954/media/529252d97de31baf1548bd817ad6bc1a.png',
 				destination: 'https://raychang2017.github.io/linktree-clone/'
 			},
@@ -51,7 +51,7 @@ class Portfolio {
 			},
 			{
 				title: 'JS Block Memory Game',
-				subtitle: 'How many levels can you achieve?',
+				subtitle: 'How many levels can you accomplish?',
 				cover:'https://cdn.dribbble.com/users/3800131/screenshots/10000193/media/5a5acc6684a86a5f46a9b4cd34f4df8e.gif',
 				destination: 'https://codepen.io/raychang2017/full/eYNmMZe'
 			},
@@ -81,7 +81,7 @@ class Portfolio {
 			},
 			{
 				title: 'Smoothly Draggable To-do List',
-				subtitle: 'And automatically saved in LocalStorage',
+				subtitle: 'And automatically saving in LocalStorage',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6757018/_____2019-07-09___11.03.44.png',
 				destination: 'https://raychang2017.github.io/draggable-localStorage-todoList/'
 			},
@@ -93,7 +93,7 @@ class Portfolio {
 			},
 			{
 				title: 'Day/Night Transition Postcard',
-				subtitle: 'Animated with CSS keyframes',
+				subtitle: 'Absolutely the modern way to share story',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6754986/_____2019-07-05___2.28.36.gif',
 				destination: 'https://codepen.io/raychang2017/full/EBGaZQ'
 			},
@@ -111,7 +111,7 @@ class Portfolio {
 			},
 			{
 				title: 'Interactive Chocolate Cake',
-				subtitle: 'Animated with animate.css',
+				subtitle: 'Animate any time when you touch it',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736602/_____2019-07-05___1.51.04.gif',
 				destination: 'https://codepen.io/raychang2017/full/ZdmgMr'
 			}

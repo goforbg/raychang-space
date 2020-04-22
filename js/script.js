@@ -6,7 +6,6 @@ class Portfolio {
 		this.dateEl = document.querySelector('.date');
 		this.nameEl = document.querySelector('.name');
 		this.worksEl = document.querySelector('.works');
-		this.textareaEl = document.querySelector('textarea');
 		this.works = [
 			// {
 			// 	title: 'Ray Chang Space',
@@ -136,6 +135,7 @@ class Portfolio {
 			this.antiMouseMove(e, this.nameEl, 80)
 		};
 
+		this.scrollBanned();
 		this.updateDate();
 		this.updateWorks();
 		this.detectTouchDevice();
@@ -143,14 +143,25 @@ class Portfolio {
 
 		// All HTML elements load finished
 		window.onload = () => {
-			setTimeout(() => {
-				this.hideLoadingEl();
-			}, 1000);
+			this.hideLoadingEl();
+			this.scrollEnable();
 		};
 	}
 
 	scrollToTop() {
 		window.scrollTo(0, 0);
+	}
+
+	scrollBanned() {
+		document.documentElement.style.overflow = 'hidden';
+		// document.documentElement.style.marginRight = m + "px";
+		// document.documentElement.style.paddingRight = m + "px";
+	}
+
+	scrollEnable() {
+		document.documentElement.style.overflow = 'auto';
+		// document.documentElement.style.marginRight = "0px";
+		// document.documentElement.style.paddingRight = "0px";
 	}
 
 	hideLoadingEl() {

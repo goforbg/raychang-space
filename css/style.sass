@@ -259,9 +259,14 @@ main
       .title
         font-size: 1.62rem
         margin-bottom: 0.58rem
-      .subtitle
+      .subtitle, .link-github
         font-size: 1.12rem
         color: $mediumGrey
+      .link-github
+        background-color: transparent
+        cursor: url('../img/icn-hover.png'), pointer
+        &:hover
+          background-color: transparent
 
 #contact
   +flexCenter

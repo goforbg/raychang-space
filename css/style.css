@@ -389,9 +389,18 @@ main .name {
   margin-bottom: 0.58rem;
 }
 
-.works .work section .subtitle {
+.works .work section .subtitle, .works .work section .link-github {
   font-size: 1.12rem;
   color: #9E9E9E;
+}
+
+.works .work section .link-github {
+  background-color: transparent;
+  cursor: url("../img/icn-hover.png"), pointer;
+}
+
+.works .work section .link-github:hover {
+  background-color: transparent;
 }
 
 #contact {

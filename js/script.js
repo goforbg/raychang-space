@@ -17,12 +17,14 @@ class Portfolio {
 				title: 'Horizontal Scrolling Theater',
 				subtitle: 'Make purchasing more comfortable',
 				cover:'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',
+				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/13%20-%20%E7%94%A8%20Vue%20%E5%92%8C%20API%20%E5%81%9A%E4%B8%80%E5%80%8B%E6%A9%AB%E5%90%91%E6%8D%B2%E5%8B%95%E9%9B%BB%E5%BD%B1%E8%B3%BC%E7%89%A9%E9%A0%81%E9%9D%A2',
 				destination: 'https://raychang2017.github.io/horizontal-scrolling-theater/'
 			},
 			{
 				title: 'Linktree Clone',
 				subtitle: 'Resizable social media link-sharing page',
 				cover:'https://cdn.dribbble.com/users/3800131/screenshots/10724954/media/529252d97de31baf1548bd817ad6bc1a.png',
+				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/12%20-%20%E5%81%9A%E4%B8%80%E5%80%8B%E7%B2%BE%E7%BE%8E%E7%89%88%E6%9C%AC%E7%9A%84%20Linktree%20Clone%20%E2%80%94%20%E8%AA%B0%E8%AA%AA%20Instagram%20bio%20%E5%8F%AA%E8%83%BD%E6%94%BE%E4%B8%80%E5%80%8B%E7%B6%B2%E5%9D%80',
 				destination: 'https://raychang2017.github.io/linktree-clone/'
 			},
 			{
@@ -41,6 +43,7 @@ class Portfolio {
 				title: 'Coffee Menu Editor',
 				subtitle: 'Editing ingredients is no longer difficult',
 				cover:'https://cdn.dribbble.com/users/3800131/screenshots/7101781/media/cbab08496ca35c2f443aa01bbd0d4d31.png',
+				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/10%20-%20Menu%20%E5%AE%A2%E8%A3%BD%E5%8C%96%E4%B8%8D%E9%BA%BB%E7%85%A9%EF%BC%8C%E7%94%A8%20Vue%20%E5%81%9A%E4%B8%80%E5%80%8B%E5%92%96%E5%95%A1%E8%8F%9C%E5%96%AE%E7%B7%A8%E8%BC%AF%E5%99%A8',
 				destination: 'https://codepen.io/raychang2017/full/MWgOMEL'
 			},
 			{
@@ -53,6 +56,7 @@ class Portfolio {
 				title: 'JS Block Memory Game',
 				subtitle: 'How many levels can you accomplish?',
 				cover:'https://cdn.dribbble.com/users/3800131/screenshots/10000193/media/5a5acc6684a86a5f46a9b4cd34f4df8e.gif',
+				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/09%20-%20%E6%96%B9%E5%A1%8A%E8%A8%98%E6%86%B6%E9%81%8A%E6%88%B2%20%E2%80%93%20%E4%BD%A0%E8%83%BD%E7%8E%A9%E5%88%B0%E7%AC%AC%E5%B9%BE%E9%97%9C%EF%BC%9F',
 				destination: 'https://codepen.io/raychang2017/full/eYNmMZe'
 			},
 			{
@@ -65,6 +69,7 @@ class Portfolio {
 				title: 'Elegant Vanilla JS Calculator',
 				subtitle: 'Why not shows the result immediately?',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6901484/_____2019-08-02___4.01.34.png',
+				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/08%20-%20%E5%81%9A%E4%B8%80%E5%80%8B%E5%84%AA%E9%9B%85%E7%9A%84%20Vanilla%20JS%20%E8%A8%88%E7%AE%97%E6%A9%9F%EF%BC%8C%E5%8D%B3%E6%99%82%E9%A1%AF%E7%A4%BA%E8%A8%88%E7%AE%97%E7%B5%90%E6%9E%9C',
 				destination: 'https://codepen.io/raychang2017/full/jgLppK'
 			},
 			{
@@ -77,12 +82,14 @@ class Portfolio {
 				title: 'JavaScript Click Game',
 				subtitle: 'How many scores can you get?',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6827214/_____2019-07-21___5.25.09.png',
+				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/07%20-%20JavaScript%20%E6%A8%99%E9%9D%B6%E9%81%8A%E6%88%B2%20%E2%80%93%20%E6%BB%91%E9%BC%A0%E4%BD%A0%E4%B8%80%E5%88%86%E9%90%98%E8%83%BD%E6%8C%89%E5%B9%BE%E4%B8%8B%EF%BC%9F',
 				destination: 'https://codepen.io/raychang2017/full/EqjXJN'
 			},
 			{
 				title: 'Smoothly Draggable To-do List',
 				subtitle: 'And automatically saving in LocalStorage',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6757018/_____2019-07-09___11.03.44.png',
+				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/06%20-%20%E5%8F%AF%E6%8B%96%E6%8B%89%E4%BB%BB%E5%8B%99%E7%9A%84%20LocalStorage%20%E5%BE%85%E8%BE%A6%E4%BA%8B%E9%A0%85%E6%B8%85%E5%96%AE',
 				destination: 'https://raychang2017.github.io/draggable-localStorage-todoList/'
 			},
 			{
@@ -95,24 +102,28 @@ class Portfolio {
 				title: 'Day/Night Transition Postcard',
 				subtitle: 'Absolutely the modern way to share story',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6754986/_____2019-07-05___2.28.36.gif',
+				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/05%20-%20%E5%AF%AB%E4%B8%80%E5%BC%B5%E5%8B%95%E6%85%8B%E6%98%8E%E4%BF%A1%E7%89%87%20%E2%80%93%20%E5%B8%8C%E8%87%98%E6%84%9B%E6%83%85%E6%B5%B7%20%E8%81%96%E6%89%98%E9%87%8C%E5%B0%BC%E5%B3%B6%E5%B0%8F%E7%99%BD%E6%88%BF',
 				destination: 'https://codepen.io/raychang2017/full/EBGaZQ'
 			},
 			{
 				title: 'RWD Project Management Page',
 				subtitle: 'Displayed with CSS Grid & Flexbox',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736854/_____2019-07-05___2.16.23.png',
+				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/04%20-%20%E7%94%A8%20CSS%20Grid%20%E5%92%8C%20Flexbox%20%E6%89%93%E9%80%A0%E4%B8%80%E5%80%8B%E9%9F%BF%E6%87%89%E5%BC%8F%E5%B0%88%E6%A1%88%E7%AE%A1%E7%90%86%E9%A0%81%E9%9D%A2',
 				destination: 'https://codepen.io/raychang2017/full/rEoNzx'
 			},
 			{
 				title: 'Apple Magic Keyboard',
 				subtitle: 'Made by pure codes of course',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736810/_____2019-07-05___2.06.35.png',
+				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/03%20-%20%E4%BD%BF%E7%94%A8%20CSS%20Grid%20%E5%92%8C%20Flexbox%20%E6%89%8B%E5%88%BB%E4%B8%80%E5%80%8B%20Mac%20%E9%8D%B5%E7%9B%A4',
 				destination: 'https://codepen.io/raychang2017/full/ZdVzmZ'
 			},
 			{
 				title: 'Interactive Chocolate Cake',
-				subtitle: 'Animate any time when you touch it',
+				subtitle: 'Animate anytime when you touch it',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736602/_____2019-07-05___1.51.04.gif',
+				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/01%20-%20%E7%94%A8%E7%A8%8B%E5%BC%8F%E7%83%98%E7%84%99%E7%9A%84%20%E3%84%89%E3%84%A8%E3%84%9E%20%E3%84%A7%E3%84%A0%20%E5%B7%A7%E5%85%8B%E5%8A%9B%E8%9B%8B%E7%B3%95',
 				destination: 'https://codepen.io/raychang2017/full/ZdmgMr'
 			}
 		];
@@ -135,7 +146,7 @@ class Portfolio {
 			this.antiMouseMove(e, this.nameEl, 80)
 		};
 
-		this.scrollBanned();
+		this.scrollDisable();
 		this.updateDate();
 		this.updateWorks();
 		this.detectTouchDevice();
@@ -152,7 +163,7 @@ class Portfolio {
 		window.scrollTo(0, 0);
 	}
 
-	scrollBanned() {
+	scrollDisable() {
 		document.documentElement.style.overflow = 'hidden';
 		// document.documentElement.style.marginRight = m + "px";
 		// document.documentElement.style.paddingRight = m + "px";
@@ -211,7 +222,7 @@ class Portfolio {
         <section>
           <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>
           <div class="title">${this.works[i].title}</div>
-          <div class="subtitle">${this.works[i].subtitle}</div>
+          <div class="subtitle">${this.works[i].subtitle}${this.works[i].github ? ` <a class="link-github" href="${this.works[i].github}" target="_blank">(Github)</a>` : ''}</div>
         </section>`;
 
 			this.worksEl.appendChild(listEl);

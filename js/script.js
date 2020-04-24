@@ -27,18 +27,18 @@ class Portfolio {
 				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/12%20-%20%E5%81%9A%E4%B8%80%E5%80%8B%E7%B2%BE%E7%BE%8E%E7%89%88%E6%9C%AC%E7%9A%84%20Linktree%20Clone%20%E2%80%94%20%E8%AA%B0%E8%AA%AA%20Instagram%20bio%20%E5%8F%AA%E8%83%BD%E6%94%BE%E4%B8%80%E5%80%8B%E7%B6%B2%E5%9D%80',
 				destination: 'https://raychang2017.github.io/linktree-clone/'
 			},
-			{
-				title: '當我按下 Enter 之後的事 — HTTP、API 與非同步跨來源請求',
-				subtitle: 'An Medium blog post',
-				cover: 'https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/medium-logo-transparent.png',
-				destination: 'https://medium.com/@raychangdesign/%E7%95%B6%E6%88%91%E6%8C%89%E4%B8%8B-enter-%E4%B9%8B%E5%BE%8C%E7%9A%84%E4%BA%8B-http-api-%E8%88%87%E9%9D%9E%E5%90%8C%E6%AD%A5%E8%B7%A8%E4%BE%86%E6%BA%90%E8%AB%8B%E6%B1%82-13bcaa426bc0'
-			},
-			{
-				title: 'Node.js 前後端分離與 NPM 套件管理',
-				subtitle: 'An Medium blog post',
-				cover: 'https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/medium-logo-transparent.png',
-				destination: 'https://medium.com/@raychangdesign/node-js-%E5%89%8D%E5%BE%8C%E7%AB%AF%E5%88%86%E9%9B%A2%E8%88%87-npm-%E5%A5%97%E4%BB%B6%E7%AE%A1%E7%90%86-4f39ba1c315a'
-			},
+			// {
+			// 	title: '當我按下 Enter 之後的事 — HTTP、API 與非同步跨來源請求',
+			// 	subtitle: 'An Medium blog post',
+			// 	cover: 'https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/medium-logo-transparent.png',
+			// 	destination: 'https://medium.com/@raychangdesign/%E7%95%B6%E6%88%91%E6%8C%89%E4%B8%8B-enter-%E4%B9%8B%E5%BE%8C%E7%9A%84%E4%BA%8B-http-api-%E8%88%87%E9%9D%9E%E5%90%8C%E6%AD%A5%E8%B7%A8%E4%BE%86%E6%BA%90%E8%AB%8B%E6%B1%82-13bcaa426bc0'
+			// },
+			// {
+			// 	title: 'Node.js 前後端分離與 NPM 套件管理',
+			// 	subtitle: 'An Medium blog post',
+			// 	cover: 'https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/medium-logo-transparent.png',
+			// 	destination: 'https://medium.com/@raychangdesign/node-js-%E5%89%8D%E5%BE%8C%E7%AB%AF%E5%88%86%E9%9B%A2%E8%88%87-npm-%E5%A5%97%E4%BB%B6%E7%AE%A1%E7%90%86-4f39ba1c315a'
+			// },
 			{
 				title: 'Coffee Menu Editor',
 				subtitle: 'Editing ingredients is no longer difficult',
@@ -46,12 +46,12 @@ class Portfolio {
 				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/10%20-%20Menu%20%E5%AE%A2%E8%A3%BD%E5%8C%96%E4%B8%8D%E9%BA%BB%E7%85%A9%EF%BC%8C%E7%94%A8%20Vue%20%E5%81%9A%E4%B8%80%E5%80%8B%E5%92%96%E5%95%A1%E8%8F%9C%E5%96%AE%E7%B7%A8%E8%BC%AF%E5%99%A8',
 				destination: 'https://codepen.io/raychang2017/full/MWgOMEL'
 			},
-			{
-				title: 'Git 與 Github 是什麼？如何使用 Git？',
-				subtitle: 'An Medium blog post',
-				cover: 'https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/medium-logo-transparent.png',
-				destination: 'https://medium.com/@raychangdesign/git-%E8%88%87-github-%E6%98%AF%E4%BB%80%E9%BA%BC-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-git-fc61f3cd0948'
-			},
+			// {
+			// 	title: 'Git 與 Github 是什麼？如何使用 Git？',
+			// 	subtitle: 'An Medium blog post',
+			// 	cover: 'https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/medium-logo-transparent.png',
+			// 	destination: 'https://medium.com/@raychangdesign/git-%E8%88%87-github-%E6%98%AF%E4%BB%80%E9%BA%BC-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-git-fc61f3cd0948'
+			// },
 			{
 				title: 'JS Block Memory Game',
 				subtitle: 'How many levels can you accomplish?',
@@ -59,12 +59,12 @@ class Portfolio {
 				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/09%20-%20%E6%96%B9%E5%A1%8A%E8%A8%98%E6%86%B6%E9%81%8A%E6%88%B2%20%E2%80%93%20%E4%BD%A0%E8%83%BD%E7%8E%A9%E5%88%B0%E7%AC%AC%E5%B9%BE%E9%97%9C%EF%BC%9F',
 				destination: 'https://codepen.io/raychang2017/full/eYNmMZe'
 			},
-			{
-				title: '快速精通 JavaScript 的 this',
-				subtitle: 'An Medium blog post',
-				cover: 'https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/medium-logo-transparent.png',
-				destination: 'https://medium.com/@raychangdesign/%E5%BF%AB%E9%80%9F%E7%B2%BE%E9%80%9A-javascript-%E7%9A%84-this-3f707e0bf873'
-			},
+			// {
+			// 	title: '快速精通 JavaScript 的 this',
+			// 	subtitle: 'An Medium blog post',
+			// 	cover: 'https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/medium-logo-transparent.png',
+			// 	destination: 'https://medium.com/@raychangdesign/%E5%BF%AB%E9%80%9F%E7%B2%BE%E9%80%9A-javascript-%E7%9A%84-this-3f707e0bf873'
+			// },
 			{
 				title: 'Elegant Vanilla JS Calculator',
 				subtitle: 'Why not shows the result immediately?',
@@ -72,12 +72,12 @@ class Portfolio {
 				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/08%20-%20%E5%81%9A%E4%B8%80%E5%80%8B%E5%84%AA%E9%9B%85%E7%9A%84%20Vanilla%20JS%20%E8%A8%88%E7%AE%97%E6%A9%9F%EF%BC%8C%E5%8D%B3%E6%99%82%E9%A1%AF%E7%A4%BA%E8%A8%88%E7%AE%97%E7%B5%90%E6%9E%9C',
 				destination: 'https://codepen.io/raychang2017/full/jgLppK'
 			},
-			{
-				title: '搞懂網頁技術名詞：MVC、SPA、SSR、AMP 及 PWA',
-				subtitle: 'An Medium blog post',
-				cover: 'https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/medium-logo-transparent.png',
-				destination: 'https://medium.com/@raychangdesign/%E6%90%9E%E6%87%82%E7%B6%B2%E9%A0%81%E6%8A%80%E8%A1%93%E5%90%8D%E8%A9%9E-mvc-spa-ssr-amp-%E5%8F%8A-pwa-17adfd3d7f7c'
-			},
+			// {
+			// 	title: '搞懂網頁技術名詞：MVC、SPA、SSR、AMP 及 PWA',
+			// 	subtitle: 'An Medium blog post',
+			// 	cover: 'https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/medium-logo-transparent.png',
+			// 	destination: 'https://medium.com/@raychangdesign/%E6%90%9E%E6%87%82%E7%B6%B2%E9%A0%81%E6%8A%80%E8%A1%93%E5%90%8D%E8%A9%9E-mvc-spa-ssr-amp-%E5%8F%8A-pwa-17adfd3d7f7c'
+			// },
 			{
 				title: 'JavaScript Click Game',
 				subtitle: 'How many scores can you get?',
@@ -92,12 +92,12 @@ class Portfolio {
 				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/06%20-%20%E5%8F%AF%E6%8B%96%E6%8B%89%E4%BB%BB%E5%8B%99%E7%9A%84%20LocalStorage%20%E5%BE%85%E8%BE%A6%E4%BA%8B%E9%A0%85%E6%B8%85%E5%96%AE',
 				destination: 'https://raychang2017.github.io/draggable-localStorage-todoList/'
 			},
-			{
-				title: 'JavaScript 簡介：ES6 以及更早之前的版本',
-				subtitle: 'An Medium blog post',
-				cover: 'https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/medium-logo-transparent.png',
-				destination: 'https://medium.com/@raychangdesign/javascript-%E7%B0%A1%E4%BB%8B-es6-%E4%BB%A5%E5%8F%8A%E6%9B%B4%E6%97%A9%E4%B9%8B%E5%89%8D%E7%9A%84%E7%89%88%E6%9C%AC-7c78e80248f9'
-			},
+			// {
+			// 	title: 'JavaScript 簡介：ES6 以及更早之前的版本',
+			// 	subtitle: 'An Medium blog post',
+			// 	cover: 'https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/medium-logo-transparent.png',
+			// 	destination: 'https://medium.com/@raychangdesign/javascript-%E7%B0%A1%E4%BB%8B-es6-%E4%BB%A5%E5%8F%8A%E6%9B%B4%E6%97%A9%E4%B9%8B%E5%89%8D%E7%9A%84%E7%89%88%E6%9C%AC-7c78e80248f9'
+			// },
 			{
 				title: 'Day/Night Transition Postcard',
 				subtitle: 'Absolutely the modern way to share story',
@@ -125,6 +125,12 @@ class Portfolio {
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736602/_____2019-07-05___1.51.04.gif',
 				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/01%20-%20%E7%94%A8%E7%A8%8B%E5%BC%8F%E7%83%98%E7%84%99%E7%9A%84%20%E3%84%89%E3%84%A8%E3%84%9E%20%E3%84%A7%E3%84%A0%20%E5%B7%A7%E5%85%8B%E5%8A%9B%E8%9B%8B%E7%B3%95',
 				destination: 'https://codepen.io/raychang2017/full/ZdmgMr'
+			},
+			{
+				title: 'Medium Blog',
+				subtitle: 'Read my technical articles',
+				cover: 'https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/medium-logo-transparent.png',
+				destination: 'https://medium.com/@raychangdesign/'
 			}
 		];
 		// this.workEls = document.querySelectorAll('.work');
@@ -222,7 +228,7 @@ class Portfolio {
         <section>
           <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>
           <div class="title">${this.works[i].title}</div>
-          <div class="subtitle">${this.works[i].subtitle}${this.works[i].github ? ` <a class="link-github" href="${this.works[i].github}" target="_blank">(Github)</a>` : ''}</div>
+          <div class="subtitle">${this.works[i].subtitle}${this.works[i].github ? ` <a class="link-github" href="${this.works[i].github}" target="_blank">(info)</a>` : ''}</div>
         </section>`;
 
 			this.worksEl.appendChild(listEl);

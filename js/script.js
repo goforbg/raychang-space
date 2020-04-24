@@ -3,7 +3,9 @@
 class Portfolio {
 	constructor() {
 		this.loadingEl = document.querySelector('.loading');
+		this.navEl = document.querySelector('nav');
 		this.dateEl = document.querySelector('.date');
+		this.mainEl = document.querySelector('main');
 		this.nameEl = document.querySelector('.name');
 		this.worksEl = document.querySelector('.works');
 		this.works = [
@@ -151,12 +153,15 @@ class Portfolio {
 		document.onmousemove = (e) => {
 			this.antiMouseMove(e, this.nameEl, 80)
 		};
+		document.onscroll = () => {
+			this.toggleElOverflow(this.mainEl);
+		}
 
 		this.scrollDisable();
+		this.parallax();
 		this.updateDate();
 		this.updateWorks();
-		this.detectTouchDevice();
-		if (!this.isTouchDevice) this.addHoverInteraction();
+		this.activateTouchDeviceHoverInteraction();
 
 		// All HTML elements load finished
 		window.onload = () => {
@@ -176,9 +181,26 @@ class Portfolio {
 	}
 
 	scrollEnable() {
-		document.documentElement.style.overflow = 'auto';
+		document.documentElement.style.overflow = 'visible';
 		// document.documentElement.style.marginRight = "0px";
 		// document.documentElement.style.paddingRight = "0px";
+	}
+
+	parallax() {
+		let rellax = new Rellax('.rellax');
+	}
+
+	toggleElOverflow(el) {
+		// const documentElPositionTop = document.documentElement.scrollTop; // body scroll position
+		const elPositionTop = el.getBoundingClientRect().top;
+		const elHeight = el.getBoundingClientRect().height / 2;
+		// console.log(elPositionTop + elHeight/2);
+
+		if (elPositionTop + elHeight/2 < 0) {
+			el.style.overflow = 'hidden';
+		} else {
+			el.style.overflow = 'visible';
+		}
 	}
 
 	hideLoadingEl() {
@@ -239,12 +261,16 @@ class Portfolio {
 		return num < 10 ? '0' + num : '' + num;
 	}
 
-	detectTouchDevice() {
-		return ("ontouchstart" in document.documentElement) ? this.isTouchDevice = true : this.isTouchDevice = false;
+	activateTouchDeviceHoverInteraction() {
+		this.detectTouchDevice();
+
+		if (!this.isTouchDevice) {
+			this.worksEl.classList.add('hover-interaction');
+		}
 	}
 
-	addHoverInteraction() {
-		this.worksEl.classList.add('hover-interaction');
+	detectTouchDevice() {
+		return ("ontouchstart" in document.documentElement) ? this.isTouchDevice = true : this.isTouchDevice = false;
 	}
 }
 

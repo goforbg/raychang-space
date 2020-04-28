@@ -6,6 +6,10 @@ class Portfolio {
 		this.navEl = document.querySelector('nav');
 		this.dateEl = document.querySelector('.date');
 		this.mainEl = document.querySelector('main');
+		this.circleYellowEl = document.querySelector('.circle-yellow');
+		this.circleOrangeEl = document.querySelector('.circle-orange');
+		this.articleLeftEl = document.querySelector('.article-left');
+		this.articleRightEl = document.querySelector('.article-right');
 		this.nameEl = document.querySelector('.name');
 		this.worksEl = document.querySelector('.works');
 		this.works = [
@@ -188,7 +192,17 @@ class Portfolio {
 	}
 
 	parallax() {
+		this.parallaxElementSet(this.circleYellowEl, '-3');
+		this.parallaxElementSet(this.circleOrangeEl, '-6');
+		this.parallaxElementSet(this.articleLeftEl, '-1.8');
+		this.parallaxElementSet(this.articleRightEl, '-1.8');
+
 		let rellax = new Rellax('.rellax');
+	}
+
+	parallaxElementSet(el, rellaxSpeed) {
+		el.classList.add('rellax');
+		el.setAttribute('data-rellax-speed', rellaxSpeed);
 	}
 
 	toggleElOverflow(el) {
@@ -197,10 +211,12 @@ class Portfolio {
 		const elHeight = el.getBoundingClientRect().height / 2;
 		// console.log(elPositionTop + elHeight/2);
 
-		if (elPositionTop + elHeight/2 < 0) {
+		if (elPositionTop + elHeight/5 < 0) {
 			el.style.overflow = 'hidden';
+			// console.log('False');
 		} else {
 			el.style.overflow = 'visible';
+			// console.log('true');
 		}
 	}
 

@@ -46,17 +46,17 @@ $paper: url('/img/paper.png')
   0%
     transform: translateY(0)
     display: block
+    opacity: 1
   100%
     transform: translateY(-100vh)
-    display: none
 
 @keyframes vanishDown
   0%
     transform: translateY(0)
     display: block
+    opacity: 1
   100%
     transform: translateY(18vh)
-    display: none
 
 ::-webkit-scrollbar
   // width: 0.8vw
@@ -122,10 +122,12 @@ button
   +flexCenter
   overflow: hidden
   background-color: $black
-  &.hide
-    animation: vanishUp $transitionTime * 3 ease-in-out both // Stop at the final frame
+  &.animated
+    animation: vanishUp $transitionTime * 3 ease-in-out forwards // Stop at the final frame
     .loading-animation
       animation: vanishDown $transitionTime * 3
+  &.hidden
+    display: none // display property can't be animated
   .loading-animation
     width: 50%
     pointer-events: none

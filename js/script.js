@@ -153,7 +153,8 @@ class Portfolio {
 		document.onmousemove = (e) => {
 			this.antiMouseMove(e, this.nameEl, 80)
 		};
-		document.onscroll = () => {
+		document.onscroll = (e) => {
+			// this.scrollSmoothly(document.documentElement, 1200 ,1200);
 			this.toggleElOverflow(this.mainEl);
 		}
 
@@ -204,7 +205,11 @@ class Portfolio {
 	}
 
 	hideLoadingEl() {
-		this.loadingEl.classList.add('hide');
+		this.loadingEl.classList.add('animated');
+
+		setTimeout(() => {
+			this.loadingEl.classList.add('hidden');
+		}, 2000)
 	}
 	
 	updateDate() {

@@ -54,6 +54,16 @@ $paper: url('/img/paper.png')
   100%
     transform: translateY(18vh)
 
+@keyframes shakeHorizontal
+  0%
+    transform: translateX(7.5%)
+  25%
+    transform: translateX(-5%)
+  50%
+    transform: translateX(2.5%)
+  100%
+    transform: translateX(0)
+
 ::-webkit-scrollbar
   // width: 0.8vw
   width: 0
@@ -319,7 +329,7 @@ main
         textarea
           line-height: 1.45
         &.alert
-          
+          animation: shakeHorizontal $transitionTime ease forwards
       .send
         display: block
         margin-left: auto

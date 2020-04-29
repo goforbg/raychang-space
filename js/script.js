@@ -325,21 +325,39 @@ class Portfolio {
 
 	// 如何製作網頁表單：https://medium.com/@AntheaLee/%E5%A6%82%E4%BD%95%E8%A3%BD%E4%BD%9C-%E8%81%AF%E7%B5%A1%E6%88%91%E5%80%91-%E7%B6%B2%E9%A0%81%E8%A1%A8%E5%96%AE-3df78756ec81
 	submitForm() {
-		const receiver = 'raychang2017@gmail.com';
+		this.isValided = true;
+		this.checkForm();
+		if (!this.isValided) return;
 
-		if (!this.inputNameEl.value) this.alertAnimate(this.inputNameEl.parentNode);
-		if (!this.inputEmailEl.value) this.alertAnimate(this.inputEmailEl.parentNode);
-		if (!this.inputTopicEl.value) this.alertAnimate(this.inputNameEl.parentNode);
+		const receiver = 'raychang2017@gmail.com';
+		// mailTo.href = `mailto:${receiver}?subject="+subject+"&body="+body`
+	}
+
+	checkForm() {
+		// Check empty
+		if (!this.inputNameEl.value) {
+			this.alertAnimate(this.inputNameEl.parentNode);
+			this.isValided = false;
+		}
+		if (!this.inputEmailEl.value) {
+			this.alertAnimate(this.inputEmailEl.parentNode);
+			this.isValided = false;
+		}
+		if (!this.inputTopicEl.value) {
+			this.alertAnimate(this.inputNameEl.parentNode);
+			this.isValided = false;
+		}
 		if (!this.textareaMessageEl.value) {
 			this.alertAnimate(this.titleMessageEl);
 			this.alertAnimate(this.textareaMessageEl.parentNode);
+			this.isValided = false;
 		}
 
-		if (this.inputEmailEl.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) === false) this.alertAnimate(this.inputEmailEl.parentNode);
-
-		if (!this.isValided) return;
-
-		// mailTo.href = `mailto:${receiver}?subject="+subject+"&body="+body`
+		// Check email format
+		if (this.inputEmailEl.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) === false) {
+			this.alertAnimate(this.inputEmailEl.parentNode);
+			this.isValided = false;
+		}
 	}
 
 	alertAnimate(el) {
@@ -348,8 +366,6 @@ class Portfolio {
 		setTimeout(() => {
 			el.classList.remove('alert');
 		}, 1000)
-
-		this.isValided = false;
 	}
 }
 

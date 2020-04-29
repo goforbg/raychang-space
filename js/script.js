@@ -6,6 +6,7 @@ class Portfolio {
 		this.navEl = document.querySelector('nav');
 		this.dateEl = document.querySelector('.date');
 		this.mainEl = document.querySelector('main');
+		this.buildingEl = document.querySelector('.building');
 		this.circleYellowEl = document.querySelector('.circle-yellow');
 		this.circleOrangeEl = document.querySelector('.circle-orange');
 		this.articleLeftEl = document.querySelector('.article-left');
@@ -13,6 +14,12 @@ class Portfolio {
 		this.nameEl = document.querySelector('.name');
 		this.worksEl = document.querySelector('.works');
 		this.textareaEls = document.querySelectorAll('textarea');
+		this.inputNameEl = document.querySelector('.input-name');
+		this.inputEmailEl = document.querySelector('.input-email');
+		this.inputTopicEl = document.querySelector('.input-topic');
+		this.titleMessageEl = document.querySelector('.title-message');
+		this.textareaMessageEl = document.querySelector('.textarea-message');
+		this.sendEl = document.querySelector('.send');
 		this.works = [
 			// {
 			// 	title: 'Ray Chang Space',
@@ -142,6 +149,7 @@ class Portfolio {
 		];
 		// this.workEls = document.querySelectorAll('.work');
 		this.isTouchDevice = false;
+		this.isValided = false;
 		this.events();
 	}
 
@@ -158,12 +166,14 @@ class Portfolio {
 		document.onmousemove = (e) => {
 			this.antiMouseMove(e, this.nameEl, 80)
 		};
+
+		this.scrollDisable();
+
 		document.onscroll = (e) => {
 			// this.scrollSmoothly(document.documentElement, 1200 ,1200);
 			this.toggleElOverflow(this.mainEl);
 		}
 
-		this.scrollDisable();
 		this.parallax();
 		this.updateDate();
 		this.updateWorks();
@@ -176,6 +186,8 @@ class Portfolio {
 			el.onpaste = (e) => this.autoExpandTextArea(e);
 			el.onchange = (e) => this.autoExpandTextArea(e);
 		})
+
+		this.sendEl.onclick = () => this.submitForm();
 
 		// All HTML elements load finished
 		window.onload = () => {
@@ -309,6 +321,35 @@ class Portfolio {
 
 		e.target.style.height = 'auto';
 		e.target.style.height = e.target.scrollHeight + offset + 'px';
+	}
+
+	// 如何製作網頁表單：https://medium.com/@AntheaLee/%E5%A6%82%E4%BD%95%E8%A3%BD%E4%BD%9C-%E8%81%AF%E7%B5%A1%E6%88%91%E5%80%91-%E7%B6%B2%E9%A0%81%E8%A1%A8%E5%96%AE-3df78756ec81
+	submitForm() {
+		const receiver = 'raychang2017@gmail.com';
+
+		if (!this.inputNameEl.value) this.alertAnimate(this.inputNameEl.parentNode);
+		if (!this.inputEmailEl.value) this.alertAnimate(this.inputEmailEl.parentNode);
+		if (!this.inputTopicEl.value) this.alertAnimate(this.inputNameEl.parentNode);
+		if (!this.textareaMessageEl.value) {
+			this.alertAnimate(this.titleMessageEl);
+			this.alertAnimate(this.textareaMessageEl.parentNode);
+		}
+
+		if (this.inputEmailEl.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) === false) this.alertAnimate(this.inputEmailEl.parentNode);
+
+		if (!this.isValided) return;
+
+		// mailTo.href = `mailto:${receiver}?subject="+subject+"&body="+body`
+	}
+
+	alertAnimate(el) {
+		el.classList.add('alert');
+
+		setTimeout(() => {
+			el.classList.remove('alert');
+		}, 1000)
+
+		this.isValided = false;
 	}
 }
 

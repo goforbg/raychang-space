@@ -45,16 +45,12 @@ $paper: url('/img/paper.png')
 @keyframes vanishUp
   0%
     transform: translateY(0)
-    display: block
-    opacity: 1
   100%
     transform: translateY(-100vh)
 
 @keyframes vanishDown
   0%
     transform: translateY(0)
-    display: block
-    opacity: 1
   100%
     transform: translateY(18vh)
 
@@ -279,6 +275,8 @@ main
   margin-bottom: $gapSize / 1.5
   figure, section
     width: 42.5%
+  figure
+    margin-top: -2.3rem
   section
     margin-left: 7.5rem
     .title
@@ -300,7 +298,8 @@ main
       font-size: 1.22rem
       font-weight: 400
       letter-spacing: normal
-      .row
+      ul li
+        list-style: none
         +flexLeft
         border-bottom: 0.1rem solid $mediumGrey
         margin-bottom: 2.3rem
@@ -319,14 +318,16 @@ main
           margin-left: 0.55rem
         textarea
           line-height: 1.45
+        &.alert
+          
       .send
         display: block
         margin-left: auto
         text-decoration: underline
         font-size: inherit
         margin-top: 2.3rem
-        
-  
+        margin-right: 0.5rem
+
 footer
   +flexCenter
   font-size: 1.1rem

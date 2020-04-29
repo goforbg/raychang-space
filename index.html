@@ -55,35 +55,36 @@
         <p>is a required input.</p>
       </div>
       <form action="mailto:raychang2017@gmail.com" method="post" enctype="text/plain">
-        <div class="row">
-          <div class="input-title">Name</div>
-          <div class="star">*</div>
-          <input type="text" name="name" required>
-        </div>
-        <div class="row">
-          <div class="input-title">Company</div>
-          <input type="text" name="company">
-        </div>
-        <div class="row">
-          <div class="input-title">Email</div>
-          <div class="star">*</div>
-          <input type="email" name="email" required>
-        </div>
-        <div class="row">
-          <div class="input-title">Topic</div>
-          <div class="star">*</div>
-          <input type="text" name="topic" required>
-        </div>
-        <div class="row">
-          <div class="input-title">Message</div>
-          <div class="star">*</div>
-        </div>
-        <div class="row">
-          <!-- <input type="text" name="message"> -->
-          <textarea name="message" required></textarea>
-        </div>
-        <!-- <input type="submit" value="Send"> -->
-        <button class="send">Send ></button>
+        <ul>
+          <li>
+            <div>Name</div>
+            <div class="star">*</div>
+            <input class="input-name" type="text" name="name" required>
+          </li>
+          <li>
+            <div>Company</div>
+            <input class="input-company" type="text" name="company">
+          </li>
+          <li>
+            <div>Email</div>
+            <div class="star">*</div>
+            <input class="input-email" type="email" name="email" required>
+          </li>
+          <li>
+            <div>Topic</div>
+            <div class="star">*</div>
+            <input class="input-topic" type="text" name="topic" required>
+          </li>
+          <li class="title-message">
+            <div>Message</div>
+            <div class="star">*</div>
+          </li>
+          <li>
+            <textarea class="textarea-message" rows="3" name="message" required></textarea>
+          </li>
+          <!-- <input type="submit" value="Send"> -->
+          <button class="send" type="submit">Send ></button>
+        </ul>
       </form>
     </section>
   </article>

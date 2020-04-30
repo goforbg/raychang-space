@@ -47,8 +47,10 @@
   <section class="works"></section>
 
   <article id="contact">
-    <figure><img src="https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/ray_js_round_800px.png" alt=""></figure>
-    <section>
+    <figure>
+      <img src="https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/ray_js_round_800px.png" alt="">
+    </figure>
+    <section class="say-hello">
       <h1 class="title">Say Hello</h1>
       <div class="note">
         <div class="star">*</div>
@@ -68,12 +70,17 @@
           <li>
             <div>Email</div>
             <div class="star">*</div>
-            <input class="input-email" type="email" name="email" required>
+            <input class="input-email" type="email" name="email" list="defaultEmails" required>
+            <datalist id="defaultEmails">
+              <option value="@gmail.com">
+              <option value="@yahoo.com.tw">
+              <option value="@hotmail.com">
+            </datalist>
           </li>
           <li>
-            <div>Topic</div>
+            <div>Subject</div>
             <div class="star">*</div>
-            <input class="input-topic" type="text" name="topic" required>
+            <input class="input-subject" type="text" name="subject" required>
           </li>
           <li class="title-message">
             <div>Message</div>
@@ -82,10 +89,13 @@
           <li>
             <textarea class="textarea-message" rows="3" name="message" required></textarea>
           </li>
-          <!-- <input type="submit" value="Send"> -->
           <button class="send" type="submit">Send ></button>
         </ul>
       </form>
+    </section>
+    <section class="appreciation hide">
+      <h1>Thanks for your time</h1>
+      <h3>The message is ready to send.</h3>
     </section>
   </article>
 

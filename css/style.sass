@@ -42,13 +42,14 @@ $paper: url('/img/paper.png')
   left: $l
   top: $t
 
-@keyframes vanishUp
+@keyframes slideUp
   0%
     transform: translateY(0)
   100%
     transform: translateY(-100vh)
+    // display: none // display property can't be animated
 
-@keyframes vanishDown
+@keyframes slideDown
   0%
     transform: translateY(0)
   100%
@@ -121,6 +122,9 @@ input, textarea, button
 button
   cursor: url('../img/icn-hover.png'), pointer
   
+.hide
+  display: none
+
 .loading
   +fixed(0, 0)
   z-index: 999
@@ -129,11 +133,9 @@ button
   overflow: hidden
   background-color: $black
   &.animated
-    animation: vanishUp $transitionTime * 3 ease-in-out forwards // Stop at the final frame
+    animation: slideUp $transitionTime * 3 ease-in-out forwards // Stop at the final frame
     .loading-animation
-      animation: vanishDown $transitionTime * 3
-  &.hidden
-    display: none // display property can't be animated
+      animation: slideDown $transitionTime * 3
   .loading-animation
     width: 50%
     pointer-events: none
@@ -283,21 +285,22 @@ main
   +flexCenter
   padding-top: $gapSize / 2
   margin-bottom: $gapSize / 1.5
-  figure, section
-    width: 42.5%
   figure
+    width: 40%
     margin-top: -2.3rem
   section
+    width: 42.5%
     margin-left: 7.5rem
+  .say-hello
     .title
-      font-size: 4.8rem
+      font-size: 4.5rem
       font-weight: 400
     .note
       display: flex
       flex-direction: row
       margin: 1.6rem 0
       p
-        font-size: 1.17rem
+        font-size: 1.1rem
         font-weight: 300
         color: $mediumGrey
         margin-left: 0.3rem
@@ -337,6 +340,18 @@ main
         font-size: inherit
         margin-top: 2.3rem
         margin-right: 0.5rem
+  .appreciation
+    +verticalCenter
+    margin-left: 3rem
+    &.hide
+      display: none
+    h1
+      font-size: 2.2rem
+      font-weight: 400
+      margin-bottom: 1rem
+    h3
+      font-size: 1.35rem
+      font-weight: 400
 
 footer
   +flexCenter

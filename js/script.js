@@ -13,13 +13,16 @@ class Portfolio {
 		this.articleRightEl = document.querySelector('.article-right');
 		this.nameEl = document.querySelector('.name');
 		this.worksEl = document.querySelector('.works');
+		this.inputEls = document.querySelectorAll('input');
 		this.textareaEls = document.querySelectorAll('textarea');
 		this.inputNameEl = document.querySelector('.input-name');
 		this.inputEmailEl = document.querySelector('.input-email');
-		this.inputTopicEl = document.querySelector('.input-topic');
+		this.inputSubjectEl = document.querySelector('.input-subject');
 		this.titleMessageEl = document.querySelector('.title-message');
 		this.textareaMessageEl = document.querySelector('.textarea-message');
 		this.sendEl = document.querySelector('.send');
+		this.sayHelloEl = document.querySelector('.say-hello');
+		this.appreciationEl = document.querySelector('.appreciation');
 		this.works = [
 			// {
 			// 	title: 'Ray Chang Space',
@@ -120,13 +123,6 @@ class Portfolio {
 				destination: 'https://codepen.io/raychang2017/full/EBGaZQ'
 			},
 			{
-				title: 'RWD Project Management Page',
-				subtitle: 'Displayed with CSS Grid & Flexbox',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736854/_____2019-07-05___2.16.23.png',
-				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/04%20-%20%E7%94%A8%20CSS%20Grid%20%E5%92%8C%20Flexbox%20%E6%89%93%E9%80%A0%E4%B8%80%E5%80%8B%E9%9F%BF%E6%87%89%E5%BC%8F%E5%B0%88%E6%A1%88%E7%AE%A1%E7%90%86%E9%A0%81%E9%9D%A2',
-				destination: 'https://codepen.io/raychang2017/full/rEoNzx'
-			},
-			{
 				title: 'Apple Magic Keyboard',
 				subtitle: 'Made by pure codes of course',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736810/_____2019-07-05___2.06.35.png',
@@ -214,9 +210,9 @@ class Portfolio {
 
 	parallax() {
 		this.parallaxElementSet(this.circleYellowEl, '-3');
-		this.parallaxElementSet(this.circleOrangeEl, '-6');
-		this.parallaxElementSet(this.articleLeftEl, '-1.8');
-		this.parallaxElementSet(this.articleRightEl, '-1.8');
+		this.parallaxElementSet(this.circleOrangeEl, '-7');
+		this.parallaxElementSet(this.articleLeftEl, '-2');
+		this.parallaxElementSet(this.articleRightEl, '-2');
 
 		let rellax = new Rellax('.rellax');
 	}
@@ -245,7 +241,7 @@ class Portfolio {
 		this.loadingEl.classList.add('animated');
 
 		setTimeout(() => {
-			this.loadingEl.classList.add('hidden');
+			this.loadingEl.classList.add('hide');
 		}, 2000)
 	}
 	
@@ -323,13 +319,18 @@ class Portfolio {
 		e.target.style.height = e.target.scrollHeight + offset + 'px';
 	}
 
-	// 製作網頁表單：https://medium.com/@AntheaLee/%E5%A6%82%E4%BD%95%E8%A3%BD%E4%BD%9C-%E8%81%AF%E7%B5%A1%E6%88%91%E5%80%91-%E7%B6%B2%E9%A0%81%E8%A1%A8%E5%96%AE-3df78756ec81
-	submitForm(e) {
+	submitForm() {
 		this.isValided = true;
 		this.checkForm();
 		if (!this.isValided) return false;
 
 		const receiver = 'raychang2017@gmail.com';
+
+		location.href = `mailto:${receiver}?subject=${this.inputSubjectEl.value}&body=${this.textareaMessageEl.value}`; // 製作網頁表單：https://medium.com/@AntheaLee/%E5%A6%82%E4%BD%95%E8%A3%BD%E4%BD%9C-%E8%81%AF%E7%B5%A1%E6%88%91%E5%80%91-%E7%B6%B2%E9%A0%81%E8%A1%A8%E5%96%AE-3df78756ec81
+
+		this.emptyForm();
+		this.sayHelloEl.classList.add('hide');
+		this.appreciationEl.classList.remove('hide');
 	}
 
 	checkForm() {
@@ -342,8 +343,8 @@ class Portfolio {
 			this.alertAnimate(this.inputEmailEl.parentNode);
 			this.isValided = false;
 		}
-		if (!this.inputTopicEl.value.trim()) {
-			this.alertAnimate(this.inputTopicEl.parentNode);
+		if (!this.inputSubjectEl.value.trim()) {
+			this.alertAnimate(this.inputSubjectEl.parentNode);
 			this.isValided = false;
 		}
 		if (!this.textareaMessageEl.value.trim()) {
@@ -353,7 +354,9 @@ class Portfolio {
 		}
 
 		// Check email format
-		if (!this.inputEmailEl.value.trim().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+		const emailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+		if (!this.inputEmailEl.value.trim().match(emailFormat)) {
 			this.alertAnimate(this.inputEmailEl.parentNode);
 			this.isValided = false;
 		}
@@ -367,6 +370,16 @@ class Portfolio {
 		setTimeout(() => {
 			el.classList.remove('alert');
 		}, 1000)
+	}
+
+	emptyForm() {
+		this.inputEls.forEach((el) => {
+			el.value = '';
+		})
+
+		this.textareaEls.forEach((el) => {
+			el.value = '';
+		})
 	}
 }
 

@@ -26,7 +26,7 @@ class Portfolio {
 		this.works = [
 			// {
 			// 	title: 'Ray Chang Space',
-			// 	subtitle: '100% Respondsive Portfolio Website',
+			// 	subtitle: '100% Responsive Portfolio Website',
 			// 	cover: '',
 			// 	destination: 'https://raychang2017.github.io/raychang-space/'
 			// },
@@ -145,7 +145,7 @@ class Portfolio {
 		];
 		// this.workEls = document.querySelectorAll('.work');
 		this.isTouchDevice = false;
-		this.isValided = false;
+		this.isValidated = false;
 		this.events();
 	}
 
@@ -320,9 +320,9 @@ class Portfolio {
 	}
 
 	submitForm() {
-		this.isValided = true;
+		this.isValidated = true;
 		this.checkForm();
-		if (!this.isValided) return false;
+		if (!this.isValidated) return false;
 
 		const receiver = 'raychang2017@gmail.com';
 
@@ -337,20 +337,20 @@ class Portfolio {
 		// Check empty
 		if (!this.inputNameEl.value.trim()) {
 			this.alertAnimate(this.inputNameEl.parentNode);
-			this.isValided = false;
+			this.isValidated = false;
 		}
 		if (!this.inputEmailEl.value.trim()) {
 			this.alertAnimate(this.inputEmailEl.parentNode);
-			this.isValided = false;
+			this.isValidated = false;
 		}
 		if (!this.inputSubjectEl.value.trim()) {
 			this.alertAnimate(this.inputSubjectEl.parentNode);
-			this.isValided = false;
+			this.isValidated = false;
 		}
 		if (!this.textareaMessageEl.value.trim()) {
 			this.alertAnimate(this.titleMessageEl);
 			this.alertAnimate(this.textareaMessageEl.parentNode);
-			this.isValided = false;
+			this.isValidated = false;
 		}
 
 		// Check email format
@@ -358,7 +358,7 @@ class Portfolio {
 
 		if (!this.inputEmailEl.value.trim().match(emailFormat)) {
 			this.alertAnimate(this.inputEmailEl.parentNode);
-			this.isValided = false;
+			this.isValidated = false;
 		}
 	}
 

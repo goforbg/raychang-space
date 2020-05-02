@@ -3,8 +3,8 @@
 class Portfolio {
 	constructor() {
 		this.loadingEl = document.querySelector('.loading');
-		this.aEls = document.querySelectorAll('a');
 		this.pagingSound = new Audio('https://raw.githubusercontent.com/raychang2017/raychang-space/master/audio/page.mp3');
+		this.typingSound = new Audio('https://raw.githubusercontent.com/raychang2017/raychang-space/master/audio/type.mp3');
 		this.navEl = document.querySelector('nav');
 		this.dateEl = document.querySelector('.date');
 		this.mainEl = document.querySelector('main');
@@ -15,6 +15,7 @@ class Portfolio {
 		this.articleRightEl = document.querySelector('.article-right');
 		this.nameEl = document.querySelector('.name');
 		this.worksEl = document.querySelector('.works');
+		this.formEl = document.querySelector('form');
 		this.inputEls = document.querySelectorAll('input');
 		this.textareaEls = document.querySelectorAll('textarea');
 		this.inputNameEl = document.querySelector('.input-name');
@@ -152,6 +153,8 @@ class Portfolio {
 	}
 
 	events() {
+		this.scrollDisable();
+
 		document.onselectstart = () => {
 			return false;
 		};
@@ -161,34 +164,36 @@ class Portfolio {
 		document.oncontextmenu = () => {
 			return false;
 		};
+		document.onclick = (e) => {
+			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
+		}
 		document.onmousemove = (e) => {
 			this.antiMouseMove(e, this.nameEl, 80)
 		};
-
-		this.scrollDisable();
-
 		document.onscroll = (e) => {
 			// this.scrollSmoothly(document.documentElement, 1200 ,1200);
 			this.toggleElOverflow(this.mainEl);
 		}
+		// document.addEventListener('wheel',function (event){
+		// 	//only vertical scroll
+		// 	if (event.deltaY > 0) {
+		// 		event.preventDefault();
+		// 		// smoothScroll(document.documentElement, 100, 1000)
+		// 	}
+		// })
 
 		this.parallax();
 		this.updateDate();
 		this.updateWorks();
 		this.activateTouchDeviceHoverInteraction();
-
-		document.onclick = (e) => {
-			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
-		}
-
+		this.formEl.onkeydown = () => this.soundPlay(this.typingSound);
 		this.textareaEls.forEach((el) => {
 			el.oninput = (e) => this.autoExpandTextArea(e);
 			el.onkeyup = (e) => this.autoExpandTextArea(e);
 			el.oncut = (e) => this.autoExpandTextArea(e);
 			el.onpaste = (e) => this.autoExpandTextArea(e);
 			el.onchange = (e) => this.autoExpandTextArea(e);
-		})
-
+		});
 		this.sendEl.onclick = () => this.submitForm();
 
 		// All HTML elements load finished

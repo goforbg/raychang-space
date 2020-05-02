@@ -3,6 +3,8 @@
 class Portfolio {
 	constructor() {
 		this.loadingEl = document.querySelector('.loading');
+		this.aEls = document.querySelectorAll('a');
+		this.pagingSound = new Audio('https://raw.githubusercontent.com/raychang2017/raychang-space/master/audio/page.mp3');
 		this.navEl = document.querySelector('nav');
 		this.dateEl = document.querySelector('.date');
 		this.mainEl = document.querySelector('main');
@@ -175,6 +177,10 @@ class Portfolio {
 		this.updateWorks();
 		this.activateTouchDeviceHoverInteraction();
 
+		document.onclick = (e) => {
+			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
+		}
+
 		this.textareaEls.forEach((el) => {
 			el.oninput = (e) => this.autoExpandTextArea(e);
 			el.onkeyup = (e) => this.autoExpandTextArea(e);
@@ -190,6 +196,11 @@ class Portfolio {
 			this.hideLoadingEl();
 			this.scrollEnable();
 		};
+	}
+
+	soundPlay(audio) {
+		audio.currentTime = 0;
+		audio.play();
 	}
 
 	scrollToTop() {
@@ -210,7 +221,7 @@ class Portfolio {
 
 	parallax() {
 		this.parallaxElementSet(this.circleYellowEl, '-3');
-		this.parallaxElementSet(this.circleOrangeEl, '-7');
+		this.parallaxElementSet(this.circleOrangeEl, '-6');
 		this.parallaxElementSet(this.articleLeftEl, '-2');
 		this.parallaxElementSet(this.articleRightEl, '-2');
 

@@ -3,6 +3,7 @@
 class Portfolio {
 	constructor() {
 		this.loadingEl = document.querySelector('.loading');
+		this.backgroundMusicEl = document.querySelector('.background-music');
 		this.pagingSound = new Audio('https://raw.githubusercontent.com/raychang2017/raychang-space/master/audio/page.mp3');
 		this.typingSound = new Audio('https://raw.githubusercontent.com/raychang2017/raychang-space/master/audio/type.mp3');
 		this.navEl = document.querySelector('nav');
@@ -200,6 +201,7 @@ class Portfolio {
 		window.onload = () => {
 			this.hideLoadingEl();
 			this.scrollEnable();
+			this.backgroundMusicEl.play();
 		};
 	}
 

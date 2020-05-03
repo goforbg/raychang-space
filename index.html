@@ -8,101 +8,102 @@
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
 <body>
-  <!-- <audio src="./audio/peaceful_piano.mp3" preload="metadata" autoplay loop volume="0.3"></audio> -->
-  <section class="loading">
-    <div class="loading-animation">
-      <img src="./img/illustration_loading.gif" alt="">
-    </div>
-  </section>
-
-  <!-- <figure class="noise"></figure> -->
+  <audio class="background-music" src="https://raw.githubusercontent.com/raychang2017/raychang-space/master/audio/piano_soundtrack.m4a" preload="metadata" loop></audio>
   
-  <nav>
-    <div class="date"></div>
-    <div class="line"></div>
-    <a class="about" href="https://github.com/raychang2017" target="_blank">ABOUT ME</a>
-    <a href="#contact" class="contact">CONTACT</a>
-  </nav>
-
-  <main>
-    <div class="circle-yellow"></div>
-    <div class="circle-orange"></div>
-    <img class="building" src="./img/building.png" alt="Building">
-    <article class="article-left">
-      <p>The Meaning of</p>
-      <h1>Design</h1>
-      <p>The word design is derived from the Latin "Designare", which means idea or plan. The simplest definition of design is a purposeful creative act. Especially for designer Feng Yu, designing is to discover and create value. Three things: "Speaking clearly", "solving problems", and "matching functionality" can be said the most common use in design.</p>
-      <img src="./img/article/article-left-transparent.png" alt="article-left">
-    </article>
-    <article class="article-right">
-      <p>Speaking of</p>
-      <h1>Programming</h1>
-      <p>When a problem is found, after thinking, the idea of solving the problem is finally expressed in a way that the computer can understand, that is, programming. The reason web technology develops so fast is that we redefine the problems over and over again. Learning programming teaches us how to think.</p>
-      <img src="./img/article/article-right-transparent.png" alt="article-right">
-    </article>
-    <div class="name">Ray Chang Space</div>
-  </main>
-  <!-- <div class="design-guide"><img src="./img/raychang-space.png" alt=""></div> -->
-
-  <section class="works"></section>
-
-  <article id="contact">
-    <figure>
-      <img src="https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/ray_js_round_800px.png" alt="">
-    </figure>
-    <section class="say-hello">
-      <h1 class="title">Say Hello</h1>
-      <div class="note">
-        <div class="star">*</div>
-        <p>is a required input.</p>
+  <div class="container">
+    <section class="loading">
+      <div class="loading-animation">
+        <img src="./img/illustration_loading.gif" alt="">
       </div>
-      <form action="mailto:raychang2017@gmail.com" method="post" enctype="text/plain">
-        <ul>
-          <li>
-            <div>Name</div>
-            <div class="star">*</div>
-            <input class="input-name" type="text" name="name" required>
-          </li>
-          <li>
-            <div>Company</div>
-            <input class="input-company" type="text" name="company">
-          </li>
-          <li>
-            <div>Email</div>
-            <div class="star">*</div>
-            <input class="input-email" type="email" name="email" list="defaultEmails" required>
-            <datalist id="defaultEmails">
-              <option value="@gmail.com">
-              <option value="@yahoo.com.tw">
-              <option value="@hotmail.com">
-            </datalist>
-          </li>
-          <li>
-            <div>Subject</div>
-            <div class="star">*</div>
-            <input class="input-subject" type="text" name="subject" required>
-          </li>
-          <li class="title-message">
-            <div>Message</div>
-            <div class="star">*</div>
-          </li>
-          <li>
-            <textarea class="textarea-message" rows="3" name="message" required></textarea>
-          </li>
-          <button class="send" type="submit">Send ></button>
-        </ul>
-      </form>
     </section>
-    <section class="appreciation hide">
-      <h1>Thanks for your time</h1>
-      <h3>The message is ready to send.</h3>
-    </section>
-  </article>
+    
+    <nav>
+      <div class="date"></div>
+      <div class="line"></div>
+      <a class="about" href="https://github.com/raychang2017" target="_blank">ABOUT ME</a>
+      <a href="#contact" class="contact">CONTACT</a>
+    </nav>
 
-  <footer>
-    <p class="message">You've reach the end</p>
-    <a href="#">GO TO TOP ⌃</a>
-  </footer>
+    <main>
+      <div class="circle-yellow"></div>
+      <div class="circle-orange"></div>
+      <img class="building" src="./img/building.png" alt="Building">
+      <article class="article-left">
+        <p>The Meaning of</p>
+        <h1>Design</h1>
+        <p>The word design is derived from the Latin "Designare", which means idea or plan. The simplest definition of design is a purposeful creative act. Especially for designer Feng Yu, designing is to discover and create value. Three things: "Speaking clearly", "solving problems", and "matching functionality" can be said the most common use in design.</p>
+        <img src="./img/article/article-left-transparent.png" alt="article-left">
+      </article>
+      <article class="article-right">
+        <p>Speaking of</p>
+        <h1>Programming</h1>
+        <p>When a problem is found, after thinking, the idea of solving the problem is finally expressed in a way that the computer can understand, that is, programming. The reason web technology develops so fast is that we redefine the problems over and over again. Learning programming teaches us how to think.</p>
+        <img src="./img/article/article-right-transparent.png" alt="article-right">
+      </article>
+      <div class="name">Ray Chang Space</div>
+    </main>
+    <!-- <div class="design-guide"><img src="./img/raychang-space.png" alt=""></div> -->
+
+    <section class="works"></section>
+
+    <article id="contact">
+      <figure>
+        <img src="https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/ray_js_round_800px.png" alt="">
+      </figure>
+      <section class="say-hello">
+        <h1 class="title">Say Hello</h1>
+        <div class="note">
+          <div class="star">*</div>
+          <p>is a required input.</p>
+        </div>
+        <form action="mailto:raychang2017@gmail.com" method="post" enctype="text/plain">
+          <ul>
+            <li>
+              <div>Name</div>
+              <div class="star">*</div>
+              <input class="input-name" type="text" name="name" required>
+            </li>
+            <li>
+              <div>Company</div>
+              <input class="input-company" type="text" name="company">
+            </li>
+            <li>
+              <div>Email</div>
+              <div class="star">*</div>
+              <input class="input-email" type="email" name="email" list="defaultEmails" required>
+              <datalist id="defaultEmails">
+                <option value="@gmail.com">
+                <option value="@yahoo.com.tw">
+                <option value="@hotmail.com">
+              </datalist>
+            </li>
+            <li>
+              <div>Subject</div>
+              <div class="star">*</div>
+              <input class="input-subject" type="text" name="subject" required>
+            </li>
+            <li class="title-message">
+              <div>Message</div>
+              <div class="star">*</div>
+            </li>
+            <li>
+              <textarea class="textarea-message" rows="3" name="message" required></textarea>
+            </li>
+            <button class="send" type="submit">Send ></button>
+          </ul>
+        </form>
+      </section>
+      <section class="appreciation hide">
+        <h1>Thanks for your time</h1>
+        <h3>The message is ready to send.</h3>
+      </section>
+    </article>
+
+    <footer>
+      <p class="message">You've reach the end</p>
+      <a href="#">GO TO TOP ⌃</a>
+    </footer>
+  </div>
 
   <!-- 滾動視差 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>

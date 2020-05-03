@@ -203,6 +203,8 @@ class Portfolio {
 			this.scrollEnable();
 			this.backgroundMusicEl.play();
 		};
+		window.onblur = () => this.backgroundMusicEl.pause();
+		window.onfocus = () => this.backgroundMusicEl.play();
 	}
 
 	soundPlay(audio) {

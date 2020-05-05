@@ -28,12 +28,13 @@ class Portfolio {
 		this.sayHelloEl = document.querySelector('.say-hello');
 		this.appreciationEl = document.querySelector('.appreciation');
 		this.works = [
-			// {
-			// 	title: 'Ray Chang Space',
-			// 	subtitle: '100% Responsive Portfolio Website',
-			// 	cover: '../img/螢幕快照 2020-05-05 下午2.01.58 4;3.png',
-			// 	destination: 'https://raychang2017.github.io/raychang-space/'
-			// },
+			{
+				title: 'Ray Chang Space',
+				subtitle: '100% Responsive Portfolio Website',
+				cover: 'https://github.com/raychang2017/raychang-space/blob/master/img/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202020-05-05%20%E4%B8%8B%E5%8D%882.01.58%204;3.png?raw=true',
+				github: 'https://github.com/raychang2017/raychang-space',
+				destination: 'https://raychang2017.github.io/raychang-space/'
+			},
 			{
 				title: 'Horizontal Scrolling Theater',
 				subtitle: 'Make purchasing more comfortable',

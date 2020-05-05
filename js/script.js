@@ -31,7 +31,7 @@ class Portfolio {
 			// {
 			// 	title: 'Ray Chang Space',
 			// 	subtitle: '100% Responsive Portfolio Website',
-			// 	cover: '',
+			// 	cover: '../img/螢幕快照 2020-05-05 下午2.01.58 4;3.png',
 			// 	destination: 'https://raychang2017.github.io/raychang-space/'
 			// },
 			{
@@ -231,8 +231,8 @@ class Portfolio {
 	parallax() {
 		this.parallaxElementSet(this.circleYellowEl, '-3');
 		this.parallaxElementSet(this.circleOrangeEl, '-6');
-		this.parallaxElementSet(this.articleLeftEl, '-2');
-		this.parallaxElementSet(this.articleRightEl, '-2');
+		this.parallaxElementSet(this.articleLeftEl, '-1.5');
+		this.parallaxElementSet(this.articleRightEl, '-1.5');
 
 		let rellax = new Rellax('.rellax');
 	}
@@ -248,12 +248,12 @@ class Portfolio {
 		const elHeight = el.getBoundingClientRect().height / 2;
 		// console.log(elPositionTop + elHeight/2);
 
-		if (elPositionTop + elHeight/5 < 0) {
+		if (elPositionTop + elHeight/100 < 0) {
 			el.style.overflow = 'hidden';
-			// console.log('False');
+			// console.log('hidden');
 		} else {
 			el.style.overflow = 'visible';
-			// console.log('true');
+			// console.log('visible');
 		}
 	}
 

@@ -1,6 +1,5 @@
 [![Photo](https://github.com/raychang2017/raychang-space/blob/master/img/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202020-05-05%20%E4%B8%8B%E5%8D%882.01.58.png?raw=true)](https://dribbble.com/raychangdesign)
-[![Photo](https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202020-05-05%20%E4%B8%8B%E5%8D%882.03.45.png)](https://dribbble.com/raychangdesign)
-[![Photo](https://github.com/raychang2017/raychang-space/blob/master/img/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202020-05-05%20%E4%B8%8B%E5%8D%882.04.17.png?raw=true)](https://dribbble.com/raychangdesign)
+[![Photo](https://cdn.dribbble.com/users/3800131/screenshots/11317150/media/08465ea718d17273f4800b2f490e65e7.png)](https://dribbble.com/raychangdesign)
 
 # Ray Chang Space - 100% Responsive Portfolio Website
 

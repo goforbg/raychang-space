@@ -122,9 +122,6 @@ input, textarea, button
   font-family: 'Merriweather', serif
 button
   cursor: url('../img/icn-hover.png'), pointer
-  
-.hide
-  display: none
 
 .loading
   +fixed(0, 0)
@@ -137,6 +134,8 @@ button
     animation: slideUp $transitionTime * 3 ease-in-out forwards // Stop at the final frame
     .loading-animation
       animation: slideDown $transitionTime * 3
+  &.hide
+    display: none
   .loading-animation
     width: 50%
     pointer-events: none
@@ -256,7 +255,7 @@ main
           margin-left: 0
           margin-right: 10rem
     a
-      +size(44.64rem, 33.48rem) // width: 60%
+      +size(44.64rem, 33.47rem) // width: 60%
       background-color: $lightGrey
       cursor: url('../img/arrow.svg') 50 50, pointer
     section
@@ -378,18 +377,6 @@ footer
 //   article
 //       border: 0.05rem solid grey
 
-// @media (orientation: portrait)
-//   html //FIXME:
-    
-//   body
-//     // transform: rotate(90deg)
-//     // +size(100vh, 100vw)
-//     // overflow: scroll
-//   .container
-//     transform: rotate(90deg)
-//     // width: 100vh
-//     // height: 100vw
-
 // 為解決小尺寸設備文章形變，在小尺寸設備上以圖片代替文字
 @media screen and (max-width: 1280px) // ≤ 1280px
   main
@@ -403,6 +390,18 @@ footer
 @media screen and (max-width: 768px) // ≤ 768px
   body
     margin-top: -6px
+@media screen and (orientation: portrait) and (max-width: 767px) // portrait, ≤ 767px
+  // https://css-tricks.com/snippets/css/orientation-lock/?unapproved=1756425&moderation-hash=3cd80b000ef56c9da79ab1989bf174fb#comment-1756425
+  html 
+    transform: rotate(-90deg)
+    transform-origin: left top
+    width: 100vh
+    height: 100vw
+    font-size: 1.168vh
+    position: absolute
+    top: 100%
+    left: 0
+    overflow-x: hidden
 @media screen and (max-width: 598px) // ≤ 598px
   nav > *
     transform: scale(0.8)

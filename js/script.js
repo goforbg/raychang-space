@@ -31,7 +31,7 @@ class Portfolio {
 			{
 				title: 'Ray Chang Space',
 				subtitle: '100% Responsive Portfolio Website',
-				cover: 'https://github.com/raychang2017/raychang-space/blob/master/img/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202020-05-05%20%E4%B8%8B%E5%8D%882.01.58%204;3.png?raw=true',
+				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/11317150/media/08465ea718d17273f4800b2f490e65e7.png',
 				github: 'https://github.com/raychang2017/raychang-space',
 				destination: 'https://raychang2017.github.io/raychang-space/'
 			},

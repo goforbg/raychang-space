@@ -158,7 +158,7 @@ class Portfolio {
 
 	events() {
 		this.scrollDisable();
-		this.resizeForAddressBarWhenPortrait();
+		// this.resizeForAddressBarWhenPortrait();
 
 		document.onselectstart = () => {
 			return false;
@@ -262,16 +262,16 @@ class Portfolio {
 		}
 	}
 
-	resizeForAddressBarWhenPortrait() {
-		// Portrait
-		if (window.innerHeight > window.innerWidth) {
-			const addressBarHeight = window.outerHeight - window.innerHeight;
-			console.log(addressBarHeight);
+	// resizeForAddressBarWhenPortrait() {
+	// 	// Portrait
+	// 	if (window.innerHeight > window.innerWidth) {
+	// 		const addressBarHeight = window.outerHeight - window.innerHeight;
+	// 		console.log(addressBarHeight);
 			
-			this.containerEl.style.width = window.innerHeight;
-			this.containerEl.style.marginTop = addressBarHeight;
-		}
-	}
+	// 		this.containerEl.style.width = window.innerHeight;
+	// 		this.containerEl.style.marginTop = addressBarHeight;
+	// 	}
+	// }
 
 	hideLoadingEl() {
 		this.loadingEl.classList.add('animated');

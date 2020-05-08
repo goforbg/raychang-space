@@ -358,6 +358,8 @@ main
 footer
   +flexCenter
   font-size: 1.1rem
+  a
+    display: none
   &.hover-interaction
     &:hover
       p
@@ -409,11 +411,11 @@ footer
     overflow-x: hidden
     padding: 3.18rem 5.6rem
     background-image: $noise
+    // Address bar
+    padding-left: 9.2rem
+    padding-right: 3rem
   main
     height: 46.5rem
-  footer
-    a
-      display: none
     
 @media screen and (max-width: 598px) // ≤ 598px
   nav > *

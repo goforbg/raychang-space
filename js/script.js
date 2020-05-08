@@ -6,6 +6,7 @@ class Portfolio {
 		this.backgroundMusicEl = document.querySelector('.background-music');
 		this.pagingSound = new Audio('https://raw.githubusercontent.com/raychang2017/raychang-space/master/audio/page.mp3');
 		this.typingSound = new Audio('https://raw.githubusercontent.com/raychang2017/raychang-space/master/audio/type.mp3');
+		this.containerEl = document.querySelector('.container');
 		this.navEl = document.querySelector('nav');
 		this.dateEl = document.querySelector('.date');
 		this.mainEl = document.querySelector('main');
@@ -157,6 +158,7 @@ class Portfolio {
 
 	events() {
 		this.scrollDisable();
+		this.resizeForAddressBarWhenPortrait();
 
 		document.onselectstart = () => {
 			return false;
@@ -257,6 +259,17 @@ class Portfolio {
 		} else {
 			el.style.overflow = 'visible';
 			// console.log('visible');
+		}
+	}
+
+	resizeForAddressBarWhenPortrait() {
+		// Portrait
+		if (window.innerHeight > window.innerWidth) {
+			const addressBarHeight = window.outerHeight - window.innerHeight;
+			console.log(addressBarHeight);
+			
+			this.containerEl.style.width = window.innerHeight;
+			this.containerEl.style.marginTop = addressBarHeight;
 		}
 	}
 

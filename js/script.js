@@ -27,6 +27,7 @@ class Portfolio {
 		this.sendEl = document.querySelector('.send');
 		this.sayHelloEl = document.querySelector('.say-hello');
 		this.appreciationEl = document.querySelector('.appreciation');
+		this.footerEl = document.querySelector('footer');
 		this.works = [
 			{
 				title: 'Ray Chang Space',
@@ -170,9 +171,10 @@ class Portfolio {
 			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
 		}
 		document.onmousemove = (e) => {
-			this.antiMouseMove(e, this.nameEl, 80)
+			this.detectTouchDevice();
+			if (!this.isTouchDevice) this.antiMouseMove(e, this.nameEl, 80);
 		};
-		document.onscroll = (e) => {
+		document.onscroll = () => {
 			// this.scrollSmoothly(document.documentElement, 1200 ,1200);
 			this.toggleElOverflow(this.mainEl);
 		}
@@ -187,7 +189,7 @@ class Portfolio {
 		this.parallax();
 		this.updateDate();
 		this.updateWorks();
-		this.activateTouchDeviceHoverInteraction();
+		this.activateTouchDeviceHoverInteraction(this.worksEl, this.footerEl);
 		this.formEl.onkeydown = () => this.soundPlay(this.typingSound);
 		this.textareaEls.forEach((el) => {
 			el.oninput = (e) => this.autoExpandTextArea(e);
@@ -320,11 +322,13 @@ class Portfolio {
 		return num < 10 ? '0' + num : '' + num;
 	}
 
-	activateTouchDeviceHoverInteraction() {
+	activateTouchDeviceHoverInteraction(...els) {
 		this.detectTouchDevice();
 
 		if (!this.isTouchDevice) {
-			this.worksEl.classList.add('hover-interaction');
+			els.forEach((el) => {
+				el.classList.add('hover-interaction');
+			})
 		}
 	}
 

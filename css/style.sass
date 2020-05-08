@@ -150,11 +150,13 @@ button
 nav
   padding: 1rem 0
   +flexLeft
-  .line
-    margin-left: 1.04rem
-    margin-top: 0.1rem
-    width: 11rem
-    border-bottom: 0.1rem solid $black
+  section
+    +flexLeft
+    .line
+      margin-left: 1.04rem
+      margin-top: 0.1rem
+      width: 11rem
+      border-bottom: 0.1rem solid $black
   .about
     margin-left: auto
     margin-right: 2.49rem
@@ -356,16 +358,17 @@ main
 footer
   +flexCenter
   font-size: 1.1rem
-  &:hover
+  &.hover-interaction
+    &:hover
+      p
+        display: none
+      a
+        display: block
     p
-      display: none
-    a
       display: block
-  p
-    display: block
-  a
-    font-size: 1.1rem
-    display: none
+    a
+      font-size: 1.1rem
+      display: none
 
 // // Screenshot setting
 // @media screen and (max-width: 1280px) // size < 1280px
@@ -386,10 +389,6 @@ footer
       img
         display: block
         
-// 瀏覽器最小字體為 12px，在小尺寸的設備上以 px 和 transform: scale() 代替 rem
-@media screen and (max-width: 768px) // ≤ 768px
-  body
-    margin-top: -6px
 @media screen and (orientation: portrait) and (max-width: 767px) // portrait, ≤ 767px
   // https://css-tricks.com/snippets/css/orientation-lock/?unapproved=1756425&moderation-hash=3cd80b000ef56c9da79ab1989bf174fb#comment-1756425
   html
@@ -397,23 +396,31 @@ footer
   body
     background-image: none
   .container
-    transform: rotate(-90deg)
+    // transform: rotate(-90deg)
+    transform: rotate(90deg)
     transform-origin: left top
     width: 100vh
     height: 100vw
     position: absolute
-    top: 100%
-    left: 0
+    // left: 0
+    // top: 100%
+    left: 100%
+    top: 0
     overflow-x: hidden
     padding: 3.18rem 5.6rem
     background-image: $noise
+  main
+    height: 46.5rem
+  footer
+    a
+      display: none
+    
 @media screen and (max-width: 598px) // ≤ 598px
   nav > *
-    transform: scale(0.8)
+    transform: scale(0.8) // 瀏覽器最小字體為 12px，在小尺寸的設備上以 px 和 transform: scale() 代替 rem
   nav
     .line
       width: 78px
       margin-left: -10px
-      margin-top: 3px
     .about
       margin-right: 0

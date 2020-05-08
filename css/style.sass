@@ -146,7 +146,7 @@ button
 //   pointer-events: none
 //   z-index: 999
 //   background-image: $noise
-
+  
 nav
   padding: 1rem 0
   +flexLeft
@@ -392,16 +392,21 @@ footer
     margin-top: -6px
 @media screen and (orientation: portrait) and (max-width: 767px) // portrait, ≤ 767px
   // https://css-tricks.com/snippets/css/orientation-lock/?unapproved=1756425&moderation-hash=3cd80b000ef56c9da79ab1989bf174fb#comment-1756425
-  html 
+  html
+    font-size: 1.168vh
+  body
+    background-image: none
+  .container
     transform: rotate(-90deg)
     transform-origin: left top
     width: 100vh
     height: 100vw
-    font-size: 1.168vh
     position: absolute
     top: 100%
     left: 0
     overflow-x: hidden
+    padding: 3.18rem 5.6rem
+    background-image: $noise
 @media screen and (max-width: 598px) // ≤ 598px
   nav > *
     transform: scale(0.8)

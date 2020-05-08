@@ -392,7 +392,7 @@ footer
         display: block
         
 @media screen and (orientation: portrait) and (max-width: 767px) // portrait, ≤ 767px
-  // https://css-tricks.com/snippets/css/orientation-lock/?unapproved=1756425&moderation-hash=3cd80b000ef56c9da79ab1989bf174fb#comment-1756425
+  // rotate html -90deg: https://css-tricks.com/snippets/css/orientation-lock/
   html
     font-size: 1.168vh
   body
@@ -418,11 +418,16 @@ footer
     height: 46.5rem
     
 @media screen and (max-width: 598px) // ≤ 598px
-  nav > *
-    transform: scale(0.8) // 瀏覽器最小字體為 12px，在小尺寸的設備上以 px 和 transform: scale() 代替 rem
+  // 瀏覽器最小字體為 12px，在小尺寸的設備上以 px 和 transform: scale() 代替 rem
   nav
-    .line
-      width: 78px
-      margin-left: -10px
+    section
+      transform: scale(0.9)
+      .date
+        
+      .line
+        width: 78px
+        // margin-left: -10px
+    .about, .contact
+      transform: scale(0.8)
     .about
       margin-right: 0

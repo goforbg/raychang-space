@@ -295,7 +295,7 @@ class Portfolio {
 		return months[num - 1];
 	}
 
-	antiMouseMove(e, item, max=20) {
+	antiMouseMove(e, el, max=20) {
 		const x = e.clientX;
     const y = e.clientY;
     //console.log(x);
@@ -306,10 +306,10 @@ class Portfolio {
     const rx = x - halfWidth;
     const ry = y - halfHeight;
 
-		const dx = (item.getBoundingClientRect().width / max) * (rx / -halfWidth);
-		const dy = (item.getBoundingClientRect().height / max) * (ry / -halfHeight);
+		const dx = (el.getBoundingClientRect().width / max) * (rx / -halfWidth);
+		const dy = (el.getBoundingClientRect().height / max) * (ry / -halfHeight);
 		
-		item.style['transform'] = item.style['-webkit-transform'] = 'translate('+dx+'px,'+dy+'px)';
+		el.style['transform'] = el.style['-webkit-transform'] = 'translate('+dx+'px,'+dy+'px)';
 	}
 
 	updateWorks() {

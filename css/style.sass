@@ -153,9 +153,9 @@ nav
   section
     +flexLeft
     .line
+      width: 11rem
       margin-left: 1.04rem
       margin-top: 0.1rem
-      width: 11rem
       border-bottom: 0.1rem solid $black
   .about
     margin-left: auto
@@ -410,10 +410,9 @@ footer
     top: 0
     overflow-x: hidden
     background-image: $noise
-    // (padding: 3.18rem 5.6rem) Reset padding for address bar
-    padding: 3rem 3rem
-    padding-left: 2rem
-    padding-right: 4em
+    padding: 3rem 3rem // (padding: 3.18rem 5.6rem) Reset padding for address bar
+    padding-left: 2rem // left 1 proportion
+    padding-right: 4em // right 2 proportion
   main
     height: 46.5rem
   .works .work section // fontSize * 1.05
@@ -434,8 +433,8 @@ footer
         font-size: 12px
         transform: scale(0.8)
       .line
-        width: 90px
-        margin-left: 2px
+        width: 11rem
+        margin-left: -1.04rem
         transform: scale(0.8)
     .about, .contact
       font-size: 12px

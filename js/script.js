@@ -94,7 +94,7 @@ class Portfolio {
 				subtitle: 'Why not shows the result immediately?',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6901484/_____2019-08-02___4.01.34.png',
 				github:'https://github.com/raychang2017/f2e-portfolio/tree/master/08%20-%20%E5%81%9A%E4%B8%80%E5%80%8B%E5%84%AA%E9%9B%85%E7%9A%84%20Vanilla%20JS%20%E8%A8%88%E7%AE%97%E6%A9%9F%EF%BC%8C%E5%8D%B3%E6%99%82%E9%A1%AF%E7%A4%BA%E8%A8%88%E7%AE%97%E7%B5%90%E6%9E%9C',
-				destination: 'https://codepen.io/raychang2017/full/jgLppK'
+				destination: 'https://raychang2017.github.io/elegant-vanilla-js-calculator/'
 			},
 			// {
 			// 	title: '搞懂網頁技術名詞：MVC、SPA、SSR、AMP 及 PWA',

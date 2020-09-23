@@ -162,7 +162,7 @@ nav
     margin-right: 2.49rem
 
 main
-  +verticalCenter
+  // +verticalCenter
   +size(100%, 47.13rem)
   border-bottom: 0.1rem solid $mediumGrey
   margin-bottom: $gapSize
@@ -172,19 +172,20 @@ main
     border-radius: 50%
     background-image: $noiseIntense
   .circle-yellow
-    // margin-left: -14.65rem
-    margin-left: -29.3rem
-    margin-top: 17.2rem
+    // left: -14.65rem
+    left: 14.3rem
+    top: 17.2rem
     +size(16.73rem)
     background-color: $yellow
   .circle-orange
-    // margin-left: 11.9rem
-    margin-left: 23.8rem
-    margin-top: -1.5rem
+    // left: 11.9rem
+    left: 38.6rem
+    top: -1.5rem
     +size(20.9rem)
     background-color: $orange
   .building
     position: absolute
+    left: 8.6rem
     bottom: 0
     +size(57.28rem, auto)
   article
@@ -210,7 +211,8 @@ main
       mix-blend-mode: multiply // 利用混合模式去背 https://developer.mozilla.org/zh-CN/docs/Web/CSS/mix-blend-mode
   .name
     position: absolute
-    top: 3.2rem
+    left: 3.8rem
+    top: 3.3rem
     font-family: 'Playfair Display', serif
     font-size: 8.3rem
     font-weight: 900

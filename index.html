@@ -25,7 +25,7 @@
         <div class="date"></div>
         <div class="line"></div>
       </section>
-      <a class="about" href="https://github.com/rayc2045" target="_blank">ABOUT ME</a>
+      <a class="about" href="https://github.com/rayc2045" target="_blank" rel="noreferrer noopener">ABOUT ME</a>
       <a href="#contact" class="contact">CONTACT</a>
     </nav>
 
@@ -49,7 +49,7 @@
     </main>
     <!-- <img class="design-guide" src="./img/螢幕快照 2020-05-05 下午2.01.58.png" alt=""> -->
 
-    <section class="works"></section>
+    <ul class="works"></ul>
 
     <article id="contact">
       <img src="https://raw.githubusercontent.com/raychang2017/raychang-space/master/img/ray_js_round_800px.png" alt="">
@@ -60,40 +60,38 @@
           <p>is a required input.</p>
         </div>
         <form action="mailto:raychang2017@gmail.com" method="post" enctype="text/plain">
-          <ul>
-            <li>
-              <div>Name</div>
-              <div class="star">*</div>
-              <input class="input-name" type="text" name="name" required>
-            </li>
-            <li>
-              <div>Company</div>
-              <input class="input-company" type="text" name="company">
-            </li>
-            <li>
-              <div>Email</div>
-              <div class="star">*</div>
-              <input class="input-email" type="email" name="email" list="defaultEmails" required>
-              <datalist id="defaultEmails">
-                <option value="@gmail.com">
-                <option value="@yahoo.com.tw">
-                <option value="@hotmail.com">
-              </datalist>
-            </li>
-            <li>
-              <div>Subject</div>
-              <div class="star">*</div>
-              <input class="input-subject" type="text" name="subject" required>
-            </li>
-            <li class="title-message">
-              <div>Message</div>
-              <div class="star">*</div>
-            </li>
-            <li>
-              <textarea class="textarea-message" rows="3" name="message" required></textarea>
-            </li>
-            <button class="send" type="submit">Send ></button>
-          </ul>
+          <label>
+            <div>Name</div>
+            <div class="star">*</div>
+            <input class="input-name" type="text" name="name" required>
+          </label>
+          <label>
+            <div>Company</div>
+            <input class="input-company" type="text" name="company">
+          </label>
+          <label>
+            <div>Email</div>
+            <div class="star">*</div>
+            <input class="input-email" type="email" name="email" list="defaultEmails" required>
+            <datalist id="defaultEmails">
+              <option value="@gmail.com">
+              <option value="@yahoo.com.tw">
+              <option value="@hotmail.com">
+            </datalist>
+          </label>
+          <label>
+            <div>Subject</div>
+            <div class="star">*</div>
+            <input class="input-subject" type="text" name="subject" required>
+          </label>
+          <label class="title-message">
+            <div>Message</div>
+            <div class="star">*</div>
+          </label>
+          <label>
+            <textarea class="textarea-message" rows="3" name="message" required></textarea>
+          </label>
+          <button class="send" type="submit">Send ></button>
         </form>
       </section>
       <section class="appreciation hide">

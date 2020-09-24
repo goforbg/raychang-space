@@ -164,6 +164,10 @@ class Portfolio {
 			this.scrollEnable();
 			this.backgroundMusicEl.play();
 		};
+		// window.addEventListener('mousewheel', (e) => {
+		// 	e.preventDefault();
+		// 	this.smoothVerticalScroll(document.documentElement, 1000, 200);
+		// }, {passive: false});
 		window.onblur = () => this.backgroundMusicEl.pause();
 		window.onfocus = () => this.backgroundMusicEl.play();
 	}
@@ -188,7 +192,7 @@ class Portfolio {
 		// document.documentElement.style.marginRight = "0px";
 		// document.documentElement.style.paddingRight = "0px";
 	}
-
+	
 	parallax() {
 		this.parallaxElementSet(this.circleYellowEl, '-3');
 		this.parallaxElementSet(this.circleOrangeEl, '-6');
@@ -234,7 +238,7 @@ class Portfolio {
 
 		setTimeout(() => {
 			this.loadingEl.classList.add('hide');
-			this.loadingEl.remove();
+			// this.loadingEl.remove();
 		}, 2000)
 	}
 	
@@ -275,13 +279,13 @@ class Portfolio {
 
 			listEl.classList.add('work');
 			listEl.innerHTML = `
-				<a href="${this.works[i].destination}" target="_blank">
+				<a href="${this.works[i].destination}" target="_blank" rel="noreferrer noopener">
           <img src="${this.works[i].cover}" alt="${this.works[i].title}">
         </a>
         <section>
           <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>
           <div class="title">${this.works[i].title}</div>
-          <div class="subtitle">${this.works[i].subtitle}${this.works[i].github ? ` (<a class="link-github" href="${this.works[i].github}" target="_blank">info</a>)` : ''}</div>
+          <div class="subtitle">${this.works[i].subtitle}${this.works[i].github ? ` (<a class="link-github" href="${this.works[i].github}" target="_blank" rel="noreferrer noopener">info</a>)` : ''}</div>
         </section>`;
 
 			this.worksEl.appendChild(listEl);

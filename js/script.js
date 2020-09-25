@@ -192,7 +192,7 @@ class Portfolio {
 		// document.documentElement.style.marginRight = "0px";
 		// document.documentElement.style.paddingRight = "0px";
 	}
-	
+
 	parallax() {
 		this.parallaxElementSet(this.circleYellowEl, '-3');
 		this.parallaxElementSet(this.circleOrangeEl, '-6');
@@ -280,7 +280,7 @@ class Portfolio {
 			listEl.classList.add('work');
 			listEl.innerHTML = `
 				<a href="${this.works[i].destination}" target="_blank" rel="noreferrer noopener">
-          <img src="${this.works[i].cover}" alt="${this.works[i].title}">
+          <img src="${this.works[i].cover}" alt="${this.works[i].title}" loading="lazy">
         </a>
         <section>
           <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>

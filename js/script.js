@@ -270,7 +270,7 @@ class Portfolio {
 		const dx = (el.getBoundingClientRect().width / max) * (rx / -halfWidth);
 		const dy = (el.getBoundingClientRect().height / max) * (ry / -halfHeight);
 		
-		el.style['transform'] = el.style['-webkit-transform'] = 'translate('+dx+'px,'+dy+'px)';
+		el.style['transform'] = el.style['-webkit-transform'] = `translate(${dx}px, ${dy}px)`;
 	}
 
 	updateWorks() {

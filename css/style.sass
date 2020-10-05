@@ -110,6 +110,10 @@ a
   &:visited
     color: $black
 
+picture
+  source
+    +size(100%, auto)
+    pointer-events: none
 img
   +size(100%, auto)
   pointer-events: none
@@ -160,6 +164,7 @@ nav
   .about
     margin-left: auto
     margin-right: 2.49rem
+    z-index: 9999
 
 main
   // +verticalCenter
@@ -183,10 +188,10 @@ main
     top: -1.5rem
     +size(20.9rem)
     background-color: $orange
-  .building
+  picture
     position: absolute
     left: 8.6rem
-    bottom: 0
+    bottom: -0.3rem
     +size(57.28rem, auto)
   article
     position: absolute
@@ -206,9 +211,13 @@ main
       letter-spacing: 0.15rem
       margin-top: 0.26rem
       margin-bottom: 0.95rem
-    img
-      display: none
-      mix-blend-mode: multiply // 利用混合模式去背 https://developer.mozilla.org/zh-CN/docs/Web/CSS/mix-blend-mode
+    picture
+      width: 100%
+      left: 0
+      top: 50%
+      source, img
+        display: none
+        mix-blend-mode: multiply // 利用混合模式去背 https://developer.mozilla.org/zh-CN/docs/Web/CSS/mix-blend-mode
   .name
     position: absolute
     left: 3.8rem
@@ -285,7 +294,7 @@ main
   +flexCenter
   padding-top: $gapSize / 2
   margin-bottom: $gapSize / 1.5
-  img
+  picture
     width: 40%
     margin-top: -2.3rem
   section
@@ -388,8 +397,9 @@ footer
     article
       p, h1
         display: none
-      img
-        display: block
+      picture
+        source, img
+          display: block
         
 @media screen and (orientation: portrait) and (max-width: 767px) // portrait, ≤ 767px
   // rotate html -90deg: https://css-tricks.com/snippets/css/orientation-lock/

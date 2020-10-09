@@ -115,7 +115,7 @@ class Portfolio {
 			}
 		];
 		// this.workEls = document.querySelectorAll('.work');
-		this.isTouchDevice = false;
+		this.isTouchDevice = 'ontouchstart' in document.documentElement;
 		this.isValidated = false;
 		this.events();
 	}
@@ -137,7 +137,6 @@ class Portfolio {
 			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
 		};
 		document.onmousemove = (e) => {
-			this.detectTouchDevice();
 			if (!this.isTouchDevice) this.antiMouseMove(e, this.nameEl, 80);
 		};
 		document.onscroll = () => {
@@ -192,7 +191,7 @@ class Portfolio {
 		// document.documentElement.style.marginRight = "0px";
 		// document.documentElement.style.paddingRight = "0px";
 	}
-
+	
 	parallax() {
 		this.parallaxElementSet(this.circleYellowEl, '-3');
 		this.parallaxElementSet(this.circleOrangeEl, '-6');
@@ -221,17 +220,6 @@ class Portfolio {
 			// console.log('visible');
 		}
 	}
-
-	// resizeForAddressBarWhenPortrait() {
-	// 	// Portrait
-	// 	if (window.innerHeight > window.innerWidth) {
-	// 		const addressBarHeight = window.outerHeight - window.innerHeight;
-	// 		console.log(addressBarHeight);
-			
-	// 		this.containerEl.style.width = window.innerHeight;
-	// 		this.containerEl.style.marginTop = addressBarHeight;
-	// 	}
-	// }
 
 	hideLoadingPage() {
 		this.loadingEl.classList.add('animated');
@@ -297,17 +285,7 @@ class Portfolio {
 	}
 
 	activateTouchDeviceHoverInteraction(...els) {
-		this.detectTouchDevice();
-
-		if (!this.isTouchDevice) {
-			els.forEach((el) => {
-				el.classList.add('hover-interaction');
-			})
-		}
-	}
-
-	detectTouchDevice() {
-		return ("ontouchstart" in document.documentElement) ? this.isTouchDevice = true : this.isTouchDevice = false;
+		if (!this.isTouchDevice) els.forEach(el => el.classList.add('hover-interaction'));
 	}
 
 	autoExpandTextArea(e){
@@ -351,7 +329,6 @@ class Portfolio {
 			this.alertAnimate(this.textareaMessageEl.parentNode);
 			this.isValidated = false;
 		}
-
 		// Check email format
 		const emailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 

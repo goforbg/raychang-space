@@ -13,113 +13,114 @@
 </head>
 <body>
   <audio class="background-music" src="https://raw.githubusercontent.com/raychang2017/raychang-space/master/audio/piano_soundtrack.m4a" preload="metadata" loop></audio>
-  <div class="container">
-    <section class="loading">
-      <div class="loading-animation">
-        <img src="./img/illustration_loading.gif" alt="">
-      </div>
-    </section>
-    
-    <nav>
-      <section>
-        <div class="date"></div>
-        <div class="line"></div>
-      </section>
-      <a class="about" href="https://github.com/rayc2045" target="_blank" rel="noreferrer noopener">ABOUT ME</a>
-      <a class="contact" href="#contact">CONTACT</a>
-    </nav>
+  <section class="loading">
+    <div class="loading-animation">
+      <img src="./img/illustration_loading.gif" alt="">
+    </div>
+  </section>
 
-    <main>
-      <div class="circle-yellow"></div>
-      <div class="circle-orange"></div>
-      <picture>
-        <source srcset="./img/building.webp" type="image/webp">
-        <img src="./img/building.png" alt="">
-      </picture>
-      <article class="article-left">
-        <p>The Meaning of</p>
-        <h1>Design</h1>
-        <p>The word design is derived from the Latin "Designare", which means idea or plan. The simplest definition of design is a purposeful creative act. Especially for designer Feng Yu, designing is to discover and create value. Three things: "Speaking clearly", "solving problems", and "matching functionality" can be said the most common use in design.</p>
+  <section class="viewport">
+    <div class="container">      
+      <nav>
+        <section>
+          <div class="date"></div>
+          <div class="line"></div>
+        </section>
+        <a class="about" href="https://github.com/rayc2045" target="_blank" rel="noreferrer noopener">ABOUT ME</a>
+        <a class="contact" href="#contact">CONTACT</a>
+      </nav>
+
+      <main>
+        <div class="circle-yellow"></div>
+        <div class="circle-orange"></div>
         <picture>
-          <source srcset="./img/article/article-left-transparent.webp" type="image/webp">
-          <img src="./img/article/article-left-transparent.png" alt="">
+          <source srcset="./img/building.webp" type="image/webp">
+          <img src="./img/building.png" alt="">
         </picture>
-      </article>
-      <article class="article-right">
-        <p>Speaking of</p>
-        <h1>Programming</h1>
-        <p>When a problem is found, after thinking, the idea of solving the problem is finally expressed in a way that the computer can understand, that is, programming. The reason web technology develops so fast is that we redefine the problems over and over again. Learning programming teaches us how to think.</p>
+        <article class="article-left">
+          <p>The Meaning of</p>
+          <h1>Design</h1>
+          <p>The word design is derived from the Latin "Designare", which means idea or plan. The simplest definition of design is a purposeful creative act. Especially for designer Feng Yu, designing is to discover and create value. Three things: "Speaking clearly", "solving problems", and "matching functionality" can be said the most common use in design.</p>
+          <picture>
+            <source srcset="./img/article/article-left-transparent.webp" type="image/webp">
+            <img src="./img/article/article-left-transparent.png" alt="">
+          </picture>
+        </article>
+        <article class="article-right">
+          <p>Speaking of</p>
+          <h1>Programming</h1>
+          <p>When a problem is found, after thinking, the idea of solving the problem is finally expressed in a way that the computer can understand, that is, programming. The reason web technology develops so fast is that we redefine the problems over and over again. Learning programming teaches us how to think.</p>
+          <picture>
+            <source srcset="./img/article/article-right-transparent.webp" type="image/webp">
+            <img src="./img/article/article-right-transparent.png" alt="">
+          </picture>
+        </article>
+        <div class="name">Ray Chang Space</div>
+      </main>
+      <!-- <img class="design-guide" src="./img/螢幕快照 2020-05-05 下午2.01.58.png" alt=""> -->
+
+      <ul class="works"></ul>
+
+      <article id="contact">
         <picture>
-          <source srcset="./img/article/article-right-transparent.webp" type="image/webp">
-          <img src="./img/article/article-right-transparent.png" alt="">
+          <source srcset="./img/ray_js_round_800px.webp" type="image/webp" loading="lazy">
+          <img src="./img/ray_js_round_800px.png" alt="" loading="lazy">
         </picture>
+        <section class="say-hello">
+          <h1 class="title">Say Hello</h1>
+          <div class="note">
+            <div class="star">*</div>
+            <p>is a required input.</p>
+          </div>
+          <form action="mailto:rayc2045@gmail.com" method="post" enctype="text/plain">
+            <label>
+              <div>Name</div>
+              <div class="star">*</div>
+              <input class="input-name" type="text" name="name" required>
+            </label>
+            <label>
+              <div>Company</div>
+              <input class="input-company" type="text" name="company">
+            </label>
+            <label>
+              <div>Email</div>
+              <div class="star">*</div>
+              <input class="input-email" type="email" name="email" list="defaultEmails" required>
+              <datalist id="defaultEmails">
+                <option value="@gmail.com">
+                <option value="@yahoo.com.tw">
+                <option value="@hotmail.com">
+              </datalist>
+            </label>
+            <label>
+              <div>Subject</div>
+              <div class="star">*</div>
+              <input class="input-subject" type="text" name="subject" required>
+            </label>
+            <label class="title-message">
+              <div>Message</div>
+              <div class="star">*</div>
+            </label>
+            <label>
+              <textarea class="textarea-message" rows="3" name="message" required></textarea>
+            </label>
+            <button class="send" type="submit">Send ></button>
+          </form>
+        </section>
+        <section class="appreciation hide">
+          <h1>Thanks for your time</h1>
+          <h3>The message is ready to send.</h3>
+        </section>
       </article>
-      <div class="name">Ray Chang Space</div>
-    </main>
-    <!-- <img class="design-guide" src="./img/螢幕快照 2020-05-05 下午2.01.58.png" alt=""> -->
 
-    <ul class="works"></ul>
+      <footer>
+        <p class="message">You've reach the end</p>
+        <a href="#">GO TO TOP ⌃</a>
+      </footer>
+    </div>
+  </section>
 
-    <article id="contact">
-      <picture>
-        <source srcset="./img/ray_js_round_800px.webp" type="image/webp" loading="lazy">
-        <img src="./img/ray_js_round_800px.png" alt="" loading="lazy">
-      </picture>
-      <section class="say-hello">
-        <h1 class="title">Say Hello</h1>
-        <div class="note">
-          <div class="star">*</div>
-          <p>is a required input.</p>
-        </div>
-        <form action="mailto:rayc2045@gmail.com" method="post" enctype="text/plain">
-          <label>
-            <div>Name</div>
-            <div class="star">*</div>
-            <input class="input-name" type="text" name="name" required>
-          </label>
-          <label>
-            <div>Company</div>
-            <input class="input-company" type="text" name="company">
-          </label>
-          <label>
-            <div>Email</div>
-            <div class="star">*</div>
-            <input class="input-email" type="email" name="email" list="defaultEmails" required>
-            <datalist id="defaultEmails">
-              <option value="@gmail.com">
-              <option value="@yahoo.com.tw">
-              <option value="@hotmail.com">
-            </datalist>
-          </label>
-          <label>
-            <div>Subject</div>
-            <div class="star">*</div>
-            <input class="input-subject" type="text" name="subject" required>
-          </label>
-          <label class="title-message">
-            <div>Message</div>
-            <div class="star">*</div>
-          </label>
-          <label>
-            <textarea class="textarea-message" rows="3" name="message" required></textarea>
-          </label>
-          <button class="send" type="submit">Send ></button>
-        </form>
-      </section>
-      <section class="appreciation hide">
-        <h1>Thanks for your time</h1>
-        <h3>The message is ready to send.</h3>
-      </section>
-    </article>
-
-    <footer>
-      <p class="message">You've reach the end</p>
-      <a href="#">GO TO TOP ⌃</a>
-    </footer>
-  </div>
-
-  <!-- 滾動視差 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+  <script src="./js/SmoothScroll.min.js"></script>
   <script src="./js/script.min.js"></script>
 </body>
 </html>

@@ -97,7 +97,7 @@ html, body
   background-color: $white
   scroll-behavior: smooth
 body
-  padding: 3.18rem 5.6rem
+  // padding: 3.18rem 5.6rem
   background-image: $noise
   // background-image: $paper
 
@@ -126,6 +126,15 @@ input, textarea, button
   font-family: 'Merriweather', serif
 button
   cursor: url('../img/icn-hover.png'), pointer
+
+.viewport
+  position: fixed
+  // overflow: hidden
+  // width: 100%
+  // height: 100%
+
+.container
+  padding: 3.18rem 5.6rem
 
 .loading
   +fixed(0, 0)
@@ -167,7 +176,6 @@ nav
     z-index: 999
 
 main
-  // +verticalCenter
   +size(100%, 47.13rem)
   border-bottom: 0.1rem solid $mediumGrey
   margin-bottom: $gapSize
@@ -370,16 +378,16 @@ footer
   a
     display: none
   &.hover-interaction
-    &:hover
-      p
-        display: none
-      a
-        display: block
     p
       display: block
     a
       font-size: 1.1rem
       display: none
+    &:hover
+      p
+        display: none
+      a
+        display: block
 
 // // Screenshot setting
 // @media screen and (max-width: 1280px) // size < 1280px
@@ -407,7 +415,7 @@ footer
     font-size: 1.168vh
   body
     background-image: none
-  .container
+  .viewport
     // transform: rotate(-90deg)
     transform: rotate(90deg)
     transform-origin: left top

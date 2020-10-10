@@ -8,14 +8,12 @@ class Portfolio {
 		this.typingSound = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/type.mp3');
 		this.bodyEl = document.querySelector('body');
 		this.containerEl = document.querySelector('.container');
-		this.navEl = document.querySelector('nav');
+		this.contactEl = document.querySelector('.contact');
+		this.toTopEl = document.querySelector('.toTop');
 		this.dateEl = document.querySelector('.date');
 		this.mainEl = document.querySelector('main');
-		this.buildingEl = document.querySelector('.building');
 		this.circleYellowEl = document.querySelector('.circle-yellow');
 		this.circleOrangeEl = document.querySelector('.circle-orange');
-		this.articleLeftEl = document.querySelector('.article-left');
-		this.articleRightEl = document.querySelector('.article-right');
 		this.nameEl = document.querySelector('.name');
 		this.worksEl = document.querySelector('.works');
 		this.formEl = document.querySelector('form');
@@ -138,8 +136,6 @@ class Portfolio {
 	}
 
 	events() {
-		this.scrollDisable();
-
 		document.onselectstart = () => {
 			return false;
 		};
@@ -149,16 +145,28 @@ class Portfolio {
 		document.oncontextmenu = () => {
 			return false;
 		};
-		document.onmouseup = (e) => {
-			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
-		};
-		document.onmousemove = (e) => {
-			if (!this.isTouchDevice) this.antiMouseMove(e, this.nameEl, 80);
-		};
 
 		this.updateDate();
 		this.updateWorks();
-		if (!this.isTouchDevice) this.activateHoverInteraction(this.worksEl, this.footerEl);
+
+		document.onmouseup = (e) => {
+			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
+		};
+		this.contactEl.onmouseup = () => {
+			this.sayHelloEl.classList.remove('hide');
+			this.appreciationEl.classList.add('hide');
+			this.soundPlay(this.pagingSound);
+			window.scrollTo(0, this.sayHelloEl.getBoundingClientRect().top);
+		};
+		this.toTopEl.onmouseup = () => {
+			this.soundPlay(this.pagingSound);
+			window.scrollTo(0, 0);
+		};
+		if (!this.isTouchDevice) {
+			document.onmousemove = (e) => this.antiMouseMove(e, this.nameEl, 80);
+			this.activateHoverInteraction(this.worksEl, this.footerEl);
+			this.smoothVerticalScroll();
+		}
 		this.formEl.onkeydown = () => this.soundPlay(this.typingSound);
 		this.textareaEls.forEach((el) => {
 			el.oninput = (e) => this.autoExpandTextArea(e);
@@ -172,8 +180,6 @@ class Portfolio {
 		// All HTML elements load finished
 		window.onload = () => {
 			this.hideLoadingPage();
-			this.scrollEnable();
-			if (!this.isTouchDevice) this.smoothVerticalScroll();
 			// this.backgroundMusicEl.play();
 		};
 
@@ -186,22 +192,12 @@ class Portfolio {
 		audio.play();
 	}
 
-	scrollToTop() {
-		window.scrollTo(0, 0);
-	}
-
-	scrollDisable() {
-		this.bodyEl.style.overflow = 'hidden';
-	}
-
-	scrollEnable() {
-		this.bodyEl.style.overflow = 'visible';
-	}
-
 	smoothVerticalScroll() {
+		document.querySelector('.viewport').style.position = 'fixed';
+
 		new SmoothScroll({
 			target: this.containerEl,
-			scrollEase: 0.1,
+			scrollEase: 0.08,
 			maxOffset: 500
 		});
 	}

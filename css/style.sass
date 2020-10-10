@@ -33,11 +33,6 @@ $paper: url('/img/paper.png')
   justify-content: center
   align-items: center
 
-@mixin verticalCenter
-  display: flex
-  flex-direction: column
-  align-items: center
-
 @mixin fixed($l, $t)
   position: fixed
   left: $l
@@ -98,12 +93,13 @@ html, body
   scroll-behavior: smooth
 body
   // padding: 3.18rem 5.6rem
-  background-image: $noise
+  // background-image: $noise
   // background-image: $paper
 
-a
+a, .contact, .toTop
   font-size: 1rem
   color: $black
+  text-decoration: underline
   cursor: url('../img/icn-hover.png'), pointer
   &:active
     color: $black
@@ -127,14 +123,13 @@ input, textarea, button
 button
   cursor: url('../img/icn-hover.png'), pointer
 
-.viewport
-  position: fixed
-  // overflow: hidden
-  // width: 100%
-  // height: 100%
+// .viewport
+//   position: fixed
+//   width: 100%
 
 .container
   padding: 3.18rem 5.6rem
+  background-image: $noise
 
 .loading
   +fixed(0, 0)
@@ -360,7 +355,9 @@ main
         margin-top: 2.3rem
         margin-right: 0.5rem
   .appreciation
-    +verticalCenter
+    +flexCenter
+    flex-direction: column
+    +size(36.2rem, 42rem)
     margin-left: 3rem
     &.hide
       display: none
@@ -375,18 +372,18 @@ main
 footer
   +flexCenter
   font-size: 1.1rem
-  a
+  .toTop
     display: none
   &.hover-interaction
     p
       display: block
-    a
+    .toTop
       font-size: 1.1rem
       display: none
     &:hover
       p
         display: none
-      a
+      .toTop
         display: block
 
 // // Screenshot setting

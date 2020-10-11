@@ -11,10 +11,6 @@ class Portfolio {
 		this.contactEl = document.querySelector('.contact');
 		this.toTopEl = document.querySelector('.toTop');
 		this.dateEl = document.querySelector('.date');
-		this.mainEl = document.querySelector('main');
-		this.circleYellowEl = document.querySelector('.circle-yellow');
-		this.circleOrangeEl = document.querySelector('.circle-orange');
-		this.nameEl = document.querySelector('.name');
 		this.worksEl = document.querySelector('.works');
 		this.formEl = document.querySelector('form');
 		this.inputEls = document.querySelectorAll('input');
@@ -163,10 +159,11 @@ class Portfolio {
 			window.scrollTo(0, 0);
 		};
 		if (!this.isTouchDevice) {
-			document.onmousemove = (e) => this.antiMouseMove(e, this.nameEl, 80);
+			// document.onmousemove = (e) => this.antiMouseMove(e, this.nameEl, 80);
 			this.activateHoverInteraction(this.worksEl, this.footerEl);
-			this.smoothVerticalScroll();
+			this.smoothScroll();
 		}
+		this.parallax();
 		this.formEl.onkeydown = () => this.soundPlay(this.typingSound);
 		this.textareaEls.forEach((el) => {
 			el.oninput = (e) => this.autoExpandTextArea(e);
@@ -192,7 +189,8 @@ class Portfolio {
 		audio.play();
 	}
 
-	smoothVerticalScroll() {
+	smoothScroll() {
+		// SmoothScroll
 		document.querySelector('.viewport').style.position = 'fixed';
 
 		new SmoothScroll({
@@ -202,7 +200,45 @@ class Portfolio {
 		});
 	}
 
-	toggleElOverflow(el) {
+	// locomotiveScroll() {
+	// 	new LocomotiveScroll({
+	// 		el: this.containerEl,
+	// 		smooth: true,
+	// 	});
+	// }
+
+	parallax() {
+		// Best on 4:3 full screen
+		this.gsapWithScrollTrigger('.circle-yellow', {y: 1200}, 1);
+		this.gsapWithScrollTrigger('.circle-orange', {y: 2400}, 1);
+		this.gsapWithScrollTrigger('.article-left', {y: 200}, 1);
+		this.gsapWithScrollTrigger('.article-right', {y: 200}, 1);
+		this.gsapWithScrollTrigger('.name', {y: -500}, 1);
+	}
+
+	gsapWithScrollTrigger(className, animation, scrub) {
+		ScrollTrigger.create({
+			animation: gsap.to(className, animation),
+			scrub: scrub
+		})
+	}
+
+	// rellax() {
+	// 	// rellax.js
+	// 	this.parallaxElementSet(this.circleYellowEl, '-3');
+	// 	this.parallaxElementSet(this.circleOrangeEl, '-6');
+	// 	this.parallaxElementSet(this.articleLeftEl, '-1.5');
+	// 	this.parallaxElementSet(this.articleRightEl, '-1.5');
+
+	// 	let rellax = new Rellax('.rellax');
+	// }
+
+	// rellaxElementSet(el, rellaxSpeed) {
+	// 	el.classList.add('rellax');
+	// 	el.setAttribute('data-rellax-speed', rellaxSpeed);
+	// }
+
+	toggleElOverflowHidden(el) {
 		// const documentElPositionTop = document.documentElement.scrollTop; // body scroll position
 		const elPositionTop = el.getBoundingClientRect().top;
 		const elHeight = el.getBoundingClientRect().height / 2;
@@ -220,12 +256,13 @@ class Portfolio {
 	hideLoadingPage() {
 		setTimeout(() => {
 			this.loadingEl.classList.add('animated');
-		}, 500);
 
-		setTimeout(() => {
-			this.loadingEl.classList.add('hide');
-			// this.loadingEl.remove();
-		}, 2000);
+			setTimeout(() => {
+				this.loadingEl.classList.add('hide');
+				// this.loadingEl.remove();
+			}, 2000);
+
+		}, 500);
 	}
 
 	updateDate() {

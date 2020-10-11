@@ -13,7 +13,10 @@
 - 封鎖可能會破壞瀏覽體驗的使用者事件，如文字的選取、圖片的拖移，以及右鍵點擊
 - 以自製格式輸出當前時間到網頁主畫面，增添報紙風格設計感
 - 對主頁標題做鼠標反向移動 DOM 操作，讓觀看者除了有閱讀報紙的感覺，也得到與網站元素互動的樂趣
-- 使用套件 [Rellax](https://dixonandmoe.com/rellax/) 對主頁的圓球和文字段落做滾動視差，使網站在捲動時更有立體感
+- 加入 [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/) 平滑滾動功能，使用滑鼠捲動網頁就像滑手機一樣順
+- 使用 [GSAP](https://greensock.com/gsap/) 做滾動視差
+<!-- - 使用 [Rellax](https://dixonandmoe.com/rellax/) 做滾動視差 -->
+- 夠過 [ScrollTrigger](https://greensock.com/scrolltrigger/) 綁定平滑滾動與滾動視差功能，實現立體感網站
 - 大型圖片採用 [WebP](https://developers.google.com/speed/webp) 格式呈現，網站讀取速度再進化
 - 作品圖片使用延遲載入技術 Lazy loading，提升網頁載入效率
 - 載入網頁時偵測觀看者使用設備是否為觸控，如果是電腦版，則加入鼠標碰觸作品圖的互動效果

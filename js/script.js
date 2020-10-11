@@ -209,18 +209,18 @@ class Portfolio {
 
 	parallax() {
 		// Best on 4:3 full screen
-		this.gsapWithScrollTrigger('.circle-yellow', {y: 1200}, 1);
-		this.gsapWithScrollTrigger('.circle-orange', {y: 2400}, 1);
-		this.gsapWithScrollTrigger('.article-left', {y: 200}, 1);
-		this.gsapWithScrollTrigger('.article-right', {y: 200}, 1);
-		this.gsapWithScrollTrigger('.name', {y: -500}, 1);
+		this.gsapWithScrollTrigger('.circle-yellow', { y: 1200 });
+		this.gsapWithScrollTrigger('.circle-orange', { y: 2400 });
+		this.gsapWithScrollTrigger('.article-left', { y: 200 });
+		this.gsapWithScrollTrigger('.article-right', { y: 200 });
+		this.gsapWithScrollTrigger('.name', { y: -500 });
 	}
 
-	gsapWithScrollTrigger(className, animation, scrub) {
+	gsapWithScrollTrigger(className, animation, scrub = 1) {
 		ScrollTrigger.create({
 			animation: gsap.to(className, animation),
 			scrub: scrub
-		})
+		});
 	}
 
 	// rellax() {

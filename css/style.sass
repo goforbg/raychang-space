@@ -95,8 +95,6 @@ html, body
   background-color: $white
   scroll-behavior: smooth
 body
-  left: 0
-  top: 0
   // padding: 3.18rem 5.6rem
   // background-image: $noise
   // background-image: $paper
@@ -183,6 +181,7 @@ main
     position: absolute
     border-radius: 50%
     background-image: $noiseIntense
+    z-index: -1
   .circle-yellow
     // left: -14.65rem
     left: 14.3rem
@@ -298,12 +297,13 @@ main
           background-color: transparent
 
 #contact
-  +flexCenter
+  display: flex
+  justify-content: center
   padding-top: $gapSize / 2
   margin-bottom: $gapSize / 1.5
   picture
     width: 40%
-    margin-top: -2.3rem
+    margin-top: 4.8rem
   section
     width: 42.5%
     margin-left: 7.5rem
@@ -390,7 +390,7 @@ footer
       .toTop
         display: block
 
-// // Screenshot setting
+// // .article screenshot setting
 // @media screen and (max-width: 1280px) // size < 1280px
 //   body
 //     background-color: white

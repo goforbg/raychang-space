@@ -149,9 +149,9 @@ class Portfolio {
 			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
 		};
 		this.contactEl.onmouseup = () => {
+			this.soundPlay(this.pagingSound);
 			this.sayHelloEl.classList.remove('hide');
 			this.appreciationEl.classList.add('hide');
-			this.soundPlay(this.pagingSound);
 			window.scrollTo(0, this.sayHelloEl.getBoundingClientRect().top);
 		};
 		this.toTopEl.onmouseup = () => {
@@ -166,17 +166,17 @@ class Portfolio {
 		this.parallax();
 		this.formEl.onkeydown = () => this.soundPlay(this.typingSound);
 		this.textareaEls.forEach((el) => {
-			el.oninput = (e) => this.autoExpandTextArea(e);
-			el.onkeyup = (e) => this.autoExpandTextArea(e);
-			el.oncut = (e) => this.autoExpandTextArea(e);
-			el.onpaste = (e) => this.autoExpandTextArea(e);
-			el.onchange = (e) => this.autoExpandTextArea(e);
+			el.oninput = (e) => this.autoExpand(e);
+			el.onkeyup = (e) => this.autoExpand(e);
+			el.oncut = (e) => this.autoExpand(e);
+			el.onpaste = (e) => this.autoExpand(e);
+			el.onchange = (e) => this.autoExpand(e);
 		});
 		this.sendEl.onclick = () => this.submitForm();
 
 		// All HTML elements load finished
 		window.onload = () => {
-			this.hideLoadingPage();
+			this.endLoading();
 			// this.backgroundMusicEl.play();
 		};
 
@@ -190,7 +190,6 @@ class Portfolio {
 	}
 
 	smoothScroll() {
-		// SmoothScroll
 		document.querySelector('.viewport').style.position = 'fixed';
 
 		new SmoothScroll({
@@ -238,31 +237,33 @@ class Portfolio {
 	// 	el.setAttribute('data-rellax-speed', rellaxSpeed);
 	// }
 
-	toggleElOverflowHidden(el) {
-		// const documentElPositionTop = document.documentElement.scrollTop; // body scroll position
-		const elPositionTop = el.getBoundingClientRect().top;
-		const elHeight = el.getBoundingClientRect().height / 2;
-		// console.log(elPositionTop + elHeight/2);
+	// toggleElOverflowHidden(el) {
+	// 	// const documentElPositionTop = document.documentElement.scrollTop; // body scroll position
+	// 	const elPositionTop = el.getBoundingClientRect().top;
+	// 	const elHeight = el.getBoundingClientRect().height / 2;
+	// 	// console.log(elPositionTop + elHeight/2);
 
-		if (elPositionTop + elHeight / 100 < 0) {
-			el.style.overflow = 'hidden';
-			// console.log('hidden');
-		} else {
-			el.style.overflow = 'visible';
-			// console.log('visible');
-		}
-	}
+	// 	if (elPositionTop + elHeight / 100 < 0) {
+	// 		el.style.overflow = 'hidden';
+	// 		// console.log('hidden');
+	// 	} else {
+	// 		el.style.overflow = 'visible';
+	// 		// console.log('visible');
+	// 	}
+	// }
 
-	hideLoadingPage() {
+	endLoading() {
+		const delay = 500;
+
 		setTimeout(() => {
 			this.loadingEl.classList.add('animated');
+		}, delay);
 
-			setTimeout(() => {
-				this.loadingEl.classList.add('hide');
-				// this.loadingEl.remove();
-			}, 2000);
-
-		}, 500);
+		setTimeout(() => {
+			// this.loadingEl.classList.add('hide');
+			// this.loadingEl.classList.remove('animated');
+			this.loadingEl.parentNode.removeChild(this.loadingEl);
+		}, delay + 2000);
 	}
 
 	updateDate() {
@@ -273,40 +274,28 @@ class Portfolio {
 	}
 
 	convertNumToMonth(num) {
-		const months = [
-			'January',
-			'February',
-			'March',
-			'April',
-			'May',
-			'June',
-			'July',
-			'August',
-			'September',
-			'October',
-			'November',
-			'December'
+		const months = ['January','February','March','April','May','June','July','August','September','October','November','December'
 		];
 
 		return months[num - 1];
 	}
 
-	antiMouseMove(e, el, max = 20) {
-		const x = e.clientX;
-		const y = e.clientY;
-		//console.log(x);
-		const winWidth = window.innerWidth;
-		const winHeight = window.innerHeight;
-		const halfWidth = winWidth / 2;
-		const halfHeight = winHeight / 2;
-		const rx = x - halfWidth;
-		const ry = y - halfHeight;
+	// antiMouseMove(e, el, max = 20) {
+	// 	const x = e.clientX;
+	// 	const y = e.clientY;
+	// 	//console.log(x);
+	// 	const winWidth = window.innerWidth;
+	// 	const winHeight = window.innerHeight;
+	// 	const halfWidth = winWidth / 2;
+	// 	const halfHeight = winHeight / 2;
+	// 	const rx = x - halfWidth;
+	// 	const ry = y - halfHeight;
 
-		const dx = el.getBoundingClientRect().width / max * (rx / -halfWidth);
-		const dy = el.getBoundingClientRect().height / max * (ry / -halfHeight);
+	// 	const dx = el.getBoundingClientRect().width / max * (rx / -halfWidth);
+	// 	const dy = el.getBoundingClientRect().height / max * (ry / -halfHeight);
 
-		el.style['transform'] = el.style['-webkit-transform'] = `translate(${dx}px, ${dy}px)`;
-	}
+	// 	el.style['transform'] = el.style['-webkit-transform'] = `translate(${dx}px, ${dy}px)`;
+	// }
 
 	updateWorks() {
 		for (let i = 0; i < this.works.length; i++) {
@@ -338,7 +327,7 @@ class Portfolio {
 		els.forEach((el) => el.classList.add('hover-interaction'));
 	}
 
-	autoExpandTextArea(e) {
+	autoExpand(e) {
 		// console.log(e.target.scrollHeight);
 		const offset = e.target.offsetHeight - e.target.clientHeight;
 

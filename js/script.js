@@ -2,11 +2,11 @@
 
 class Portfolio {
 	constructor() {
-		this.loadingEl = document.querySelector('.loading');
 		this.backgroundMusicEl = document.querySelector('.background-music');
 		this.pagingSound = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3');
 		this.typingSound = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/type.mp3');
-		this.bodyEl = document.querySelector('body');
+		this.loadingEl = document.querySelector('.loading');
+		this.viewportEl = document.querySelector('.viewport');
 		this.containerEl = document.querySelector('.container');
 		this.contactEl = document.querySelector('.contact');
 		this.toTopEl = document.querySelector('.toTop');
@@ -166,13 +166,31 @@ class Portfolio {
 		this.parallax();
 		this.formEl.onkeydown = () => this.soundPlay(this.typingSound);
 		this.textareaEls.forEach((el) => {
-			el.oninput = (e) => this.autoExpand(e);
-			el.onkeyup = (e) => this.autoExpand(e);
-			el.oncut = (e) => this.autoExpand(e);
-			el.onpaste = (e) => this.autoExpand(e);
-			el.onchange = (e) => this.autoExpand(e);
+			el.oninput = (e) => {
+				this.autoExpand(e);
+				this.resizeBodyHeight();
+			};
+			el.onkeyup = (e) => {
+				this.autoExpand(e);
+				this.resizeBodyHeight();
+			};
+			el.oncut = (e) => {
+				this.autoExpand(e);
+				this.resizeBodyHeight();
+			};
+			el.onpaste = (e) => {
+				this.autoExpand(e);
+				this.resizeBodyHeight();
+			};
+			el.onchange = (e) => {
+				this.autoExpand(e);
+				this.resizeBodyHeight();
+			};
 		});
-		this.sendEl.onclick = () => this.submitForm();
+		this.sendEl.onclick = () => {
+			this.submitForm();
+			this.resizeBodyHeight();
+		};
 
 		// All HTML elements load finished
 		window.onload = () => {
@@ -335,6 +353,10 @@ class Portfolio {
 		e.target.style.height = e.target.scrollHeight + offset + 'px';
 	}
 
+	resizeBodyHeight() {
+		this.bodyEl.style.height = this.viewportEl.scrollHeight + 'px';
+	}
+
 	submitForm() {
 		this.isValidated = true;
 		this.checkForm();
@@ -393,9 +415,21 @@ class Portfolio {
 		});
 
 		this.textareaEls.forEach((el) => {
+			el.style.height = 'auto';
 			el.value = '';
 		});
 	}
+
+	// scrollToggleForm() {
+	// 	const sayHelloElPosTop = this.sayHelloEl.getBoundingClientRect().top;
+	// 	const sayHelloElHeight = this.sayHelloEl.getBoundingClientRect().height;
+	// 	const isAboveFormEl = sayHelloElPosTop < (sayHelloElHeight + sayHelloElHeight / 2);
+
+	// 	if (isAboveFormEl && this.sayHelloEl.classList.contains('hide')) {
+	// 		this.sayHelloEl.classList.remove('hide');
+	// 		this.appreciationEl.classList.add('hide');
+	// 	}
+	// }
 }
 
 new Portfolio();

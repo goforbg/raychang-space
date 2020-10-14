@@ -5,11 +5,13 @@ class Portfolio {
 		this.backgroundMusicEl = document.querySelector('.background-music');
 		this.pagingSound = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3');
 		this.typingSound = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/type.mp3');
+		this.bodyEl = document.querySelector('body');
 		this.loadingEl = document.querySelector('.loading');
 		this.viewportEl = document.querySelector('.viewport');
 		this.containerEl = document.querySelector('.container');
-		this.contactEl = document.querySelector('.contact');
-		this.toTopEl = document.querySelector('.toTop');
+		this.contactButton = document.querySelector('.contact');
+		this.contactEl = document.querySelector('#contact');
+		this.toTopButton = document.querySelector('.toTop');
 		this.dateEl = document.querySelector('.date');
 		this.worksEl = document.querySelector('.works');
 		this.formEl = document.querySelector('form');
@@ -20,7 +22,7 @@ class Portfolio {
 		this.inputSubjectEl = document.querySelector('.input-subject');
 		this.titleMessageEl = document.querySelector('.title-message');
 		this.textareaMessageEl = document.querySelector('.textarea-message');
-		this.sendEl = document.querySelector('.send');
+		this.sendButton = document.querySelector('.send');
 		this.sayHelloEl = document.querySelector('.say-hello');
 		this.appreciationEl = document.querySelector('.appreciation');
 		this.footerEl = document.querySelector('footer');
@@ -127,6 +129,7 @@ class Portfolio {
 		];
 		// this.workEls = document.querySelectorAll('.work');
 		this.isTouchDevice = 'ontouchstart' in document.documentElement;
+		this.bodyWidth = this.bodyEl.getBoundingClientRect().width;
 		this.isValidated = false;
 		this.events();
 	}
@@ -142,21 +145,21 @@ class Portfolio {
 			return false;
 		};
 
+		this.preventScroll();
 		this.updateDate();
 		this.updateWorks();
 
 		document.onmouseup = (e) => {
 			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
 		};
-		this.contactEl.onmouseup = () => {
+		this.contactButton.onmouseup = () => {
 			this.soundPlay(this.pagingSound);
-			this.sayHelloEl.classList.remove('hide');
-			this.appreciationEl.classList.add('hide');
-			window.scrollTo(0, this.sayHelloEl.getBoundingClientRect().top);
+			this.showForm();
+			window.scrollTo(0, this.contactEl.getBoundingClientRect().top);
 		};
-		this.toTopEl.onmouseup = () => {
+		this.toTopButton.onmouseup = () => {
 			this.soundPlay(this.pagingSound);
-			window.scrollTo(0, 0);
+			if (!this.isTouchDevice) window.scrollTo(0, 0);
 		};
 		if (!this.isTouchDevice) {
 			// document.onmousemove = (e) => this.antiMouseMove(e, this.nameEl, 80);
@@ -187,7 +190,7 @@ class Portfolio {
 				this.resizeBodyHeight();
 			};
 		});
-		this.sendEl.onclick = () => {
+		this.sendButton.onclick = () => {
 			this.submitForm();
 			this.resizeBodyHeight();
 		};
@@ -195,8 +198,9 @@ class Portfolio {
 		// All HTML elements load finished
 		window.onload = () => {
 			this.endLoading();
+			this.enableScroll();
 			// this.backgroundMusicEl.play();
-		};
+		}
 
 		// window.onblur = () => this.backgroundMusicEl.pause();
 		// window.onfocus = () => this.backgroundMusicEl.play();
@@ -205,6 +209,14 @@ class Portfolio {
 	soundPlay(audio) {
 		audio.currentTime = 0;
 		audio.play();
+	}
+
+	preventScroll() {
+		this.bodyEl.style.overflow = 'hidden';
+	}
+
+	enableScroll() {
+		this.bodyEl.style.overflow = '';
 	}
 
 	smoothScroll() {
@@ -225,12 +237,15 @@ class Portfolio {
 	// }
 
 	parallax() {
-		// Best on 4:3 full screen
-		this.gsapWithScrollTrigger('.circle-yellow', { y: 1200 });
-		this.gsapWithScrollTrigger('.circle-orange', { y: 2400 });
-		this.gsapWithScrollTrigger('.article-left', { y: 200 });
-		this.gsapWithScrollTrigger('.article-right', { y: 200 });
-		this.gsapWithScrollTrigger('.name', { y: -500 });
+		// Best on 16:10 full screen
+		let screenScale = this.bodyWidth / 1280;
+
+		this.gsapWithScrollTrigger('.circle-yellow', { y: 1200 * screenScale });
+		this.gsapWithScrollTrigger('.circle-orange', { y: 2400 * screenScale });
+		this.gsapWithScrollTrigger('.article-left', { y: 200 * screenScale });
+		this.gsapWithScrollTrigger('.article-right', { y: 200 * screenScale });
+		this.gsapWithScrollTrigger('.name', { y: -500 * screenScale });
+		this.gsapWithScrollTrigger('.description', { y: -500 * screenScale });
 	}
 
 	gsapWithScrollTrigger(className, animation, scrub = 1) {
@@ -286,7 +301,10 @@ class Portfolio {
 
 	updateDate() {
 		const today = new Date();
-		const date = `${this.convertNumToMonth(today.getMonth() + 1)} ${today.getDate()}, ${today.getFullYear()}`;
+		let date = `${this.convertNumToMonth(today.getMonth() + 1)} ${today.getDate()}, ${today.getFullYear()}`;
+		
+		if (this.bodyWidth < 768) 
+			date = `${this.convertNumToMonth(today.getMonth() + 1).slice(0, 3)} ${today.getDate()}, ${today.getFullYear()}`;
 
 		this.dateEl.textContent = date;
 	}
@@ -328,7 +346,7 @@ class Portfolio {
           <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>
           <div class="title">${this.works[i].title}</div>
           <div class="subtitle">${this.works[i].subtitle}${this.works[i].github
-				? ` (<a class="link-github" href="${this.works[i]
+				? ` (<a class="link" href="${this.works[i]
 						.github}" target="_blank" rel="noreferrer noopener">info</a>)`
 				: ''}</div>
         </section>`;
@@ -367,8 +385,7 @@ class Portfolio {
 		location.href = `mailto:${receiver}?subject=${this.inputSubjectEl.value}&body=${this.textareaMessageEl.value}`; // 製作網頁表單：https://medium.com/@AntheaLee/%E5%A6%82%E4%BD%95%E8%A3%BD%E4%BD%9C-%E8%81%AF%E7%B5%A1%E6%88%91%E5%80%91-%E7%B6%B2%E9%A0%81%E8%A1%A8%E5%96%AE-3df78756ec81
 
 		this.emptyForm();
-		this.sayHelloEl.classList.add('hide');
-		this.appreciationEl.classList.remove('hide');
+		this.hideForm();
 	}
 
 	checkForm() {
@@ -418,6 +435,16 @@ class Portfolio {
 			el.style.height = 'auto';
 			el.value = '';
 		});
+	}
+
+	hideForm() {
+		this.sayHelloEl.classList.add('hide');
+		this.appreciationEl.classList.remove('hide');
+	}
+
+	showForm() {
+		this.sayHelloEl.classList.remove('hide');
+		this.appreciationEl.classList.add('hide');
 	}
 
 	// scrollToggleForm() {

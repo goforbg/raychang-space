@@ -83,8 +83,8 @@ $paper: url('/img/paper.png')
   cursor: url('../img/icn-arrow.png'), auto
 
 html, body
-  padding: 0
   margin: 0
+  padding: 0
   width: 100%
   font-family: 'Merriweather', serif
   font-size: 1.168vw
@@ -109,11 +109,7 @@ a, .contact, .toTop
   &:visited
     color: $black
 
-picture
-  source
-    +size(100%, auto)
-    pointer-events: none
-img
+picture source, img
   +size(100%, auto)
   pointer-events: none
 
@@ -126,15 +122,11 @@ input, textarea, button
 button
   cursor: url('../img/icn-hover.png'), pointer
 
-.container
-  padding: 3.18rem 5.6rem
-  background-image: $noise
-
 .loading
+  +size(100%)
   +fixed(0, 0)
-  z-index: 9999
-  +size(100%, 100%)
   +flexCenter
+  z-index: 9999
   overflow: hidden
   background-color: $black
   &.animated
@@ -146,23 +138,20 @@ button
   .loading-animation
     width: 50%
     pointer-events: none
-
-// .noise
-//   +size(100vw, 100vh)
-//   +fixed(0, 0)
-//   pointer-events: none
-//   z-index: 999
-//   background-image: $noise
   
+.container
+  padding: 3.18rem 5.6rem
+  background-image: $noise
+
 nav
   padding: 1rem 0
   +flexLeft
   section
     +flexLeft
     .line
-      width: 11rem
       margin-left: 1.04rem
       margin-top: 0.1rem
+      width: 11rem
       border-bottom: 0.1rem solid $black
   .about, .contact
     z-index: 999
@@ -171,32 +160,30 @@ nav
     margin-right: 2.49rem
 
 main
-  +size(100%, 47.13rem + $mainElOffset)
   border-bottom: 0.1rem solid $mediumGrey
   margin-bottom: $gapSize - $mainElOffset
+  height: 47.1rem + $mainElOffset
   position: relative
-  top: - $mainElOffset
+  top: - $mainElOffset - 0.3rem
   overflow: hidden
   [class^="circle"]
     position: absolute
     border-radius: 50%
     background-image: $noiseIntense
-    z-index: -1
   .circle-yellow
-    // left: -14.65rem
     left: 14.3rem
     top: 17.2rem + $mainElOffset
     +size(16.73rem)
     background-color: $yellow
   .circle-orange
-    // left: 11.9rem
     left: 38.6rem
     top: -1.5rem + $mainElOffset
     +size(20.9rem)
     background-color: $orange
   picture
     position: absolute
-    left: 8.6rem
+    left: 50%
+    transform: translateX(-50%)
     bottom: -0.3rem
     +size(57.28rem, auto)
   article
@@ -212,14 +199,13 @@ main
       font-weight: 700
       line-height: 1.54
     h1
+      margin-top: 0.26rem
+      margin-bottom: 0.95rem
       font-size: 2.35rem
       font-weight: 700
       letter-spacing: 0.15rem
-      margin-top: 0.26rem
-      margin-bottom: 0.95rem
     picture
       width: 100%
-      left: 0
       top: 50%
       source, img
         display: none
@@ -232,16 +218,18 @@ main
     font-size: 8.3rem
     font-weight: 900
     letter-spacing: 0
+  .description
+    display: none
 
 .design-guide
-  margin-top: 5.7rem
-  +fixed(50%, 50%)
-  transform: translate(-50%, -50%)
+  position: fixed
+  width: 85.5rem
+  transform: translate(-5.5rem, -62.4rem)
   opacity: 0.3
 
 .works
-  border-bottom: 0.1rem solid $mediumGrey
   margin-bottom: $gapSize / 2
+  border-bottom: 0.1rem solid $mediumGrey
   &.hover-interaction
     .work
       a
@@ -257,10 +245,9 @@ main
         filter: grayscale(100%)
         transition: $transitionTime
   .work
+    margin-bottom: $gapSize
     list-style: none
     display: flex
-    +size(74.4rem, 33.5rem)
-    margin-bottom: $gapSize
     &:nth-of-type(2n)
       flex-direction: row-reverse
       section
@@ -270,7 +257,9 @@ main
           margin-left: 0
           margin-right: 10rem
     a
-      +size(44.64rem, 33.47rem) // width: 60%
+      width: 60%
+      height: 33.5rem // img offset
+      overflow: hidden
       background-color: $lightGrey
       cursor: url('../img/arrow.svg') 50 50, pointer
     section
@@ -278,35 +267,35 @@ main
       margin-top: 3.04rem
       width: 27.4rem
       .number
+        margin-left: 10rem
+        margin-bottom: -1.58rem
         +flexCenter
         font-size: 13.5rem
         font-weight: normal
         color: $lightGrey
-        margin-left: 10rem
-        margin-bottom: -1.58rem
       .title
-        font-size: 1.62rem
         margin-bottom: 0.58rem
-      .subtitle, .link-github
+        font-size: 1.62rem
+      .subtitle, .link
         font-size: 1.12rem
         color: $mediumGrey
-      .link-github
+      .link
         background-color: transparent
         cursor: url('../img/icn-hover.png'), pointer
         &:hover
           background-color: transparent
 
 #contact
+  margin-bottom: $gapSize / 1.5
+  padding-top: $gapSize / 2
   display: flex
   justify-content: center
-  padding-top: $gapSize / 2
-  margin-bottom: $gapSize / 1.5
   picture
     width: 40%
     margin-top: 4.8rem
   section
-    width: 42.5%
     margin-left: 7.5rem
+    width: 42.5%
   .say-hello
     &.hide
       display: none
@@ -314,14 +303,14 @@ main
       font-size: 4.5rem
       font-weight: 400
     .note
+      margin: 1.6rem 0
       display: flex
       flex-direction: row
-      margin: 1.6rem 0
       p
+        margin-left: 0.3rem
         font-size: 1.1rem
         font-weight: 300
         color: $mediumGrey
-        margin-left: 0.3rem
     .star
       color: $darkYellow
       font-size: 1.1rem
@@ -330,21 +319,21 @@ main
       font-weight: 400
       letter-spacing: normal
       label
+        margin-bottom: 2.3rem
         list-style: none
         +flexLeft
         border-bottom: 0.1rem solid $mediumGrey
-        margin-bottom: 2.3rem
         &:nth-of-type(5)
-          border: none
           margin-bottom: 0
+          border: none
         &:nth-of-type(6)
           margin-bottom: 0
         input, textarea
+          padding: 0.55rem 0
           font-size: 1.2rem
           color: $mediumGrey
           width: 100%
           word-break: break-all // input 為單行元件
-          padding: 0.55rem 0
         input
           margin-left: 0.55rem
         textarea
@@ -352,23 +341,23 @@ main
         &.alert
           animation: shakeHorizontal $transitionTime ease forwards
       .send
-        display: block
+        margin-top: 2.3rem
         margin-left: auto
+        margin-right: 0.5rem
+        display: block
         text-decoration: underline
         font-size: inherit
-        margin-top: 2.3rem
-        margin-right: 0.5rem
   .appreciation
+    margin-left: 3rem
     +flexCenter
     flex-direction: column
     +size(36.2rem, 42rem)
-    margin-left: 3rem
     &.hide
       display: none
     h1
+      margin-bottom: 1rem
       font-size: 2.2rem
       font-weight: 400
-      margin-bottom: 1rem
     h3
       font-size: 1.35rem
       font-weight: 400
@@ -390,8 +379,8 @@ footer
       .toTop
         display: block
 
-// // .article screenshot setting
-// @media screen and (max-width: 1280px) // size < 1280px
+// Design, Programming .article screenshot setting
+// @media screen and (max-width: 1280px) // size ≤ 1280px
 //   body
 //     background-color: white
 //     background-image: none
@@ -400,8 +389,8 @@ footer
 //   article
 //       border: 0.05rem solid grey
 
-// 為解決小尺寸設備文章形變，在小尺寸設備上以圖片代替文字
-@media screen and (max-width: 1280px) // ≤ 1280px
+// Design, Programming .article RWD
+@media screen and (max-width: 1279px) // ≤ 1279px
   main
     article
       p, h1
@@ -409,54 +398,129 @@ footer
       picture
         source, img
           display: block
-        
-@media screen and (orientation: portrait) and (max-width: 767px) // portrait, ≤ 767px
-  // rotate html -90deg: https://css-tricks.com/snippets/css/orientation-lock/
-  html
-    font-size: 1.168vh
-  body
-    background-image: none
-  .viewport
-    // transform: rotate(-90deg)
-    transform: rotate(90deg)
-    transform-origin: left top
-    width: 91.45vh // (width: 100vh) Reset for address bar
-    height: 100vw
-    position: absolute
-    // left: 0
-    // top: 100%
-    left: 100%
-    top: 0
-    overflow-x: hidden
-    background-image: $noise
-    padding: 3rem 3rem // (padding: 3.18rem 5.6rem) Reset padding for address bar
-    padding-left: 2rem // left 1 proportion
-    padding-right: 4em // right 2 proportion
-  main
-    height: 46.5rem
-  .works .work section // fontSize * 1.05
-    .number
-      font-size: 14.175rem
-    .title
-      font-size: 1.701rem
-    .subtitle, .link-github
-      font-size: 1.176rem
-  footer // fontSize * 1.05
-    font-size: 1.155rem
-    
-@media screen and (max-width: 598px) // ≤ 598px
-  // 瀏覽器最小字體為 12px，在小尺寸的設備上以 px 和 transform: scale() 代替 rem
+
+@media screen and (max-width: 767px) // portrait, ≤ 767px
   nav
-    section
-      .date
-        font-size: 12px
-        transform: scale(0.8)
-      .line
-        width: 11rem
-        margin-left: -1.04rem
-        transform: scale(0.8)
-    .about, .contact
-      font-size: 12px
-      transform: scale(0.8)
-    .about
-      margin-right: 4px
+    .date
+      font-size: 1.3rem
+  main
+    top: - $mainElOffset - 0.5rem
+
+@media screen and (orientation: portrait) and (max-width: 767px) // portrait, ≤ 767px
+  html
+    font-size: 3.5vw
+    letter-spacing: 0.02rem
+
+  .loading .loading-animation
+    width: 75%
+
+  nav, .line, .contact, .about, main [class^="circle"], main picture, main article, .works .work section .number, footer
+    display: none
+
+  .container
+    padding: 1.5rem 1.6rem
+
+  main
+    top: 0
+    height: auto
+    .name
+      position: relative
+      left: 0
+      top: 0
+      font-size: 3.2rem
+      span
+        display: none
+    .description
+      margin-top: 0.7rem
+      margin-bottom: 2rem
+      padding-left: 0.3rem
+    .description, a
+      display: inline-block
+      font-size: 1.2rem
+      color: $mediumGrey
+
+  .design-guide
+    width: 135rem
+    transform: translate(-30rem, -96.7rem)
+  
+  .works
+    .work, .work:nth-of-type(2n)
+      margin-bottom: $gapSize / 2.5
+      height: auto
+      flex-direction: column
+      a
+        width: 100%
+        height: auto
+        background-color: transparent
+      section
+        margin: 0
+        width: 100%
+        .title, .subtitle
+          padding-left: 0.3rem
+        .title
+          margin-top: 0.7rem
+          margin-bottom: 0
+          font-size: 1.7rem
+        .subtitle, .subtitle .link
+          font-size: 1.2rem
+        .subtitle
+          margin-top: 0.2rem
+
+  #contact
+    margin-bottom: $gapSize / 5
+    padding: 0
+    flex-direction: column
+    align-items: center
+    picture
+      margin-top: 0
+      width: 75%
+    .say-hello
+      margin-top: 2rem
+      margin-left: 0
+      width: 90%
+      .title
+        +flexCenter
+        font-size: 3rem
+      .note
+        margin-top: 1rem
+        +flexCenter
+    .appreciation
+      margin: 0
+      margin-top: 2.5rem
+      +size(auto, auto)
+
+  // footer p
+  //   font-size: 3.2rem
+
+  // rotate html -90deg: https://css-tricks.com/snippets/css/orientation-lock/
+  // html
+  //   font-size: 1.168vh
+  // body
+  //   background-image: none
+  // .viewport
+  //   // transform: rotate(-90deg)
+  //   transform: rotate(90deg)
+  //   transform-origin: left top
+  //   width: 91.45vh // (width: 100vh) Reset for address bar
+  //   height: 100vw
+  //   position: absolute
+  //   // left: 0
+  //   // top: 100%
+  //   left: 100%
+  //   top: 0
+  //   overflow-x: hidden
+  //   background-image: $noise
+  //   padding: 3rem 3rem // (padding: 3.18rem 5.6rem) Reset padding for address bar
+  //   padding-left: 2rem // left 1 proportion
+  //   padding-right: 4em // right 2 proportion
+  // main
+  //   height: 46.5rem
+  // .works .work section // fontSize * 1.05
+  //   .number
+  //     font-size: 14.175rem
+  //   .title
+  //     font-size: 1.701rem
+  //   .subtitle, .link-github
+  //     font-size: 1.176rem
+  // footer // fontSize * 1.05
+  //   font-size: 1.155rem

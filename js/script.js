@@ -197,6 +197,7 @@ class Portfolio {
 
 		// All HTML elements load finished
 		window.onload = () => {
+			this.resizeBodyHeight();
 			this.endLoading();
 			this.enableScroll();
 			// this.backgroundMusicEl.play();
@@ -305,9 +306,6 @@ class Portfolio {
 	updateDate() {
 		const today = new Date();
 		let date = `${this.convertNumToMonth(today.getMonth() + 1)} ${today.getDate()}, ${today.getFullYear()}`;
-		
-		if (this.bodyWidth < 768) 
-			date = `${this.convertNumToMonth(today.getMonth() + 1).slice(0, 3)} ${today.getDate()}, ${today.getFullYear()}`;
 
 		this.dateEl.textContent = date;
 	}

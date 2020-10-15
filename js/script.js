@@ -200,7 +200,10 @@ class Portfolio {
 			this.endLoading();
 			this.enableScroll();
 			// this.backgroundMusicEl.play();
-		}
+		};
+		window.onresize = () => {
+			setTimeout(() => this.resizeBodyHeight(), 500);
+		};
 
 		// window.onblur = () => this.backgroundMusicEl.pause();
 		// window.onfocus = () => this.backgroundMusicEl.play();
@@ -245,7 +248,7 @@ class Portfolio {
 		this.gsapWithScrollTrigger('.article-left', { y: 200 * screenScale });
 		this.gsapWithScrollTrigger('.article-right', { y: 200 * screenScale });
 		this.gsapWithScrollTrigger('.name', { y: -500 * screenScale });
-		this.gsapWithScrollTrigger('.description', { y: -500 * screenScale });
+		this.gsapWithScrollTrigger('.description', { y: -750 * screenScale });
 	}
 
 	gsapWithScrollTrigger(className, animation, scrub = 1) {

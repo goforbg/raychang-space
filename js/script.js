@@ -45,24 +45,6 @@ class Portfolio {
 				destination: 'https://rayc2045.github.io/horizontal-scrolling-theater/'
 			},
 			{
-				title: 'Linktree Clone',
-				subtitle: 'Resizable link-sharing page',
-				cover:
-					'https://cdn.dribbble.com/users/3800131/screenshots/10724954/media/529252d97de31baf1548bd817ad6bc1a.png',
-				github:
-					'https://github.com/rayc2045/f2e-portfolio/tree/master/12%20-%20%E5%81%9A%E4%B8%80%E5%80%8B%E7%B2%BE%E7%BE%8E%E7%89%88%E6%9C%AC%E7%9A%84%20Linktree%20Clone%20%E2%80%94%20%E8%AA%B0%E8%AA%AA%20Instagram%20bio%20%E5%8F%AA%E8%83%BD%E6%94%BE%E4%B8%80%E5%80%8B%E7%B6%B2%E5%9D%80',
-				destination: 'https://rayc2045.github.io/linktree-clone/'
-			},
-			{
-				title: 'Coffee Menu Editor',
-				subtitle: 'Editing ingredients is no longer difficult',
-				cover:
-					'https://cdn.dribbble.com/users/3800131/screenshots/7101781/media/cbab08496ca35c2f443aa01bbd0d4d31.png',
-				github:
-					'https://github.com/rayc2045/f2e-portfolio/tree/master/10%20-%20Menu%20%E5%AE%A2%E8%A3%BD%E5%8C%96%E4%B8%8D%E9%BA%BB%E7%85%A9%EF%BC%8C%E7%94%A8%20Vue%20%E5%81%9A%E4%B8%80%E5%80%8B%E5%92%96%E5%95%A1%E8%8F%9C%E5%96%AE%E7%B7%A8%E8%BC%AF%E5%99%A8',
-				destination: 'https://codepen.io/rayc2045/full/MWgOMEL'
-			},
-			{
 				title: 'JS Block Memory Game',
 				subtitle: 'How many levels can you accomplish?',
 				cover:
@@ -88,7 +70,7 @@ class Portfolio {
 				destination: 'https://codepen.io/rayc2045/full/EqjXJN'
 			},
 			{
-				title: 'Smoothly Draggable To-do List',
+				title: 'Draggable To-do List',
 				subtitle: 'And automatically saving in LocalStorage',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6757018/_____2019-07-09___11.03.44.png',
 				github:

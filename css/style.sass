@@ -34,6 +34,11 @@ $paper: url('/img/paper.png')
   justify-content: center
   align-items: center
 
+@mixin flexVerticalCenter
+  display: flex
+  flex-direction: column
+  align-items: center
+
 @mixin fixed($l, $t)
   position: fixed
   left: $l
@@ -72,7 +77,7 @@ $paper: url('/img/paper.png')
 
 ::selection
   background-color: $lightGrey
-  
+
 *
   margin: 0
   padding: 0
@@ -138,7 +143,7 @@ button
   .loading-animation
     width: 50%
     pointer-events: none
-  
+
 .container
   padding: 3.18rem 5.6rem
   background-image: $noise
@@ -180,7 +185,7 @@ main
     top: -1.5rem + $mainElOffset
     +size(20.9rem)
     background-color: $orange
-  picture
+  .building
     position: absolute
     left: 50%
     transform: translateX(-50%)
@@ -210,6 +215,8 @@ main
       source, img
         display: none
         mix-blend-mode: multiply // 利用混合模式去背 https://developer.mozilla.org/zh-CN/docs/Web/CSS/mix-blend-mode
+  .avatar
+    display: none
   .name
     position: absolute
     left: 3.8rem
@@ -235,11 +242,14 @@ main
       a
         transition: $transitionTime
         &:hover
-          background-color: $lightGrey2
+          background-color: transparent
           img
             animation-play-state: running
             filter: grayscale(0%)
             transition: $transitionTime
+      &:last-child a
+        &:hover
+          background-color: $lightGrey2
       img
         animation-play-state: paused
         filter: grayscale(100%)
@@ -256,11 +266,13 @@ main
         .number
           margin-left: 0
           margin-right: 10rem
+    &:last-child a
+      background-color: $lightGrey
     a
       width: 60%
-      height: 33.5rem // img offset
+      // height: 33.5rem // img offset
+      background-color: transparent
       overflow: hidden
-      background-color: $lightGrey
       cursor: url('../img/arrow.svg') 50 50, pointer
     section
       margin-left: auto
@@ -414,26 +426,28 @@ footer
   .loading .loading-animation
     width: 75%
 
-  nav, .line, .contact, .about, main [class^="circle"], main picture, main article, .works .work section .number, footer
+  nav, .line, .contact, .about, main [class^="circle"], .building, .name span, main article, .works .work section .number, #contact picture, footer
     display: none
 
   .container
     padding: 1.5rem 1.6rem
 
   main
-    top: 0
+    position: static
     height: auto
+    +flexVerticalCenter
+    .avatar
+      display: block
+      width: 75%
     .name
-      position: relative
-      left: 0
-      top: 0
+      margin-top: 0.25rem
+      margin-bottom: 0.7rem
+      position: static
       font-size: 3.2rem
-      span
-        display: none
     .description
-      margin-top: 0.7rem
       margin-bottom: 2rem
-      padding-left: 0.3rem
+      text-align: center
+      width: 80%
     .description, .description a
       display: inline-block
       font-size: 1.2rem
@@ -444,6 +458,7 @@ footer
     transform: translate(-30rem, -96.7rem)
   
   .works
+    margin-bottom: $gapSize / 2.5
     .work, .work:nth-of-type(2n)
       margin-bottom: $gapSize / 2.5
       height: auto
@@ -451,7 +466,6 @@ footer
       a
         width: 100%
         height: auto
-        background-color: transparent
       section
         margin: 0
         width: 100%
@@ -459,41 +473,30 @@ footer
           padding-left: 0.3rem
         .title
           margin-top: 0.7rem
-          margin-bottom: 0
+          margin-bottom: 0.25rem
+          letter-spacing: 0
         .subtitle, .subtitle .link
         .subtitle
           margin-top: 0.2rem
-    .work:last-child
-      a
-        background-color: $lightGrey
 
   #contact
     margin-bottom: $gapSize / 5
     padding: 0
     flex-direction: column
     align-items: center
-    picture
-      margin-top: 0
-      width: 75%
     .say-hello
-      margin-top: 2rem
       margin-left: 0
-      width: 90%
+      width: 95%
       .title
-        +flexCenter
         font-size: 2.8rem
       .note
         margin-top: 1rem
-        +flexCenter
     .appreciation
       margin: 0
       margin-top: 2.5rem
       +size(auto, auto)
 
-  // footer p
-  //   font-size: 3.2rem
-
-  // rotate html -90deg: https://css-tricks.com/snippets/css/orientation-lock/
+  // Rotate document.html -90deg: https://css-tricks.com/snippets/css/orientation-lock/
   // html
   //   font-size: 1.168vh
   // body

@@ -5,7 +5,6 @@ class Portfolio {
 		this.backgroundMusicEl = document.querySelector('.background-music');
 		this.pagingSound = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3');
 		this.typingSound = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/type.mp3');
-		this.bodyEl = document.querySelector('body');
 		this.loadingEl = document.querySelector('.loading');
 		this.viewportEl = document.querySelector('.viewport');
 		this.containerEl = document.querySelector('.container');
@@ -29,89 +28,78 @@ class Portfolio {
 		this.works = [
 			{
 				title: 'Ray Chang Space',
-				subtitle: '100% Responsive Portfolio Website',
-				cover:
-					'https://cdn.dribbble.com/users/3800131/screenshots/11317150/media/08465ea718d17273f4800b2f490e65e7.png',
+				subtitle: '2.5D Portfolio Website with Smooth-scrolling',
+				cover:'https://cdn.dribbble.com/users/3800131/screenshots/11317150/media/08465ea718d17273f4800b2f490e65e7.png',
 				github: 'https://github.com/rayc2045/raychang-space',
 				destination: 'https://rayc2045.github.io/raychang-space/'
 			},
 			{
 				title: 'Horizontal Scrolling Theater',
-				subtitle: 'Make purchasing more comfortable',
-				cover:
-					'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',
-				github:
-					'https://github.com/rayc2045/f2e-portfolio/tree/master/13%20-%20%E7%94%A8%20Vue%20%E5%92%8C%20API%20%E5%81%9A%E4%B8%80%E5%80%8B%E6%A9%AB%E5%90%91%E6%8D%B2%E5%8B%95%E9%9B%BB%E5%BD%B1%E8%B3%BC%E7%89%A9%E9%A0%81%E9%9D%A2',
+				subtitle: 'Enjoy the movie purchasing',
+				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',
+				github:'https://github.com/rayc2045/f2e-portfolio/tree/master/13%20-%20%E7%94%A8%20Vue%20%E5%92%8C%20API%20%E5%81%9A%E4%B8%80%E5%80%8B%E6%A9%AB%E5%90%91%E6%8D%B2%E5%8B%95%E9%9B%BB%E5%BD%B1%E8%B3%BC%E7%89%A9%E9%A0%81%E9%9D%A2',
 				destination: 'https://rayc2045.github.io/horizontal-scrolling-theater/'
 			},
 			{
-				title: 'JS Block Memory Game',
+				title: 'Block Memory Game',
 				subtitle: 'How many levels can you accomplish?',
-				cover:
-					'https://cdn.dribbble.com/users/3800131/screenshots/10000193/media/5a5acc6684a86a5f46a9b4cd34f4df8e.gif',
-				github:
-					'https://github.com/rayc2045/f2e-portfolio/tree/master/09%20-%20%E6%96%B9%E5%A1%8A%E8%A8%98%E6%86%B6%E9%81%8A%E6%88%B2%20%E2%80%93%20%E4%BD%A0%E8%83%BD%E7%8E%A9%E5%88%B0%E7%AC%AC%E5%B9%BE%E9%97%9C%EF%BC%9F',
+				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/10000193/media/5a5acc6684a86a5f46a9b4cd34f4df8e.gif',
+				github:'https://github.com/rayc2045/f2e-portfolio/tree/master/09%20-%20%E6%96%B9%E5%A1%8A%E8%A8%98%E6%86%B6%E9%81%8A%E6%88%B2%20%E2%80%93%20%E4%BD%A0%E8%83%BD%E7%8E%A9%E5%88%B0%E7%AC%AC%E5%B9%BE%E9%97%9C%EF%BC%9F',
 				destination: 'https://codepen.io/rayc2045/full/eYNmMZe'
 			},
 			{
-				title: 'Elegant Vanilla JS Calculator',
-				subtitle: 'Why not shows the result immediately?',
+				title: 'Vanilla Calculator',
+				subtitle: 'Elegantly shows the result immediately',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6901484/_____2019-08-02___4.01.34.png',
-				github:
-					'https://github.com/rayc2045/f2e-portfolio/tree/master/08%20-%20%E5%81%9A%E4%B8%80%E5%80%8B%E5%84%AA%E9%9B%85%E7%9A%84%20Vanilla%20JS%20%E8%A8%88%E7%AE%97%E6%A9%9F%EF%BC%8C%E5%8D%B3%E6%99%82%E9%A1%AF%E7%A4%BA%E8%A8%88%E7%AE%97%E7%B5%90%E6%9E%9C',
+				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/08%20-%20%E5%81%9A%E4%B8%80%E5%80%8B%E5%84%AA%E9%9B%85%E7%9A%84%20Vanilla%20JS%20%E8%A8%88%E7%AE%97%E6%A9%9F%EF%BC%8C%E5%8D%B3%E6%99%82%E9%A1%AF%E7%A4%BA%E8%A8%88%E7%AE%97%E7%B5%90%E6%9E%9C',
 				destination: 'https://rayc2045.github.io/elegant-vanilla-js-calculator/'
 			},
 			{
 				title: 'JavaScript Click Game',
 				subtitle: 'How many scores can you get?',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6827214/_____2019-07-21___5.25.09.png',
-				github:
-					'https://github.com/rayc2045/f2e-portfolio/tree/master/07%20-%20JavaScript%20%E6%A8%99%E9%9D%B6%E9%81%8A%E6%88%B2%20%E2%80%93%20%E6%BB%91%E9%BC%A0%E4%BD%A0%E4%B8%80%E5%88%86%E9%90%98%E8%83%BD%E6%8C%89%E5%B9%BE%E4%B8%8B%EF%BC%9F',
+				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/07%20-%20JavaScript%20%E6%A8%99%E9%9D%B6%E9%81%8A%E6%88%B2%20%E2%80%93%20%E6%BB%91%E9%BC%A0%E4%BD%A0%E4%B8%80%E5%88%86%E9%90%98%E8%83%BD%E6%8C%89%E5%B9%BE%E4%B8%8B%EF%BC%9F',
 				destination: 'https://codepen.io/rayc2045/full/EqjXJN'
 			},
 			{
 				title: 'Draggable To-do List',
 				subtitle: 'And automatically saving in LocalStorage',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6757018/_____2019-07-09___11.03.44.png',
-				github:
-					'https://github.com/rayc2045/f2e-portfolio/tree/master/06%20-%20%E5%8F%AF%E6%8B%96%E6%8B%89%E4%BB%BB%E5%8B%99%E7%9A%84%20LocalStorage%20%E5%BE%85%E8%BE%A6%E4%BA%8B%E9%A0%85%E6%B8%85%E5%96%AE',
+				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/06%20-%20%E5%8F%AF%E6%8B%96%E6%8B%89%E4%BB%BB%E5%8B%99%E7%9A%84%20LocalStorage%20%E5%BE%85%E8%BE%A6%E4%BA%8B%E9%A0%85%E6%B8%85%E5%96%AE',
 				destination: 'https://rayc2045.github.io/draggable-localStorage-todoList/'
 			},
 			{
 				title: 'Day/Night Transition Postcard',
 				subtitle: 'Absolutely the modern way to share story',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6754986/_____2019-07-05___2.28.36.gif',
-				github:
-					'https://github.com/rayc2045/f2e-portfolio/tree/master/05%20-%20%E5%AF%AB%E4%B8%80%E5%BC%B5%E5%8B%95%E6%85%8B%E6%98%8E%E4%BF%A1%E7%89%87%20%E2%80%93%20%E5%B8%8C%E8%87%98%E6%84%9B%E6%83%85%E6%B5%B7%20%E8%81%96%E6%89%98%E9%87%8C%E5%B0%BC%E5%B3%B6%E5%B0%8F%E7%99%BD%E6%88%BF',
+				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/05%20-%20%E5%AF%AB%E4%B8%80%E5%BC%B5%E5%8B%95%E6%85%8B%E6%98%8E%E4%BF%A1%E7%89%87%20%E2%80%93%20%E5%B8%8C%E8%87%98%E6%84%9B%E6%83%85%E6%B5%B7%20%E8%81%96%E6%89%98%E9%87%8C%E5%B0%BC%E5%B3%B6%E5%B0%8F%E7%99%BD%E6%88%BF',
 				destination: 'https://codepen.io/rayc2045/full/EBGaZQ'
 			},
 			{
 				title: 'Apple Magic Keyboard',
 				subtitle: 'Made by pure codes of course',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736810/_____2019-07-05___2.06.35.png',
-				github:
-					'https://github.com/rayc2045/f2e-portfolio/tree/master/03%20-%20%E4%BD%BF%E7%94%A8%20CSS%20Grid%20%E5%92%8C%20Flexbox%20%E6%89%8B%E5%88%BB%E4%B8%80%E5%80%8B%20Mac%20%E9%8D%B5%E7%9B%A4',
+				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/03%20-%20%E4%BD%BF%E7%94%A8%20CSS%20Grid%20%E5%92%8C%20Flexbox%20%E6%89%8B%E5%88%BB%E4%B8%80%E5%80%8B%20Mac%20%E9%8D%B5%E7%9B%A4',
 				destination: 'https://codepen.io/rayc2045/full/ZdVzmZ'
 			},
 			{
 				title: 'Interactive Chocolate Cake',
 				subtitle: 'Animate anytime when you touch it',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736602/_____2019-07-05___1.51.04.gif',
-				github:
-					'https://github.com/rayc2045/f2e-portfolio/tree/master/01%20-%20%E7%94%A8%E7%A8%8B%E5%BC%8F%E7%83%98%E7%84%99%E7%9A%84%20%E3%84%89%E3%84%A8%E3%84%9E%20%E3%84%A7%E3%84%A0%20%E5%B7%A7%E5%85%8B%E5%8A%9B%E8%9B%8B%E7%B3%95',
+				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/01%20-%20%E7%94%A8%E7%A8%8B%E5%BC%8F%E7%83%98%E7%84%99%E7%9A%84%20%E3%84%89%E3%84%A8%E3%84%9E%20%E3%84%A7%E3%84%A0%20%E5%B7%A7%E5%85%8B%E5%8A%9B%E8%9B%8B%E7%B3%95',
 				destination: 'https://codepen.io/rayc2045/full/ZdmgMr'
 			},
 			{
 				title: 'Medium Blog',
 				subtitle: 'Read my latest technical article',
-				cover:
-					'https://raw.githubusercontent.com/rayc2045/raychang-space/master/img/medium-logo-transparent.png',
+				cover: 'https://raw.githubusercontent.com/rayc2045/raychang-space/master/img/medium-logo-transparent.png',
 				destination: 'https://medium.com/@raychangdesign/'
 			}
 		];
 		// this.workEls = document.querySelectorAll('.work');
 		this.isTouchDevice = 'ontouchstart' in document.documentElement;
-		this.bodyWidth = this.bodyEl.getBoundingClientRect().width;
+		this.bodyWidth = document.body.getBoundingClientRect().width;
+		this.screenScale = this.bodyWidth / 1280;
 		this.isValidated = false;
 		this.events();
 	}
@@ -131,7 +119,7 @@ class Portfolio {
 		this.updateDate();
 		this.updateWorks();
 
-		document.onmouseup = (e) => {
+		document.onmouseup = e => {
 			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
 		};
 		this.contactButton.onmouseup = () => {
@@ -144,30 +132,30 @@ class Portfolio {
 			if (!this.isTouchDevice) window.scrollTo(0, 0);
 		};
 		if (!this.isTouchDevice) {
-			// document.onmousemove = (e) => this.antiMouseMove(e, this.nameEl, 80);
+			// document.onmousemove = e => this.antiMouseMove(e, this.nameEl, 80);
 			this.activateHoverInteraction(this.worksEl, this.footerEl);
 			this.smoothScroll();
 		}
 		this.parallax();
 		this.formEl.onkeydown = () => this.soundPlay(this.typingSound);
-		this.textareaEls.forEach((el) => {
-			el.oninput = (e) => {
+		this.textareaEls.forEach(el => {
+			el.oninput = e => {
 				this.autoExpand(e);
 				this.resizeBodyHeight();
 			};
-			el.onkeyup = (e) => {
+			el.onkeyup = e => {
 				this.autoExpand(e);
 				this.resizeBodyHeight();
 			};
-			el.oncut = (e) => {
+			el.oncut = e => {
 				this.autoExpand(e);
 				this.resizeBodyHeight();
 			};
-			el.onpaste = (e) => {
+			el.onpaste = e => {
 				this.autoExpand(e);
 				this.resizeBodyHeight();
 			};
-			el.onchange = (e) => {
+			el.onchange = e => {
 				this.autoExpand(e);
 				this.resizeBodyHeight();
 			};
@@ -185,6 +173,7 @@ class Portfolio {
 			// this.backgroundMusicEl.play();
 		};
 		window.onresize = () => {
+			this.resetParallax();
 			setTimeout(() => this.resizeBodyHeight(), 500);
 		};
 
@@ -198,11 +187,11 @@ class Portfolio {
 	}
 
 	preventScroll() {
-		this.bodyEl.style.overflow = 'hidden';
+		document.body.style.overflow = 'hidden';
 	}
 
 	enableScroll() {
-		this.bodyEl.style.overflow = '';
+		document.body.style.overflow = '';
 	}
 
 	smoothScroll() {
@@ -222,22 +211,30 @@ class Portfolio {
 	// 	});
 	// }
 
+	resetParallax() {
+		// Reset parameter
+		this.bodyWidth = document.body.getBoundingClientRect().width;
+		this.screenScale = this.bodyWidth / 1280;
+		// Reset parallax
+		ScrollTrigger.getAll().forEach(el => el.kill());
+		this.parallax();
+	}
+
 	parallax() {
 		// Best on 16:10 full screen
-		let screenScale = this.bodyWidth / 1280;
-
-		this.gsapWithScrollTrigger('.circle-yellow', { y: 1200 * screenScale });
-		this.gsapWithScrollTrigger('.circle-orange', { y: 2400 * screenScale });
-		this.gsapWithScrollTrigger('.article-left', { y: 200 * screenScale });
-		this.gsapWithScrollTrigger('.article-right', { y: 200 * screenScale });
-		this.gsapWithScrollTrigger('.name', { y: -500 * screenScale });
-		this.gsapWithScrollTrigger('.description', { y: -750 * screenScale });
+		this.gsapWithScrollTrigger('.circle-yellow', { y: 1200 * this.screenScale });
+		this.gsapWithScrollTrigger('.circle-orange', { y: 2400 * this.screenScale });
+		this.gsapWithScrollTrigger('.article-left', { y: 200 * this.screenScale });
+		this.gsapWithScrollTrigger('.article-right', { y: 200 * this.screenScale });
+		this.gsapWithScrollTrigger('.avatar', { y: -750 * this.screenScale });
+		this.gsapWithScrollTrigger('.name', { y: -500 * this.screenScale });
+		this.gsapWithScrollTrigger('.description', { y: -250 * this.screenScale });
 	}
 
 	gsapWithScrollTrigger(className, animation, scrub = 1) {
 		ScrollTrigger.create({
 			animation: gsap.to(className, animation),
-			scrub: scrub
+			scrub
 		});
 	}
 
@@ -355,7 +352,7 @@ class Portfolio {
 	}
 
 	resizeBodyHeight() {
-		this.bodyEl.style.height = this.viewportEl.scrollHeight + 'px';
+		document.body.style.height = this.viewportEl.scrollHeight + 'px';
 	}
 
 	submitForm() {

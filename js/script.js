@@ -27,6 +27,13 @@ class Portfolio {
 		this.footerEl = document.querySelector('footer');
 		this.works = [
 			{
+				title: 'Ghibli Gallery App',
+				subtitle: 'Remaster Ghibli Work Album',
+				cover:'https://cdn.dribbble.com/users/3800131/screenshots/14472746/media/db81ebe9113c4b723a1440438e7bb7ef.png',
+				github: 'https://github.com/rayc2045/ghibli-gallery',
+				destination: 'https://rayc2045.github.io/ghibli-gallery/'
+			},
+			{
 				title: 'Ray Chang Space',
 				subtitle: '2.5D Portfolio Website with Smooth-scrolling',
 				cover:'https://cdn.dribbble.com/users/3800131/screenshots/11317150/media/08465ea718d17273f4800b2f490e65e7.png',
@@ -81,13 +88,6 @@ class Portfolio {
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736810/_____2019-07-05___2.06.35.png',
 				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/03%20-%20%E4%BD%BF%E7%94%A8%20CSS%20Grid%20%E5%92%8C%20Flexbox%20%E6%89%8B%E5%88%BB%E4%B8%80%E5%80%8B%20Mac%20%E9%8D%B5%E7%9B%A4',
 				destination: 'https://codepen.io/rayc2045/full/ZdVzmZ'
-			},
-			{
-				title: 'Interactive Chocolate Cake',
-				subtitle: 'Animate anytime when you touch it',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736602/_____2019-07-05___1.51.04.gif',
-				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/01%20-%20%E7%94%A8%E7%A8%8B%E5%BC%8F%E7%83%98%E7%84%99%E7%9A%84%20%E3%84%89%E3%84%A8%E3%84%9E%20%E3%84%A7%E3%84%A0%20%E5%B7%A7%E5%85%8B%E5%8A%9B%E8%9B%8B%E7%B3%95',
-				destination: 'https://codepen.io/rayc2045/full/ZdmgMr'
 			},
 			{
 				title: 'Medium Blog',

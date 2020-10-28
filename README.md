@@ -19,4 +19,4 @@
 - 將聯絡表單的 Textarea 做自適應設計，隨著文字量做擴展或內縮
 - 使用 JS 做表單驗證，並在驗證結果為不通過時加入提示動畫，減少輸入錯誤的挫折感
 - 將長度為 2:54 的音樂 [Touch - Svyat Illin](https://icons8.com/music/search/touch) 剪輯為 00:31 並在網頁載入後無限循環播放。此外，在點擊連結、填連絡表單時加入不同音效，讓網站變得有聲有色
-- [線上版](https://rayc2045.github.io/raychang-space/)
+- [My Portfolio Website](https://rayc2045.github.io/raychang-space/)

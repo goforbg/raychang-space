@@ -29,7 +29,7 @@ class Portfolio {
 			{
 				title: 'Ghibli Gallery App',
 				subtitle: 'Remaster Ghibli Work Album',
-				cover:'https://cdn.dribbble.com/users/3800131/screenshots/14472746/media/db81ebe9113c4b723a1440438e7bb7ef.png',
+				cover:'https://cdn.dribbble.com/users/3800131/screenshots/14489502/media/e740658dea07f7e82afa9e88d4dd880a.png',
 				github: 'https://github.com/rayc2045/ghibli-gallery',
 				destination: 'https://rayc2045.github.io/ghibli-gallery/'
 			},

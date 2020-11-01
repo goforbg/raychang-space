@@ -27,13 +27,6 @@ class Portfolio {
 		this.footerEl = document.querySelector('footer');
 		this.works = [
 			{
-				title: 'Ghibli Gallery App',
-				subtitle: 'Remaster Ghibli Work Album',
-				cover:'https://cdn.dribbble.com/users/3800131/screenshots/14489502/media/e740658dea07f7e82afa9e88d4dd880a.png',
-				github: 'https://github.com/rayc2045/ghibli-gallery',
-				destination: 'https://rayc2045.github.io/ghibli-gallery/'
-			},
-			{
 				title: 'Ray Chang Space',
 				subtitle: '2.5D Portfolio Website with Smooth-scrolling',
 				cover:'https://cdn.dribbble.com/users/3800131/screenshots/11317150/media/08465ea718d17273f4800b2f490e65e7.png',
@@ -46,6 +39,13 @@ class Portfolio {
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',
 				github:'https://github.com/rayc2045/f2e-portfolio/tree/master/13%20-%20%E7%94%A8%20Vue%20%E5%92%8C%20API%20%E5%81%9A%E4%B8%80%E5%80%8B%E6%A9%AB%E5%90%91%E6%8D%B2%E5%8B%95%E9%9B%BB%E5%BD%B1%E8%B3%BC%E7%89%A9%E9%A0%81%E9%9D%A2',
 				destination: 'https://rayc2045.github.io/horizontal-scrolling-theater/'
+			},
+			{
+				title: 'Ghibli Gallery App',
+				subtitle: 'Remaster Ghibli Work Album',
+				cover:'https://cdn.dribbble.com/users/3800131/screenshots/14489502/media/e740658dea07f7e82afa9e88d4dd880a.png',
+				github: 'https://github.com/rayc2045/ghibli-gallery',
+				destination: 'https://rayc2045.github.io/ghibli-gallery/'
 			},
 			{
 				title: 'Block Memory Game',

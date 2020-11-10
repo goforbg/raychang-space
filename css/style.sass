@@ -19,26 +19,6 @@ $paper: url('/img/paper.png')
   width: $w
   height: $h
 
-@mixin flexLeft
-  display: flex
-  justify-content: flex-start
-  align-items: center
-
-@mixin flexRight
-  display: flex
-  justify-content: flex-end
-  align-items: center
-
-@mixin flexCenter
-  display: flex
-  justify-content: center
-  align-items: center
-
-@mixin flexVerticalCenter
-  display: flex
-  flex-direction: column
-  align-items: center
-
 @mixin fixed($l, $t)
   position: fixed
   left: $l
@@ -127,10 +107,27 @@ input, textarea, button
 button
   cursor: url('../img/icn-hover.png'), pointer
 
+// Utility
+.flex-left
+  display: flex
+  justify-content: flex-start
+  align-items: center
+.flex-right
+  display: flex
+  justify-content: flex-end
+  align-items: center
+.flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+.flex-vertical-center
+  display: flex
+  flex-direction: column
+  align-items: center
+
 .loading
   +size(100%)
   +fixed(0, 0)
-  +flexCenter
   z-index: 9999
   overflow: hidden
   background-color: $black
@@ -150,9 +147,7 @@ button
 
 nav
   padding: 1rem 0
-  +flexLeft
   section
-    +flexLeft
     .line
       margin-left: 1.04rem
       margin-top: 0.1rem
@@ -281,7 +276,6 @@ main
       .number
         margin-left: 10rem
         margin-bottom: -1.58rem
-        +flexCenter
         font-size: 13.5rem
         font-weight: normal
         color: $lightGrey
@@ -333,7 +327,6 @@ main
       label
         margin-bottom: 2.3rem
         list-style: none
-        +flexLeft
         border-bottom: 0.1rem solid $mediumGrey
         &:nth-of-type(5)
           margin-bottom: 0
@@ -361,7 +354,6 @@ main
         font-size: inherit
   .appreciation
     margin-left: 3rem
-    +flexCenter
     flex-direction: column
     +size(36.2rem, 42rem)
     &.hide
@@ -375,7 +367,6 @@ main
       font-weight: 400
 
 footer
-  +flexCenter
   font-size: 1.1rem
   .toTop
     display: none
@@ -435,7 +426,6 @@ footer
   main
     position: static
     height: auto
-    +flexVerticalCenter
     .avatar
       display: block
       width: 75%

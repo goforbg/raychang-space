@@ -15,7 +15,7 @@
 <body>
   <!-- <audio class="background-music" src="https://raw.githubusercontent.com/raychang2017/raychang-space/master/audio/piano_soundtrack.m4a" preload="metadata" loop></audio> -->
   
-  <section class="loading flex-center">
+  <section class="loading">
     <div class="loading-animation">
       <img src="./img/illustration_loading.gif" alt="">
     </div>
@@ -23,8 +23,8 @@
 
   <section class="viewport">
     <div class="container">
-      <nav class="flex-left">
-        <section class="flex-left">
+      <nav>
+        <section>
           <div class="date"></div>
           <div class="line"></div>
         </section>
@@ -80,16 +80,16 @@
             <p>is a required input.</p>
           </div>
           <form action="mailto:rayc2045@gmail.com" method="post" enctype="text/plain">
-            <label class="flex-left">
+            <label>
               <div>Name</div>
               <div class="star">*</div>
               <input class="input-name" type="text" name="name" required>
             </label>
-            <label class="flex-left">
+            <label>
               <div>Company</div>
               <input class="input-company" type="text" name="company">
             </label>
-            <label class="flex-left">
+            <label>
               <div>Email</div>
               <div class="star">*</div>
               <input class="input-email" type="email" name="email" list="defaultEmails" required>
@@ -99,12 +99,12 @@
                 <option value="@hotmail.com">
               </datalist>
             </label>
-            <label class="flex-left">
+            <label>
               <div>Subject</div>
               <div class="star">*</div>
               <input class="input-subject" type="text" name="subject" required>
             </label>
-            <label class="title-message flex-left">
+            <label class="title-message">
               <div>Message</div>
               <div class="star">*</div>
             </label>
@@ -114,13 +114,13 @@
             <button class="send" type="button">Send ></button>
           </form>
         </section>
-        <section class="appreciation flex-center hide">
+        <section class="appreciation hide">
           <h1>Thanks for your time</h1>
           <h3>The message is ready to send.</h3>
         </section>
       </article>
 
-      <footer class="flex-center">
+      <footer>
         <p class="message">You've reach the end</p>
         <div class="toTop">GO TO TOP ⌃</div>
       </footer>

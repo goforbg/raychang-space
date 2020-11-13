@@ -323,7 +323,7 @@ class Portfolio {
           <img src="${this.works[i].cover}" alt="${this.works[i].title}" loading="lazy">
         </a>
         <section>
-          <div class="number flex-center">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>
+          <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>
           <div class="title">${this.works[i].title}</div>
           <div class="subtitle">${this.works[i].subtitle}${this.works[i].github
 				? ` (<a class="link" href="${this.works[i]

@@ -62,13 +62,6 @@ class Portfolio {
 				destination: 'https://rayc2045.github.io/elegant-vanilla-js-calculator/'
 			},
 			{
-				title: 'JavaScript Click Game',
-				subtitle: 'How many scores can you get?',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6827214/_____2019-07-21___5.25.09.png',
-				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/07%20-%20JavaScript%20%E6%A8%99%E9%9D%B6%E9%81%8A%E6%88%B2%20%E2%80%93%20%E6%BB%91%E9%BC%A0%E4%BD%A0%E4%B8%80%E5%88%86%E9%90%98%E8%83%BD%E6%8C%89%E5%B9%BE%E4%B8%8B%EF%BC%9F',
-				destination: 'https://codepen.io/rayc2045/full/EqjXJN'
-			},
-			{
 				title: 'Draggable To-do List',
 				subtitle: 'And automatically saving in LocalStorage',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6757018/_____2019-07-09___11.03.44.png',
@@ -181,8 +174,9 @@ class Portfolio {
 		// window.onfocus = () => this.backgroundMusicEl.play();
 	}
 
-	soundPlay(audio) {
+	soundPlay(audio, volume = 1) {
 		audio.currentTime = 0;
+		audio.volume = volume;
 		audio.play();
 	}
 
@@ -314,10 +308,10 @@ class Portfolio {
 	// }
 
 	updateWorks() {
-		for (let i = 0; i < this.works.length; i++) {
+		for (const i in this.works) {
 			const listEl = document.createElement('li');
-
 			listEl.classList.add('work');
+
 			listEl.innerHTML = `
 				<a href="${this.works[i].destination}" target="_blank" rel="noreferrer noopener">
           <img src="${this.works[i].cover}" alt="${this.works[i].title}" loading="lazy">
@@ -329,7 +323,7 @@ class Portfolio {
 				? ` (<a class="link" href="${this.works[i]
 						.github}" target="_blank" rel="noreferrer noopener">info</a>)`
 				: ''}</div>
-        </section>`;
+				</section>`;
 
 			this.worksEl.appendChild(listEl);
 		}
@@ -346,7 +340,6 @@ class Portfolio {
 	autoExpand(e) {
 		// console.log(e.target.scrollHeight);
 		const offset = e.target.offsetHeight - e.target.clientHeight;
-
 		e.target.style.height = 'auto';
 		e.target.style.height = e.target.scrollHeight + offset + 'px';
 	}
@@ -359,13 +352,14 @@ class Portfolio {
 		this.isValidated = true;
 		this.checkForm();
 		if (!this.isValidated) return false;
-
-		const receiver = 'rayc2045@gmail.com';
-
-		location.href = `mailto:${receiver}?subject=${this.inputSubjectEl.value}&body=${this.textareaMessageEl.value}`; // 製作網頁表單：https://medium.com/@AntheaLee/%E5%A6%82%E4%BD%95%E8%A3%BD%E4%BD%9C-%E8%81%AF%E7%B5%A1%E6%88%91%E5%80%91-%E7%B6%B2%E9%A0%81%E8%A1%A8%E5%96%AE-3df78756ec81
-
 		this.emptyForm();
 		this.hideForm();
+
+		setTimeout(() => {
+			const receiver = 'rayc2045@gmail.com';
+			location.href = `mailto:${receiver}?subject=${this.inputSubjectEl.value}&body=${this.textareaMessageEl.value}`;
+			// 製作網頁表單：https://medium.com/@AntheaLee/%E5%A6%82%E4%BD%95%E8%A3%BD%E4%BD%9C-%E8%81%AF%E7%B5%A1%E6%88%91%E5%80%91-%E7%B6%B2%E9%A0%81%E8%A1%A8%E5%96%AE-3df78756ec81
+		}, 800)
 	}
 
 	checkForm() {
@@ -398,12 +392,8 @@ class Portfolio {
 
 	alertAnimate(el) {
 		if (el.classList.contains('alert')) return;
-
 		el.classList.add('alert');
-
-		setTimeout(() => {
-			el.classList.remove('alert');
-		}, 1000);
+		setTimeout(() => el.classList.remove('alert'), 1000);
 	}
 
 	emptyForm() {

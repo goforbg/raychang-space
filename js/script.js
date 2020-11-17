@@ -111,60 +111,51 @@ class Portfolio {
 		this.preventScroll();
 		this.updateDate();
 		this.updateWorks();
+		this.parallax();
 
-		document.onmouseup = e => {
-			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
-		};
-		this.contactButton.onmouseup = () => {
-			this.soundPlay(this.pagingSound);
-			this.showForm();
-			window.scrollTo(0, this.contactEl.getBoundingClientRect().top);
-		};
-		this.toTopButton.onmouseup = () => {
-			this.soundPlay(this.pagingSound);
-			if (!this.isTouchDevice) window.scrollTo(0, 0);
-		};
 		if (!this.isTouchDevice) {
 			// document.onmousemove = e => this.antiMouseMove(e, this.nameEl, 80);
 			this.activateHoverInteraction(this.worksEl, this.footerEl);
 			this.smoothScroll();
 		}
-		this.parallax();
+
+		document.onmouseup = e => {
+			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
+		};
+
+		this.contactButton.onmouseup = () => {
+			this.soundPlay(this.pagingSound);
+			this.showForm();
+			window.scrollTo(0, this.contactEl.getBoundingClientRect().top);
+		};
+
+		this.toTopButton.onmouseup = () => {
+			this.soundPlay(this.pagingSound);
+			window.scrollTo(0, 0);
+		};
+
 		this.formEl.onkeydown = () => this.soundPlay(this.typingSound);
+
 		this.textareaEls.forEach(el => {
-			el.oninput = e => {
-				this.autoExpand(e);
-				this.resizeBodyHeight();
-			};
-			el.onkeyup = e => {
-				this.autoExpand(e);
-				this.resizeBodyHeight();
-			};
-			el.oncut = e => {
-				this.autoExpand(e);
-				this.resizeBodyHeight();
-			};
-			el.onpaste = e => {
-				this.autoExpand(e);
-				this.resizeBodyHeight();
-			};
-			el.onchange = e => {
-				this.autoExpand(e);
-				this.resizeBodyHeight();
-			};
+			el.oninput = e => {this.autoExpand(e); this.resizeBodyHeight();};
+			el.onkeyup = e => {this.autoExpand(e); this.resizeBodyHeight();};
+			el.oncut = e => {this.autoExpand(e); this.resizeBodyHeight();};
+			el.onpaste = e => {this.autoExpand(e); this.resizeBodyHeight();};
+			el.onchange = e => {this.autoExpand(e); this.resizeBodyHeight();};
 		});
-		this.sendButton.onclick = () => {
-			this.submitForm();
+
+		this.sendButton.onclick = e => {
+			this.submitForm(e);
 			this.resizeBodyHeight();
 		};
 
-		// All HTML elements load finished
 		window.onload = () => {
 			this.resizeBodyHeight();
 			this.endLoading();
 			this.enableScroll();
 			// this.backgroundMusicEl.play();
 		};
+
 		window.onresize = () => {
 			this.resetParallax();
 			setTimeout(() => this.resizeBodyHeight(), 500);
@@ -345,7 +336,8 @@ class Portfolio {
 		document.body.style.height = this.viewportEl.scrollHeight + 'px';
 	}
 
-	submitForm() {
+	submitForm(e) {
+		e.preventDefault();
 		this.isValidated = true;
 		this.checkForm();
 		if (!this.isValidated) return false;

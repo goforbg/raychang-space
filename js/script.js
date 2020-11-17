@@ -213,6 +213,7 @@ class Portfolio {
 		// Reset parameter
 		this.bodyWidth = document.body.getBoundingClientRect().width;
 		this.screenScale = this.bodyWidth / 1280;
+
 		// Reset parallax
 		ScrollTrigger.getAll().forEach(el => el.kill());
 		this.parallax();
@@ -279,7 +280,6 @@ class Portfolio {
 	updateDate() {
 		const today = new Date();
 		let date = `${this.convertNumToMonth(today.getMonth() + 1)} ${today.getDate()}, ${today.getFullYear()}`;
-
 		this.dateEl.textContent = date;
 	}
 

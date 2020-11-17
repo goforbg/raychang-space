@@ -180,6 +180,10 @@ class Portfolio {
 		audio.play();
 	}
 
+	removeElement(el) {
+		el.parentNode.removeChild(el);
+	}
+
 	preventScroll() {
 		document.body.style.overflow = 'hidden';
 	}
@@ -264,16 +268,12 @@ class Portfolio {
 
 	endLoading() {
 		const delay = 500;
-
-		setTimeout(() => {
-			this.loadingEl.classList.add('animated');
-		}, delay);
-
-		setTimeout(() => {
-			// this.loadingEl.classList.add('hide');
-			// this.loadingEl.classList.remove('animated');
-			this.loadingEl.parentNode.removeChild(this.loadingEl);
-		}, delay + 2000);
+		setTimeout(() => this.loadingEl.classList.add('animated'), delay);
+		setTimeout(() => this.removeElement(this.loadingEl), delay + 2000);
+		// setTimeout(() => {
+		// 	this.loadingEl.classList.add('hide');
+		// 	this.loadingEl.classList.remove('animated');
+		// }, delay + 2000);
 	}
 
 	updateDate() {
@@ -284,10 +284,7 @@ class Portfolio {
 	}
 
 	convertNumToMonth(num) {
-		const months = ['January','February','March','April','May','June','July','August','September','October','November','December'
-		];
-
-		return months[num - 1];
+		return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][num - 1];
 	}
 
 	// antiMouseMove(e, el, max = 20) {

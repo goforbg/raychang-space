@@ -230,8 +230,7 @@ class Portfolio {
 		});
 	}
 
-	// rellax() {
-	// 	// rellax.js
+	// rellaxJS() {
 	// 	this.parallaxElementSet(this.circleYellowEl, '-3');
 	// 	this.parallaxElementSet(this.circleOrangeEl, '-6');
 	// 	this.parallaxElementSet(this.articleLeftEl, '-1.5');
@@ -243,21 +242,6 @@ class Portfolio {
 	// rellaxElementSet(el, rellaxSpeed) {
 	// 	el.classList.add('rellax');
 	// 	el.setAttribute('data-rellax-speed', rellaxSpeed);
-	// }
-
-	// toggleElOverflowHidden(el) {
-	// 	// const documentElPositionTop = document.documentElement.scrollTop; // body scroll position
-	// 	const elPositionTop = el.getBoundingClientRect().top;
-	// 	const elHeight = el.getBoundingClientRect().height / 2;
-	// 	// console.log(elPositionTop + elHeight/2);
-
-	// 	if (elPositionTop + elHeight / 100 < 0) {
-	// 		el.style.overflow = 'hidden';
-	// 		// console.log('hidden');
-	// 	} else {
-	// 		el.style.overflow = 'visible';
-	// 		// console.log('visible');
-	// 	}
 	// }
 
 	endLoading() {
@@ -401,11 +385,6 @@ class Portfolio {
 	hideForm() {
 		this.sayHelloEl.classList.add('hide');
 		this.appreciationEl.classList.remove('hide');
-	}
-
-	showForm() {
-		this.sayHelloEl.classList.remove('hide');
-		this.appreciationEl.classList.add('hide');
 	}
 
 	putPackForm() {

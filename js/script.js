@@ -149,6 +149,8 @@ class Portfolio {
 			this.resizeBodyHeight();
 		};
 
+		window.onscroll = () => this.putPackForm();
+
 		window.onload = () => {
 			this.resizeBodyHeight();
 			this.endLoading();
@@ -406,15 +408,25 @@ class Portfolio {
 		this.appreciationEl.classList.add('hide');
 	}
 
-	// scrollToggleForm() {
-	// 	const sayHelloElPosTop = this.sayHelloEl.getBoundingClientRect().top;
-	// 	const sayHelloElHeight = this.sayHelloEl.getBoundingClientRect().height;
-	// 	const isAboveFormEl = sayHelloElPosTop < (sayHelloElHeight + sayHelloElHeight / 2);
+	putPackForm() {
+		if (!this.sayHelloEl.classList.contains('hide')) return;
+		if (!this.isInView(this.appreciationEl)) {
+			this.sayHelloEl.classList.remove('hide');
+			this.appreciationEl.classList.add('hide');
+		}
+	}
 
-	// 	if (isAboveFormEl && this.sayHelloEl.classList.contains('hide')) {
-	// 		this.sayHelloEl.classList.remove('hide');
-	// 		this.appreciationEl.classList.add('hide');
-	// 	}
+	isInView(el) {
+		const elTop = ~(-el.getBoundingClientRect().top);
+		const elBottom = ~(-el.getBoundingClientRect().bottom);
+		return (elTop < window.innerHeight && elBottom >= 0);
+		// https://usefulangle.com/post/113/javascript-detecting-element-visible-during-scroll
+	}
+
+	// isFullyVisible(el) {
+	// 	const elTop = ~(-el.getBoundingClientRect().top);
+	// 	const elBottom = ~(-el.getBoundingClientRect().bottom);
+	// 	return (elTop >= 0 && elBottom <= window.innerHeight);
 	// }
 }
 

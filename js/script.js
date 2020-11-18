@@ -125,7 +125,6 @@ class Portfolio {
 
 		this.contactButton.onmouseup = () => {
 			this.soundPlay(this.pagingSound);
-			this.showForm();
 			window.scrollTo(0, this.contactEl.getBoundingClientRect().top);
 		};
 
@@ -158,13 +157,13 @@ class Portfolio {
 			// this.backgroundMusicEl.play();
 		};
 
+		// window.onblur = () => this.backgroundMusicEl.pause();
+		// window.onfocus = () => this.backgroundMusicEl.play();
+
 		window.onresize = () => {
 			this.resetParallax();
 			setTimeout(() => this.resizeBodyHeight(), 500);
 		};
-
-		// window.onblur = () => this.backgroundMusicEl.pause();
-		// window.onfocus = () => this.backgroundMusicEl.play();
 	}
 
 	soundPlay(audio, volume = 1) {
@@ -213,7 +212,7 @@ class Portfolio {
 	}
 
 	parallax() {
-		// Best on 16:10 full screen
+		// Best on 16:10 full screen (MacBook)
 		this.gsapWithScrollTrigger('.circle-yellow', { y: 1200 * this.screenScale });
 		this.gsapWithScrollTrigger('.circle-orange', { y: 2400 * this.screenScale });
 		this.gsapWithScrollTrigger('.article-left', { y: 200 * this.screenScale });
@@ -235,7 +234,6 @@ class Portfolio {
 	// 	this.parallaxElementSet(this.circleOrangeEl, '-6');
 	// 	this.parallaxElementSet(this.articleLeftEl, '-1.5');
 	// 	this.parallaxElementSet(this.articleRightEl, '-1.5');
-
 	// 	let rellax = new Rellax('.rellax');
 	// }
 

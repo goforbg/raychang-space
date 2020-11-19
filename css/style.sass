@@ -240,20 +240,19 @@ main
   &.hover-interaction
     .work
       a
-        transition: $transitionTime
+        transition: background-color $transitionTime
         &:hover
           background-color: transparent
           img
             animation-play-state: running
             filter: grayscale(0%)
-            transition: $transitionTime
       &:last-child a
         &:hover
           background-color: $lightGrey2
       img
         animation-play-state: paused
         filter: grayscale(100%)
-        transition: $transitionTime
+        transition: filter $transitionTime
   .work
     margin-bottom: $gapSize
     list-style: none

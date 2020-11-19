@@ -9,7 +9,7 @@
 - 使用 `data:image` [噪點](http://noisepng.com/)填充頁面，增添印刷紙張的質感
 - 網頁元素以 `rem` 做單位，達成任何尺寸顯示上的絕佳比例
 - 使用 CSS `@media` 和 `transform` 讓使用者設備為手機時，自動旋轉 90 度以提供最佳瀏覽體驗
-- 封鎖可能會破壞瀏覽體驗的使用者事件，如文字的選取、圖片的拖移，以及右鍵點擊
+- 封鎖任何破壞瀏覽體驗的使用者事件，如文字選取、圖片拖移和右鍵點擊，並加入頁面點擊互動作為補償
 - 以自製格式輸出當前時間到網頁主畫面，增添報紙風格設計感
 - 加入 [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/) 平滑滾動功能，使用滑鼠捲動網頁就像滑手機一樣順
 - 使用 [GSAP](https://greensock.com/gsap/) 做滾動視差<!-- - 使用 [Rellax](https://dixonandmoe.com/rellax/) 做滾動視差 -->，再透過過 [ScrollTrigger](https://greensock.com/scrolltrigger/) 綁定平滑滾動與滾動視差功能，實現立體感網站

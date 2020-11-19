@@ -118,12 +118,12 @@ class Portfolio {
 			this.activateHoverInteraction(this.worksEl, this.footerEl);
 			this.smoothScroll();
 		}
-
-		document.onmousedown = e => this.appendCircle(e);
 		
 		document.onmouseup = e => {
 			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
 		};
+
+		this.containerEl.onmousedown = e => this.appendCircle(e);
 
 		this.contactButton.onmouseup = () => {
 			this.soundPlay(this.pagingSound);
@@ -183,7 +183,7 @@ class Portfolio {
 		circle.style.left = `${e.pageX - circleOffset - customCursorOffset}px`;
 		circle.style.top = `${e.pageY - circleOffset - customCursorOffset}px`;
 
-		document.body.appendChild(circle);
+		this.containerEl.appendChild(circle);
 		setTimeout(() => this.removeElement(circle), 1500);
 	}
 

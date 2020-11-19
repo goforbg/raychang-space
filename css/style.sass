@@ -67,6 +67,13 @@ $paper: url('/img/paper.png')
   100%
     transform: translateX(0)
 
+@keyframes expanding
+  0%
+    transform: scale(0.01)
+    background-color: rgba($black, 0.03)
+  100%
+    transform: scale(1)
+
 ::-webkit-scrollbar
   // width: 0.8vw
   width: 0
@@ -99,7 +106,7 @@ html, body
   color: $black
   background-color: $white
   scroll-behavior: smooth
-body
+// body
   // padding: 3.18rem 5.6rem
   // background-image: $noise
   // background-image: $paper
@@ -143,6 +150,15 @@ button
   .loading-animation
     width: 50%
     pointer-events: none
+
+.circle
+  position: absolute
+  +size(50vw)
+  border-radius: 50%
+  transform-origin: 50% 50%
+  animation: expanding 1.5s
+  animation-fill-mode: forwards
+  pointer-events: none
 
 .container
   padding: 3.18rem 5.6rem

@@ -119,6 +119,8 @@ class Portfolio {
 			this.smoothScroll();
 		}
 
+		document.onmousedown = e => this.appendCircle(e);
+		
 		document.onmouseup = e => {
 			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
 		};
@@ -170,6 +172,19 @@ class Portfolio {
 		audio.currentTime = 0;
 		audio.volume = volume;
 		audio.play();
+	}
+
+	appendCircle(e) {
+		const circle = document.createElement('div');
+		circle.classList.add('circle');
+
+		const circleOffset = 0.25 * document.body.getBoundingClientRect().width;
+		const customCursorOffset = -(0.004 * document.body.getBoundingClientRect().width);
+		circle.style.left = `${e.pageX - circleOffset - customCursorOffset}px`;
+		circle.style.top = `${e.pageY - circleOffset - customCursorOffset}px`;
+
+		document.body.appendChild(circle);
+		setTimeout(() => this.removeElement(circle), 1500);
 	}
 
 	removeElement(el) {

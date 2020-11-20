@@ -1,4 +1,4 @@
-[![Photo](https://github.com/raychang2017/raychang-space/blob/master/img/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202020-05-05%20%E4%B8%8B%E5%8D%882.01.58.png?raw=true)](https://dribbble.com/raychangdesign)
+[![Photo](https://raw.githubusercontent.com/rayc2045/raychang-space/master/img/%E6%88%AA%E5%9C%96%202020-11-20%20%E4%B8%8B%E5%8D%881.50.08.png)](https://dribbble.com/raychangdesign)
 
 # Ray Chang Space - 2.5D Portfolio Website with Smooth-scrolling
 

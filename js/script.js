@@ -174,17 +174,19 @@ class Portfolio {
 		audio.play();
 	}
 
-	appendCircle(e) {
+	appendCircle(e, duration = 1.5) {
 		const circle = document.createElement('div');
 		circle.classList.add('circle');
 
 		const circleOffset = 0.25 * document.body.getBoundingClientRect().width;
-		const customCursorOffset = -(0.004 * document.body.getBoundingClientRect().width);
+		let customCursorOffset = -(0.004 * document.body.getBoundingClientRect().width);
+		if (this.isTouchDevice) customCursorOffset = 0;
 		circle.style.left = `${e.pageX - circleOffset - customCursorOffset}px`;
 		circle.style.top = `${e.pageY - circleOffset - customCursorOffset}px`;
+		circle.style.animationDuration = `${duration}s`;
 
 		this.containerEl.appendChild(circle);
-		setTimeout(() => this.removeElement(circle), 1500);
+		setTimeout(() => this.removeElement(circle), duration * 1000);
 	}
 
 	removeElement(el) {

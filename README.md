@@ -20,4 +20,4 @@
 - 使用 JS 做表單驗證，並在驗證結果為不通過時加入提示動畫，減少輸入錯誤的挫折感
 - 表單自動復原設計：表單提交後轉換為感謝視窗，滑動頁面直到感謝視窗離開畫面時，將自動切換回連絡表單
 - 將長度為 2:54 的音樂 [Touch - Svyat Illin](https://icons8.com/music/search/touch) 剪輯為 00:31 並在網頁載入後無限循環播放。此外，在點擊連結、填寫連絡表單時加入不同音效，讓網站變得有聲有色
-- [My Portfolio Website](https://rayc2045.github.io/raychang-space/)
+- [See my portfolio website](https://rayc2045.github.io/raychang-space/)

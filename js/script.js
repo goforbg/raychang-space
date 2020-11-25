@@ -63,7 +63,7 @@ class Portfolio {
 			},
 			{
 				title: 'Draggable To-do List',
-				subtitle: 'And automatically saving in LocalStorage',
+				subtitle: 'Featured by autosave and markdown support',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6757018/_____2019-07-09___11.03.44.png',
 				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/06%20-%20%E5%8F%AF%E6%8B%96%E6%8B%89%E4%BB%BB%E5%8B%99%E7%9A%84%20LocalStorage%20%E5%BE%85%E8%BE%A6%E4%BA%8B%E9%A0%85%E6%B8%85%E5%96%AE',
 				destination: 'https://rayc2045.github.io/draggable-localStorage-todoList/'

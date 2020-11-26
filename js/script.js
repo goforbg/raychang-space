@@ -59,14 +59,14 @@ class Portfolio {
 				subtitle: 'Elegantly shows the result immediately',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6901484/_____2019-08-02___4.01.34.png',
 				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/08%20-%20%E5%81%9A%E4%B8%80%E5%80%8B%E5%84%AA%E9%9B%85%E7%9A%84%20Vanilla%20JS%20%E8%A8%88%E7%AE%97%E6%A9%9F%EF%BC%8C%E5%8D%B3%E6%99%82%E9%A1%AF%E7%A4%BA%E8%A8%88%E7%AE%97%E7%B5%90%E6%9E%9C',
-				destination: 'https://rayc2045.github.io/elegant-vanilla-js-calculator/'
+				destination: 'https://rayc2045.github.io/vanilla-calculator/'
 			},
 			{
 				title: 'Draggable To-do List',
 				subtitle: 'Featured by autosave and markdown support',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6757018/_____2019-07-09___11.03.44.png',
 				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/06%20-%20%E5%8F%AF%E6%8B%96%E6%8B%89%E4%BB%BB%E5%8B%99%E7%9A%84%20LocalStorage%20%E5%BE%85%E8%BE%A6%E4%BA%8B%E9%A0%85%E6%B8%85%E5%96%AE',
-				destination: 'https://rayc2045.github.io/draggable-localStorage-todoList/'
+				destination: 'https://rayc2045.github.io/draggable-todoList/'
 			},
 			{
 				title: 'Day/Night Transition Postcard',

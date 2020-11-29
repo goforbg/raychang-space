@@ -27,13 +27,6 @@ class Portfolio {
 		this.footerEl = document.querySelector('footer');
 		this.works = [
 			{
-				title: 'Ray Chang Space',
-				subtitle: '2.5D Portfolio Website with Smooth-scrolling',
-				cover:'https://cdn.dribbble.com/users/3800131/screenshots/11317150/media/08465ea718d17273f4800b2f490e65e7.png',
-				github: 'https://github.com/rayc2045/raychang-space',
-				destination: 'https://rayc2045.github.io/raychang-space/'
-			},
-			{
 				title: 'Horizontal Scrolling Theater',
 				subtitle: 'Enjoy the movie purchasing',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',

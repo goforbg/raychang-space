@@ -135,7 +135,7 @@ class Portfolio {
 			window.scrollTo(0, 0);
 		};
 
-		this.formEl.onkeydown = () => this.soundPlay(this.typingSound);
+		this.formEl.onkeydown = () => this.soundPlay(this.typingSound, 0.65);
 
 		this.textareaEls.forEach(el => {
 			el.oninput = e => {this.autoExpand(e); this.resizeBodyHeight();};

@@ -337,7 +337,6 @@ class Portfolio {
 		if (!this.isValidated) return false;
 		this.emptyForm();
 		this.hideForm();
-		this.removeElement(document.querySelector('.circle')); // Stop the interactive effect when the form switching to appreciation block
 
 		setTimeout(() => {
 			const receiver = 'rayc2045@gmail.com';

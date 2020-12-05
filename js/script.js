@@ -28,7 +28,7 @@ class Portfolio {
 		this.works = [
 			{
 				title: 'Ghibli Gallery App',
-				subtitle: 'Remaster Ghibli\'s Work Album with Vue 3',
+				subtitle: 'Remaster Ghibli\'s Work Album with Vue 3.0',
 				cover:'https://cdn.dribbble.com/users/3800131/screenshots/14489502/media/e740658dea07f7e82afa9e88d4dd880a.png',
 				github: 'https://github.com/rayc2045/ghibli-gallery',
 				destination: 'https://rayc2045.github.io/ghibli-gallery/'

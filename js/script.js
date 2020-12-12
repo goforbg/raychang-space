@@ -340,8 +340,8 @@ class Portfolio {
 
 		setTimeout(() => {
 			const receiver = 'rayc2045@gmail.com';
+			location.target = '_top';
 			location.href = `mailto:${receiver}?subject=${this.inputSubjectEl.value}&body=${this.textareaMessageEl.value}`;
-			// 製作網頁表單：https://medium.com/@AntheaLee/%E5%A6%82%E4%BD%95%E8%A3%BD%E4%BD%9C-%E8%81%AF%E7%B5%A1%E6%88%91%E5%80%91-%E7%B6%B2%E9%A0%81%E8%A1%A8%E5%96%AE-3df78756ec81
 		}, 800)
 	}
 

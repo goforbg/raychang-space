@@ -348,28 +348,28 @@ class Portfolio {
 	checkForm() {
 		// Check empty
 		if (!this.inputNameEl.value.trim()) {
-			this.alertAnimate(this.inputNameEl.parentNode);
 			this.isValidated = false;
+			this.alertAnimate(this.inputNameEl.parentNode);
 		}
 		if (!this.inputEmailEl.value.trim()) {
-			this.alertAnimate(this.inputEmailEl.parentNode);
 			this.isValidated = false;
+			this.alertAnimate(this.inputEmailEl.parentNode);
 		}
 		if (!this.inputSubjectEl.value.trim()) {
-			this.alertAnimate(this.inputSubjectEl.parentNode);
 			this.isValidated = false;
+			this.alertAnimate(this.inputSubjectEl.parentNode);
 		}
 		if (!this.textareaMessageEl.value.trim()) {
+			this.isValidated = false;
 			this.alertAnimate(this.titleMessageEl);
 			this.alertAnimate(this.textareaMessageEl.parentNode);
-			this.isValidated = false;
 		}
 		// Check email format
 		const emailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 		if (!this.inputEmailEl.value.trim().match(emailFormat)) {
-			this.alertAnimate(this.inputEmailEl.parentNode);
 			this.isValidated = false;
+			this.alertAnimate(this.inputEmailEl.parentNode);
 		}
 	}
 

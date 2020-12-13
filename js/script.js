@@ -30,56 +30,56 @@ class Portfolio {
 				title: 'Ghibli Gallery App',
 				subtitle: 'Remaster Studio Ghibli\'s Work Album with Vue 3.0',
 				cover:'https://cdn.dribbble.com/users/3800131/screenshots/14489502/media/e740658dea07f7e82afa9e88d4dd880a.png',
-				github: 'https://github.com/rayc2045/ghibli-gallery',
-				destination: 'https://rayc2045.github.io/ghibli-gallery/'
+				info: 'https://github.com/rayc2045/ghibli-gallery',
+				link: 'https://rayc2045.github.io/ghibli-gallery/'
 			},
 			{
 				title: 'Horizontal Scrolling Theater',
 				subtitle: 'Enjoy the movie purchasing',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',
-				github:'https://github.com/rayc2045/f2e-portfolio/tree/master/13%20-%20%E7%94%A8%20Vue%20%E5%92%8C%20API%20%E5%81%9A%E4%B8%80%E5%80%8B%E6%A9%AB%E5%90%91%E6%8D%B2%E5%8B%95%E9%9B%BB%E5%BD%B1%E8%B3%BC%E7%89%A9%E9%A0%81%E9%9D%A2',
-				destination: 'https://rayc2045.github.io/horizontal-scrolling-theater/'
+				info:'https://github.com/rayc2045/horizontal-scrolling-theater',
+				link: 'https://rayc2045.github.io/horizontal-scrolling-theater/'
 			},
 			{
 				title: 'Block Memory Game',
 				subtitle: 'How many levels can you accomplish?',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/10000193/media/5a5acc6684a86a5f46a9b4cd34f4df8e.gif',
-				github:'https://github.com/rayc2045/f2e-portfolio/tree/master/09%20-%20%E6%96%B9%E5%A1%8A%E8%A8%98%E6%86%B6%E9%81%8A%E6%88%B2%20%E2%80%93%20%E4%BD%A0%E8%83%BD%E7%8E%A9%E5%88%B0%E7%AC%AC%E5%B9%BE%E9%97%9C%EF%BC%9F',
-				destination: 'https://codepen.io/rayc2045/full/eYNmMZe'
+				info:'https://github.com/rayc2045/f2e-portfolio/tree/master/09%20-%20%E6%96%B9%E5%A1%8A%E8%A8%98%E6%86%B6%E9%81%8A%E6%88%B2%20%E2%80%93%20%E4%BD%A0%E8%83%BD%E7%8E%A9%E5%88%B0%E7%AC%AC%E5%B9%BE%E9%97%9C%EF%BC%9F',
+				link: 'https://codepen.io/rayc2045/full/eYNmMZe'
 			},
 			{
 				title: 'Vanilla Calculator',
 				subtitle: 'Elegantly shows the result immediately',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6901484/_____2019-08-02___4.01.34.png',
-				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/08%20-%20%E5%81%9A%E4%B8%80%E5%80%8B%E5%84%AA%E9%9B%85%E7%9A%84%20Vanilla%20JS%20%E8%A8%88%E7%AE%97%E6%A9%9F%EF%BC%8C%E5%8D%B3%E6%99%82%E9%A1%AF%E7%A4%BA%E8%A8%88%E7%AE%97%E7%B5%90%E6%9E%9C',
-				destination: 'https://rayc2045.github.io/vanilla-calculator/'
+				info: 'https://github.com/rayc2045/vanilla-calculator',
+				link: 'https://rayc2045.github.io/vanilla-calculator/'
 			},
 			{
 				title: 'Draggable To-do List',
 				subtitle: 'Featured by autosave and markdown support',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/14655703/media/f45bd7c734c9acc23572c989a9703ef4.png',
-				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/06%20-%20%E5%8F%AF%E6%8B%96%E6%8B%89%E4%BB%BB%E5%8B%99%E7%9A%84%20LocalStorage%20%E5%BE%85%E8%BE%A6%E4%BA%8B%E9%A0%85%E6%B8%85%E5%96%AE',
-				destination: 'https://rayc2045.github.io/draggable-todoList/'
+				info: 'https://github.com/rayc2045/draggable-todoList',
+				link: 'https://rayc2045.github.io/draggable-todoList/'
 			},
 			{
 				title: 'Day/Night Transition Postcard',
 				subtitle: 'Absolutely the modern way to share story',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6754986/_____2019-07-05___2.28.36.gif',
-				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/05%20-%20%E5%AF%AB%E4%B8%80%E5%BC%B5%E5%8B%95%E6%85%8B%E6%98%8E%E4%BF%A1%E7%89%87%20%E2%80%93%20%E5%B8%8C%E8%87%98%E6%84%9B%E6%83%85%E6%B5%B7%20%E8%81%96%E6%89%98%E9%87%8C%E5%B0%BC%E5%B3%B6%E5%B0%8F%E7%99%BD%E6%88%BF',
-				destination: 'https://codepen.io/rayc2045/full/EBGaZQ'
+				info: 'https://github.com/rayc2045/f2e-portfolio/tree/master/05%20-%20%E5%AF%AB%E4%B8%80%E5%BC%B5%E5%8B%95%E6%85%8B%E6%98%8E%E4%BF%A1%E7%89%87%20%E2%80%93%20%E5%B8%8C%E8%87%98%E6%84%9B%E6%83%85%E6%B5%B7%20%E8%81%96%E6%89%98%E9%87%8C%E5%B0%BC%E5%B3%B6%E5%B0%8F%E7%99%BD%E6%88%BF',
+				link: 'https://codepen.io/rayc2045/full/EBGaZQ'
 			},
 			{
 				title: 'Apple Magic Keyboard',
 				subtitle: 'Made by pure codes of course',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736810/_____2019-07-05___2.06.35.png',
-				github: 'https://github.com/rayc2045/f2e-portfolio/tree/master/03%20-%20%E4%BD%BF%E7%94%A8%20CSS%20Grid%20%E5%92%8C%20Flexbox%20%E6%89%8B%E5%88%BB%E4%B8%80%E5%80%8B%20Mac%20%E9%8D%B5%E7%9B%A4',
-				destination: 'https://codepen.io/rayc2045/full/ZdVzmZ'
+				info: 'https://github.com/rayc2045/f2e-portfolio/tree/master/03%20-%20%E4%BD%BF%E7%94%A8%20CSS%20Grid%20%E5%92%8C%20Flexbox%20%E6%89%8B%E5%88%BB%E4%B8%80%E5%80%8B%20Mac%20%E9%8D%B5%E7%9B%A4',
+				link: 'https://codepen.io/rayc2045/full/ZdVzmZ'
 			},
 			{
 				title: 'Medium Blog',
 				subtitle: 'Read my latest technical article',
-				cover: 'https://raw.githubusercontent.com/rayc2045/raychang-space/master/img/medium-logo-transparent.png',
-				destination: 'https://medium.com/@raychangdesign/'
+				cover: '/img/medium-logo-transparent.png',
+				link: 'https://medium.com/@raychangdesign/'
 			}
 		];
 		// this.workEls = document.querySelectorAll('.work');
@@ -295,16 +295,13 @@ class Portfolio {
 			listEl.classList.add('work');
 
 			listEl.innerHTML = `
-				<a href="${this.works[i].destination}" target="_blank" rel="noreferrer noopener">
+				<a href="${this.works[i].link}" target="_blank" rel="noreferrer noopener">
           <img src="${this.works[i].cover}" alt="${this.works[i].title}" loading="lazy">
         </a>
         <section>
           <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>
           <div class="title">${this.works[i].title}</div>
-          <div class="subtitle">${this.works[i].subtitle}${this.works[i].github
-				? ` (<a class="link" href="${this.works[i]
-						.github}" target="_blank" rel="noreferrer noopener">info</a>)`
-				: ''}</div>
+          <div class="subtitle">${this.works[i].subtitle}${this.works[i].info ? ` (<a class="info" href="${this.works[i].info}" target="_blank" rel="noreferrer noopener">info</a>)` : ''}</div>
 				</section>`;
 
 			this.worksEl.appendChild(listEl);

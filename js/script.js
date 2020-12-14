@@ -79,7 +79,7 @@ class Portfolio {
 			{
 				title: 'Medium Blog',
 				subtitle: 'Read my latest technical article',
-				cover: '/img/medium-logo-transparent.png',
+				cover: 'https://raw.githubusercontent.com/rayc2045/raychang-space/master/img/medium-logo-transparent.png',
 				link: 'https://medium.com/@raychangdesign/'
 			}
 		];

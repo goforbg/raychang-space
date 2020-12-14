@@ -17,6 +17,7 @@ class Portfolio {
 		this.inputEls = document.querySelectorAll('input');
 		this.textareaEls = document.querySelectorAll('textarea');
 		this.inputNameEl = document.querySelector('.input-name');
+		this.inputCompanyEl = document.querySelector('.input-company');
 		this.inputEmailEl = document.querySelector('.input-email');
 		this.inputSubjectEl = document.querySelector('.input-subject');
 		this.titleMessageEl = document.querySelector('.title-message');
@@ -343,30 +344,30 @@ class Portfolio {
 	}
 
 	checkForm() {
-		// Check empty
-		if (!this.inputNameEl.value.trim()) {
+		this.inputNameEl.value = this.removeTag(this.inputNameEl.value);
+		this.inputCompanyEl.value = this.removeTag(this.inputCompanyEl.value);
+		this.inputEmailEl.value = this.removeTag(this.inputEmailEl.value);
+		this.inputSubjectEl.value = this.removeTag(this.inputSubjectEl.value);
+		this.textareaMessageEl.value = this.removeTag(this.textareaMessageEl.value);
+
+		const emailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+		if (!this.inputNameEl.value) {
 			this.isValidated = false;
 			this.alertAnimate(this.inputNameEl.parentNode);
 		}
-		if (!this.inputEmailEl.value.trim()) {
+		if (!this.inputEmailEl.value.match(emailFormat)) {
 			this.isValidated = false;
 			this.alertAnimate(this.inputEmailEl.parentNode);
 		}
-		if (!this.inputSubjectEl.value.trim()) {
+		if (!this.inputSubjectEl.value) {
 			this.isValidated = false;
 			this.alertAnimate(this.inputSubjectEl.parentNode);
 		}
-		if (!this.textareaMessageEl.value.trim()) {
+		if (!this.textareaMessageEl.value) {
 			this.isValidated = false;
 			this.alertAnimate(this.titleMessageEl);
 			this.alertAnimate(this.textareaMessageEl.parentNode);
-		}
-		// Check email format
-		const emailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-		if (!this.inputEmailEl.value.trim().match(emailFormat)) {
-			this.isValidated = false;
-			this.alertAnimate(this.inputEmailEl.parentNode);
 		}
 	}
 
@@ -374,6 +375,13 @@ class Portfolio {
 		if (el.classList.contains('alert')) return;
 		el.classList.add('alert');
 		setTimeout(() => el.classList.remove('alert'), 1000);
+	}
+
+	removeTag(text) {
+		return String(text)
+			.trim()
+			.replace(/%3C/gi, '')
+			.replace(/(<([^>]+)>)/gi, '');
 	}
 
 	emptyForm() {

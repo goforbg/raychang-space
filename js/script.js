@@ -45,8 +45,8 @@ class Portfolio {
 				title: 'Block Memory Game',
 				subtitle: 'How many levels can you accomplish?',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/10000193/media/5a5acc6684a86a5f46a9b4cd34f4df8e.gif',
-				info:'https://github.com/rayc2045/f2e-portfolio/tree/master/09%20-%20%E6%96%B9%E5%A1%8A%E8%A8%98%E6%86%B6%E9%81%8A%E6%88%B2%20%E2%80%93%20%E4%BD%A0%E8%83%BD%E7%8E%A9%E5%88%B0%E7%AC%AC%E5%B9%BE%E9%97%9C%EF%BC%9F',
-				link: 'https://codepen.io/rayc2045/full/eYNmMZe'
+				info: 'https://github.com/rayc2045/block-memory-game',
+				link: 'https://rayc2045.github.io/block-memory-game/'
 			},
 			{
 				title: 'Vanilla Calculator',
@@ -61,20 +61,6 @@ class Portfolio {
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/14655703/media/f45bd7c734c9acc23572c989a9703ef4.png',
 				info: 'https://github.com/rayc2045/draggable-todoList',
 				link: 'https://rayc2045.github.io/draggable-todoList/'
-			},
-			{
-				title: 'Day/Night Transition Postcard',
-				subtitle: 'Absolutely the modern way to share story',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6754986/_____2019-07-05___2.28.36.gif',
-				info: 'https://github.com/rayc2045/f2e-portfolio/tree/master/05%20-%20%E5%AF%AB%E4%B8%80%E5%BC%B5%E5%8B%95%E6%85%8B%E6%98%8E%E4%BF%A1%E7%89%87%20%E2%80%93%20%E5%B8%8C%E8%87%98%E6%84%9B%E6%83%85%E6%B5%B7%20%E8%81%96%E6%89%98%E9%87%8C%E5%B0%BC%E5%B3%B6%E5%B0%8F%E7%99%BD%E6%88%BF',
-				link: 'https://codepen.io/rayc2045/full/EBGaZQ'
-			},
-			{
-				title: 'Apple Magic Keyboard',
-				subtitle: 'Made by pure codes of course',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6736810/_____2019-07-05___2.06.35.png',
-				info: 'https://github.com/rayc2045/f2e-portfolio/tree/master/03%20-%20%E4%BD%BF%E7%94%A8%20CSS%20Grid%20%E5%92%8C%20Flexbox%20%E6%89%8B%E5%88%BB%E4%B8%80%E5%80%8B%20Mac%20%E9%8D%B5%E7%9B%A4',
-				link: 'https://codepen.io/rayc2045/full/ZdVzmZ'
 			},
 			{
 				title: 'Medium Blog',

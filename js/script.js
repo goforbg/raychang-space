@@ -93,8 +93,10 @@ class Portfolio {
 		document.ondragstart = () => false;
 		document.oncontextmenu = () => false;
 		document.onmouseup = e => {
-			if (e.which !== 3 && e.target.hasAttribute('href'))
+			if (e.target.hasAttribute('href')) {
 				this.soundPlay(this.pagingSound);
+				if (e.which === 3) window.open(e.target.href, '_blank');
+			};
 		};
 
 		this.containerEl.onmousedown = e => this.appendCircle(e);
@@ -318,8 +320,7 @@ class Portfolio {
 
 		setTimeout(() => {
 			const receiver = 'rayc2045@gmail.com';
-			location.target = '_top';
-			location.href = `mailto:${receiver}?subject=${this.inputSubjectEl.value}&body=${this.textareaMessageEl.value}`;
+			window.open(`mailto:${receiver}?subject=${this.inputSubjectEl.value}&body=${this.textareaMessageEl.value}`, '_top');
 		}, 800)
 	}
 

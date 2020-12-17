@@ -78,16 +78,6 @@ class Portfolio {
 	}
 
 	events() {
-		document.onselectstart = () => {
-			return false;
-		};
-		document.ondragstart = () => {
-			return false;
-		};
-		document.oncontextmenu = () => {
-			return false;
-		};
-
 		this.preventScroll();
 		this.updateDate();
 		this.updateWorks();
@@ -99,8 +89,12 @@ class Portfolio {
 			this.smoothScroll();
 		}
 		
+		document.onselectstart = () => false;
+		document.ondragstart = () => false;
+		document.oncontextmenu = () => false;
 		document.onmouseup = e => {
-			if (e.target.hasAttribute('href')) this.soundPlay(this.pagingSound);
+			if (e.which !== 3 && e.target.hasAttribute('href'))
+				this.soundPlay(this.pagingSound);
 		};
 
 		this.containerEl.onmousedown = e => this.appendCircle(e);

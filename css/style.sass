@@ -121,7 +121,7 @@ a, .contact, .toTop
   &:visited
     color: $black
 
-picture source, img
+picture source, img, video
   +size(100%, auto)
   pointer-events: none
 
@@ -260,14 +260,12 @@ main
         transition: background-color $transitionTime
         &:hover
           background-color: transparent
-          img
-            animation-play-state: running
+          img, video
             filter: grayscale(0%)
       &:last-child a
         &:hover
           background-color: $lightGrey2
-      img
-        animation-play-state: paused
+      img, video
         filter: grayscale(100%)
         transition: filter $transitionTime
   .work

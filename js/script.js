@@ -30,44 +30,44 @@ class Portfolio {
 			{
 				title: 'Ghibli Gallery App',
 				subtitle: 'Remaster Studio Ghibli\'s Work Album with Vue 3.0',
-				cover:'https://cdn.dribbble.com/users/3800131/screenshots/14489502/media/e740658dea07f7e82afa9e88d4dd880a.png',
+				cover:'../img/webp/ghibli_gallery_app.webp',
 				info: 'https://github.com/rayc2045/ghibli-gallery',
 				link: 'https://rayc2045.github.io/ghibli-gallery/'
 			},
 			{
 				title: 'Horizontal Scrolling Theater',
 				subtitle: 'Enjoy the movie purchasing',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/11028118/media/8ba2db964d4f882bd59e50050cb09c46.png',
+				cover: '../img/webp/horizontal_scrolling_theater.webp',
 				info:'https://github.com/rayc2045/horizontal-scrolling-theater',
 				link: 'https://rayc2045.github.io/horizontal-scrolling-theater/'
 			},
 			{
 				title: 'Block Memory Game',
 				subtitle: 'How many levels can you accomplish?',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/10000193/media/5a5acc6684a86a5f46a9b4cd34f4df8e.gif',
-				video: 'https://raw.githubusercontent.com/rayc2045/block-memory-game/main/demo/demo.webm',
+				cover: '../img/webp/block_memory_game.webp',
+				video: '../video/webm/block_memory_game.webm',
 				info: 'https://github.com/rayc2045/block-memory-game',
 				link: 'https://rayc2045.github.io/block-memory-game/'
 			},
 			{
 				title: 'Vanilla Calculator',
 				subtitle: 'Elegantly shows the result immediately',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/6901484/_____2019-08-02___4.01.34.png',
+				cover: '../img/webp/vanilla_calculator.webp',
 				info: 'https://github.com/rayc2045/vanilla-calculator',
 				link: 'https://rayc2045.github.io/vanilla-calculator/'
 			},
 			{
 				title: 'Draggable To-do List',
 				subtitle: 'Featured by autosave and markdown support',
-				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/14655703/media/f45bd7c734c9acc23572c989a9703ef4.png',
-				video: 'https://raw.githubusercontent.com/rayc2045/draggable-todoList/master/demo/demo.webm',
+				cover: '../img/webp/draggable_todo_list.webp',
+				video: '../video/webm/draggable_todo_list.webm',
 				info: 'https://github.com/rayc2045/draggable-todoList',
 				link: 'https://rayc2045.github.io/draggable-todoList/'
 			},
 			{
 				title: 'Medium Blog',
 				subtitle: 'Read my latest technical article',
-				cover: 'https://raw.githubusercontent.com/rayc2045/raychang-space/master/img/medium-logo-transparent.png',
+				cover: '../img/webp/medium_logo_transparent.webp',
 				link: 'https://medium.com/@raychangdesign/'
 			}
 		];

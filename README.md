@@ -13,7 +13,7 @@
 - 以自製格式輸出當前時間到網頁主畫面，增添報紙風格設計感
 - 加入 [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/) 平滑滾動功能，使用滑鼠捲動網頁就像滑手機一樣順
 - 使用 [GSAP](https://greensock.com/gsap/) 做滾動視差<!-- - 使用 [Rellax](https://dixonandmoe.com/rellax/) 做滾動視差 -->，再透過過 [ScrollTrigger](https://greensock.com/scrolltrigger/) 綁定平滑滾動與滾動視差功能，實現立體感網站
-- 大型圖片、影片資源採用 [WebP](https://developers.google.com/speed/webp)/[WebM](https://web.dev/efficient-animated-content/) 格式呈現，減少 50% 以上檔案大小
+- 大型圖片、影片資源採用 [WebP](https://developers.google.com/speed/webp)/[WebM](https://web.dev/efficient-animated-content/) 格式呈現，減少 82% 檔案大小
 - 作品圖片使用延遲載入技術 [Lazy loading](https://web.dev/browser-level-image-lazy-loading/)，提升網頁載入效率
 - 將鼠標碰觸作品圖的互動效果以使用者設備為條件做分離，使用電腦瀏覽器開啟網頁才會加入
 - 將聯絡表單的 Textarea 做自適應設計，隨著文字量做擴展或內縮

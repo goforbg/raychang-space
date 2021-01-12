@@ -45,7 +45,7 @@ class Portfolio {
 				title: 'Block Memory Game',
 				subtitle: 'How many levels can you accomplish?',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/10000193/media/5a5acc6684a86a5f46a9b4cd34f4df8e.gif',
-				video: 'https://github.com/rayc2045/block-memory-game/blob/main/demo.webm?raw=true',
+				video: 'https://raw.githubusercontent.com/rayc2045/block-memory-game/main/demo/demo.webm',
 				info: 'https://github.com/rayc2045/block-memory-game',
 				link: 'https://rayc2045.github.io/block-memory-game/'
 			},
@@ -60,7 +60,7 @@ class Portfolio {
 				title: 'Draggable To-do List',
 				subtitle: 'Featured by autosave and markdown support',
 				cover: 'https://cdn.dribbble.com/users/3800131/screenshots/14655703/media/f45bd7c734c9acc23572c989a9703ef4.png',
-				video: 'https://github.com/rayc2045/draggable-todoList/blob/master/demo.webm?raw=true',
+				video: 'https://raw.githubusercontent.com/rayc2045/draggable-todoList/master/demo/demo.webm',
 				info: 'https://github.com/rayc2045/draggable-todoList',
 				link: 'https://rayc2045.github.io/draggable-todoList/'
 			},

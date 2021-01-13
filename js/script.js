@@ -53,6 +53,7 @@ class Portfolio {
 				title: 'Vanilla Calculator',
 				subtitle: 'Elegantly shows the result immediately',
 				cover: '../img/webp/vanilla_calculator.webp',
+				// video: '../video/webm/vanilla_calculator.webm',
 				info: 'https://github.com/rayc2045/vanilla-calculator',
 				link: 'https://rayc2045.github.io/vanilla-calculator/'
 			},
@@ -83,11 +84,11 @@ class Portfolio {
 		this.preventScroll();
 		this.updateDate();
 		this.updateWorks();
-		this.parallax();
-
+		
 		if (!this.isTouchDevice) {
 			// document.onmousemove = e => this.antiMouseMove(e, this.nameEl, 80);
 			this.activateHoverInteraction(this.worksEl, this.footerEl);
+			this.parallax();
 			this.smoothScroll();
 		}
 		
@@ -141,7 +142,7 @@ class Portfolio {
 		// window.onfocus = () => this.backgroundMusicEl.play();
 
 		window.onresize = () => {
-			this.resetParallax();
+			if (!this.isTouchDevice) this.resetParallax();
 			setTimeout(() => this.resizeBodyHeight(), 500);
 		};
 	}
@@ -207,14 +208,12 @@ class Portfolio {
 	}
 
 	parallax() {
-		// Best on 16:10 full screen (MacBook)
+		// Best view on 16:10 full screen (MacBook)
 		this.gsapWithScrollTrigger('.circle-yellow', { y: 1200 * this.screenScale });
 		this.gsapWithScrollTrigger('.circle-orange', { y: 2400 * this.screenScale });
 		this.gsapWithScrollTrigger('.article-left', { y: 200 * this.screenScale });
 		this.gsapWithScrollTrigger('.article-right', { y: 200 * this.screenScale });
-		this.gsapWithScrollTrigger('.avatar', { y: -750 * this.screenScale });
 		this.gsapWithScrollTrigger('.name', { y: -500 * this.screenScale });
-		this.gsapWithScrollTrigger('.description', { y: -250 * this.screenScale });
 	}
 
 	gsapWithScrollTrigger(className, animation, scrub = 1) {

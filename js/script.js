@@ -283,8 +283,13 @@ class Portfolio {
 					${this.works[i].video
 						?`<video autoplay loop muted playsinline>
 								<source src="${this.works[i].video}">
+								<source src="${this.works[i].video.replace(/webm/g, 'original').replace('.original', '.mov')}">
 							</video>`
-						: `<img src="${this.works[i].cover}" alt="${this.works[i].title}" loading="lazy">`}_
+						:`<picture>
+								<source srcset="${this.works[i].cover}" type="image/webp">
+								<source srcset="${this.works[i].cover.replace(/webp/g, 'original').replace('.original', '.png')}" type="image/png"> 
+								<img src="${this.works[i].cover.replace(/webp/g, 'original').replace('.original', '.png')}" alt="${this.works[i].title}" loading="lazy">
+							</picture>`}_
         </a>
         <section>
           <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>

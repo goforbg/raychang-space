@@ -285,7 +285,7 @@ class Portfolio {
 						?`<video autoplay loop muted playsinline>
 								<source src="${this.works[i].video}">
 							</video>`
-						: `<img src="${this.works[i].cover}" alt="${this.works[i].title}" loading="lazy">`}
+						: `<img src="${this.works[i].cover}" alt="${this.works[i].title}" loading="lazy">`}_
         </a>
         <section>
           <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>

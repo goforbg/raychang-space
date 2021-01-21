@@ -117,8 +117,8 @@ class Portfolio {
     this.formEl.onkeydown = e => {
       console.log(e.target.value);
       setTimeout(() => (e.target.value = this.cleanText(e.target.value)));
-      // if (e.target.classList.contains('input-email'))
-      // 	setTimeout(() => (e.target.value = this.formatEmail(e.target.value)));
+      if (e.target.classList.contains('input-email'))
+      	setTimeout(() => (e.target.value = this.textWithoutWhiteSpace(e.target.value)));
       this.soundPlay(this.typingSound, 0.65);
     };
 
@@ -323,6 +323,10 @@ class Portfolio {
         .replace(/  /g, ' ')
         .replace(/%3C/gi, '')
         .replace(/(<([^>]+)>)/gi, ''); // remove tags
+  }
+
+  textWithoutWhiteSpace(str) {
+    return str.replace(/ /g, '');
   }
 
   // formatName(str) {

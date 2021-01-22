@@ -109,7 +109,7 @@ html, body
   // padding: 3.18rem 5.6rem
   // background-image: $noise
 
-a, .contact, .toTop
+a, .contact, .to-top
   font-size: 1rem
   color: $black
   text-decoration: underline
@@ -195,7 +195,7 @@ main
     top: 17.2rem + $mainElOffset
     +size(16.73rem)
     background-color: $yellow
-  .circle-orange
+  .circle-red
     left: 38.6rem
     top: -1.5rem + $mainElOffset
     +size(20.9rem)
@@ -391,21 +391,23 @@ footer
   position: relative
   left: 50%
   transform: translateX(-50%)
-  width: 12.5rem
+  width: 12.7rem
   font-size: 1.1rem
   text-align: center
-  .toTop
+  .to-top
+    margin: 0 auto
     display: none
+    width: 8.01rem
   &.hover-interaction
     p
       display: block
-    .toTop
+    .to-top
       font-size: 1.1rem
       display: none
     &:hover
       p
         display: none
-      .toTop
+      .to-top
         display: block
 
 // Design, Programming .article screenshot setting

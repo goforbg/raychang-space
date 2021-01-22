@@ -10,7 +10,7 @@ class Portfolio {
     this.containerEl = document.querySelector('.container');
     this.contactButton = document.querySelector('.contact');
     this.contactEl = document.querySelector('#contact');
-    this.toTopButton = document.querySelector('.toTop');
+    this.toTopButton = document.querySelector('.to-top');
     this.dateEl = document.querySelector('.date');
     this.worksEl = document.querySelector('.works');
     this.formEl = document.querySelector('form');
@@ -216,7 +216,7 @@ class Portfolio {
   parallax() {
     // Best view on 16:10 full screen (MacBook)
     this.gsapWithScrollTrigger('.circle-yellow', { y: 1200 * this.screenScale });
-    this.gsapWithScrollTrigger('.circle-orange', { y: 2400 * this.screenScale });
+    this.gsapWithScrollTrigger('.circle-red', { y: 2400 * this.screenScale });
     this.gsapWithScrollTrigger('.article-left', { y: 200 * this.screenScale });
     this.gsapWithScrollTrigger('.article-right', { y: 200 * this.screenScale });
     this.gsapWithScrollTrigger('.name', { y: -500 * this.screenScale });

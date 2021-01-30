@@ -91,7 +91,7 @@ $noiseIntense: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAA
   outline: none
   appearance: none
   -webkit-touch-callout: none
-  cursor: url('../img/webp/arrow.webp'), auto
+  cursor: url('../img/webp/arrow.webp'), url('../img/original/arrow.png'), auto
 
 html, body
   margin: 0
@@ -113,7 +113,7 @@ a, .contact, .to-top
   font-size: 1rem
   color: $black
   text-decoration: underline
-  cursor: url('../img/webp/hover.webp'), pointer
+  cursor: url('../img/webp/hover.webp'), url('../img/original/hover.png'), pointer
   &:active
     color: $black
   &:visited
@@ -130,7 +130,7 @@ input, textarea, button
   background-color: transparent
   font-family: 'Merriweather', serif
 button
-  cursor: url('../img/webp/hover.webp'), pointer
+  cursor: url('../img/webp/hover.webp'), url('../img/original/hover.png'), pointer
 
 .loading
   +size(100%)
@@ -306,7 +306,7 @@ main
         color: $mediumGrey
       .info
         background-color: transparent
-        cursor: url('../img/webp/hover.webp'), pointer
+        cursor: url('../img/webp/hover.webp'), url('../img/original/hover.png'), pointer
         &:hover
           background-color: transparent
 
@@ -464,12 +464,11 @@ footer
       position: static
       font-size: 3.2rem
     .description
+      display: block
       margin-bottom: 2rem
       text-align: center
       width: 80%
-    .description, .description a
-      display: inline-block
-      font-size: 1.2rem
+      font-size: 1.25rem
       color: $mediumGrey
 
   .design-guide

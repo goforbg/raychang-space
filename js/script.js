@@ -115,7 +115,7 @@ class Portfolio {
     };
 
     this.formEl.onkeydown = e => {
-      console.log(e.target.value);
+      // console.log(e.target.value);
       setTimeout(() => (e.target.value = this.cleanText(e.target.value)));
       if (e.target.classList.contains('input-email'))
       	setTimeout(() => (e.target.value = this.textWithoutWhiteSpace(e.target.value)));

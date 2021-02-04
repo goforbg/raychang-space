@@ -81,6 +81,7 @@ class Portfolio {
     ];
     // this.workEls = document.querySelectorAll('.work');
     this.isTouchDevice = 'ontouchstart' in document.documentElement;
+    this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
     this.bodyWidth = document.body.getBoundingClientRect().width;
     this.screenScale = this.bodyWidth / 1280;
     this.isValidated = false;
@@ -96,7 +97,7 @@ class Portfolio {
       // document.onmousemove = e => this.antiMouseMove(e, this.nameEl, 80);
       this.activateHoverInteraction(this.worksEl, this.footerEl);
       this.parallax();
-      this.smoothScroll();
+      if (!this.isFirefox) this.smoothScroll();
     }
 
     document.onselectstart = () => false;

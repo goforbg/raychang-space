@@ -66,6 +66,13 @@ class Portfolio {
         link: 'https://rayc2045.github.io/draggable-todoList/',
       },
       {
+        title: 'Codewars Challenge',
+        subtitle: 'Join the journey of achieving code mastery',
+        cover: '../img/webp/codewars.webp',
+        info: 'https://github.com/rayc2045/codewars-challenge',
+        link: 'https://github.com/rayc2045/codewars-challenge',
+      },
+      {
         title: 'Medium Blog',
         subtitle: 'Read my latest technical article',
         cover: '../img/webp/medium_logo_transparent.webp',

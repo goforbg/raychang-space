@@ -412,6 +412,17 @@ footer
       .to-top
         display: block
 
+.copyright
+  position: absolute
+  left: 2rem
+  bottom: 1.65rem
+  font-family: sans-serif
+  font-weight: normal
+  font-size: 0.8rem
+  letter-spacing: 0
+  color: $mediumGrey
+  pointer-events: none
+
 // Design, Programming .article screenshot setting
 // @media screen and (max-width: 1280px) // size ≤ 1280px
 //   body
@@ -431,13 +442,6 @@ footer
       picture
         source, img
           display: block
-
-@media screen and (max-width: 767px) // portrait, ≤ 767px
-  nav
-    .date
-      font-size: 1.3rem
-  main
-    top: - $mainElOffset - 0.5rem
 
 @media screen and (orientation: portrait) and (max-width: 767px) // portrait, ≤ 767px
   html
@@ -514,6 +518,20 @@ footer
       margin: 0
       margin-top: 2.5rem
       +size(auto, auto)
+
+  .copyright
+    margin-top: $gapSize / 2.5
+    position: relative
+    left: 0
+    top: 0
+    text-align: center
+
+@media screen and (max-width: 767px) // portrait, ≤ 767px
+  nav
+    .date
+      font-size: 1.3rem
+  main
+    top: - $mainElOffset - 0.5rem
 
   // Rotate document.html -90deg: https://css-tricks.com/snippets/css/orientation-lock/
   // html

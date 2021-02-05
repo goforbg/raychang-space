@@ -415,7 +415,7 @@ footer
 .copyright
   position: absolute
   left: 2rem
-  bottom: 1.65rem
+  bottom: 1.3rem
   font-family: sans-serif
   font-weight: normal
   font-size: 0.8rem
@@ -442,6 +442,13 @@ footer
       picture
         source, img
           display: block
+
+@media screen and (max-width: 767px) // portrait, ≤ 767px
+  nav
+    .date
+      font-size: 1.3rem
+  main
+    top: - $mainElOffset - 0.5rem
 
 @media screen and (orientation: portrait) and (max-width: 767px) // portrait, ≤ 767px
   html
@@ -526,13 +533,6 @@ footer
     top: 0
     font-size: 0.9rem
     text-align: center
-
-@media screen and (max-width: 767px) // portrait, ≤ 767px
-  nav
-    .date
-      font-size: 1.3rem
-  main
-    top: - $mainElOffset - 0.5rem
 
   // Rotate document.html -90deg: https://css-tricks.com/snippets/css/orientation-lock/
   // html

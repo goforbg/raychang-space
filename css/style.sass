@@ -255,19 +255,14 @@ main
   margin-bottom: $gapSize / 2
   border-bottom: 0.1rem solid $mediumGrey
   &.hover-interaction
-    .work
-      a
-        transition: background-color $transitionTime
-        &:hover
-          background-color: transparent
-          img, video
-            filter: grayscale(0%)
-      &:last-child a
-        &:hover
-          background-color: $lightGrey2
-      img, video
-        filter: grayscale(100%)
-        transition: filter $transitionTime
+    .work a
+      filter: grayscale(100%)
+      background-color: $lightGrey
+      transition: filter $transitionTime, background-color $transitionTime
+      &:hover
+        filter: grayscale(0%)
+        background-color: $lightGrey2
+          
   .work
     margin-bottom: $gapSize
     list-style: none
@@ -280,11 +275,9 @@ main
         .number
           margin-left: 0
           margin-right: 10rem
-    &:last-child a
-      background-color: $lightGrey
     a
       width: 60%
-      height: 33.5rem // img offset
+      height: 33.5rem // offset
       color: transparent
       background-color: transparent
       overflow: hidden

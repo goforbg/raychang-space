@@ -93,7 +93,7 @@ class Portfolio {
     this.preventScroll();
     this.updateDate();
     this.updateWorks();
-    this.scrollToggleClass([...this.worksEl.childNodes, this.contactAvatar, this.contactAvatar], 'active');
+    this.scrollToggleClass(this.worksEl.childNodes, 'color');
 
     if (!this.isTouchDevice) {
       // document.onmousemove = e => this.antiMouseMove(e, this.nameEl, 80);
@@ -159,7 +159,7 @@ class Portfolio {
 
     window.onresize = () => {
       if (!this.isTouchDevice) this.resetParallax();
-      this.scrollToggleClass([...this.worksEl.childNodes, this.contactAvatar], 'active');
+      this.scrollToggleClass(this.worksEl.childNodes, 'color');
       setTimeout(() => this.resizeBodyHeight(), 500);
     };
   }

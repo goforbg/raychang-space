@@ -116,7 +116,7 @@ a, .contact, .to-top
   color: $black
   text-decoration: underline
   cursor: url('../img/webp/hover.webp'), url('../img/original/hover.png'), pointer
-  &:active
+  &:color
     color: $black
   &:visited
     color: $black
@@ -283,7 +283,7 @@ main
       overflow: hidden
       cursor: url('../img/original/arrow.svg') 50 50, pointer
       transition: filter $transitionTime * 1.5, background-color $transitionTime * 1.5
-    &.active a
+    &.color a
       background-color: $lightGrey2
       filter: grayscale(0%)
     section
@@ -317,10 +317,6 @@ main
   picture
     width: 40%
     margin-top: 4.8rem
-    filter: grayscale(1000%)
-    transition: filter $transitionTime * 2
-    &.active
-      filter: grayscale(0%)
   section
     margin-left: 7.5rem
     width: 42.5%

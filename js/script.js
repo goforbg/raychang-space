@@ -23,6 +23,7 @@ class Portfolio {
     this.titleMessageEl = document.querySelector('.title-message');
     this.textareaMessageEl = document.querySelector('.textarea-message');
     this.sendButton = document.querySelector('.send');
+    this.contactAvatar = document.querySelector('#contact picture');
     this.sayHelloEl = document.querySelector('.say-hello');
     this.appreciationEl = document.querySelector('.appreciation');
     this.footerEl = document.querySelector('footer');
@@ -92,6 +93,7 @@ class Portfolio {
     this.preventScroll();
     this.updateDate();
     this.updateWorks();
+    this.scrollToggleClass([...this.worksEl.childNodes, this.contactAvatar, this.contactAvatar], 'active');
 
     if (!this.isTouchDevice) {
       // document.onmousemove = e => this.antiMouseMove(e, this.nameEl, 80);
@@ -157,6 +159,7 @@ class Portfolio {
 
     window.onresize = () => {
       if (!this.isTouchDevice) this.resetParallax();
+      this.scrollToggleClass([...this.worksEl.childNodes, this.contactAvatar], 'active');
       setTimeout(() => this.resizeBodyHeight(), 500);
     };
   }
@@ -319,6 +322,27 @@ class Portfolio {
     return num < 10 ? '0' + num : '' + num;
   }
 
+  scrollToggleClass([...els], className) {
+    els.forEach((el, idx) => {
+      // gsap.to(el, { autoAlpha: 1 });
+
+      ScrollTrigger.create({
+        trigger: el,
+        id: idx + 1,
+        start: 'top center',
+        end: () => `+=${el.clientHeight}`,
+        toggleAction: 'play reverse none reverse',
+        toggleClass: {
+          targets: el,
+          className
+        },
+        // markers: true
+      })
+      // if (this.isVisible(el)) return el.classList.add(className)
+      // return el.classList.remove(className);
+    })
+  }
+
   activateHoverInteraction(...els) {
     els.forEach(el => el.classList.add('hover-interaction'));
   }
@@ -433,13 +457,13 @@ class Portfolio {
 
   putPackForm() {
     if (!this.sayHelloEl.classList.contains('hide')) return;
-    if (!this.isInView(this.appreciationEl)) {
+    if (!this.isVisible(this.appreciationEl)) {
       this.sayHelloEl.classList.remove('hide');
       this.appreciationEl.classList.add('hide');
     }
   }
 
-  isInView(el) {
+  isVisible(el) {
     const elTop = ~-el.getBoundingClientRect().top;
     const elBottom = ~-el.getBoundingClientRect().bottom;
     return elTop < window.innerHeight && elBottom >= 0;

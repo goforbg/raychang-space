@@ -124,6 +124,13 @@ class Portfolio {
       window.scrollTo(0, 0);
     };
 
+    this.worksEl.childNodes.forEach(el => {
+      el.childNodes[1].onmouseenter = () =>
+        this.worksEl.childNodes.forEach(el => this.toggleGrayscale(el))
+      el.childNodes[1].onmouseout = () =>
+        this.worksEl.childNodes.forEach(el => el.classList.remove('grayscale'))
+    });
+
     this.formEl.onkeydown = e => {
       // console.log(e.target.value);
       setTimeout(() => (e.target.value = this.cleanText(e.target.value)));
@@ -341,6 +348,12 @@ class Portfolio {
       // if (this.isVisible(el)) return el.classList.add(className)
       // return el.classList.remove(className);
     })
+  }
+
+  toggleGrayscale(el) {
+    el.classList.contains('color')
+      ? el.classList.add('grayscale')
+      : el.classList.remove('grayscale');
   }
 
   activateHoverInteraction(...els) {

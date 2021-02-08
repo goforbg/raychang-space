@@ -9,10 +9,8 @@
 - 網頁元素以 `rem` 做單位，達成任何尺寸顯示上的絕佳比例<!-- - 使用 CSS `@media` 和 `transform` 讓使用者設備為手機時，自動旋轉 90 度以提供最佳瀏覽體驗 -->
 - 封鎖任何破壞瀏覽體驗的使用者事件，如文字選取、圖片拖移和右鍵點擊，並加入頁面點擊互動作為補償
 - 大型圖片、影片資源採用 [WebP](https://developers.google.com/speed/webp)/[WebM](https://web.dev/efficient-animated-content/) 格式呈現，檔案大小減少 82%！並使用延遲載入技術 [Lazy loading](https://web.dev/browser-level-image-lazy-loading/)，大幅提升網頁載入效率
-- 加入 [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/) 平滑滾動功能，使用滑鼠捲動網頁就像滑手機一樣順
-- 使用 [GSAP](https://greensock.com/gsap/) 做滾動視差<!-- - 使用 [Rellax](https://dixonandmoe.com/rellax/) 做滾動視差 -->，再透過過 [ScrollTrigger](https://greensock.com/scrolltrigger/) 綁定平滑滾動與滾動視差功能，實現立體感網站
+- 加入 [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/) 平滑滾動功能，使用滑鼠捲動網頁就像滑手機一樣順；以及使用 [GSAP](https://greensock.com/gsap/) 達成滾動視差，再透過過 [ScrollTrigger](https://greensock.com/scrolltrigger/) 綁定平滑滾動與滾動視差功能，實現立體感網站<!-- - 使用 [Rellax](https://dixonandmoe.com/rellax/) 做滾動視差 -->
 - 為作品封面加上鼠標碰觸 (CSS Hover) 和捲動頁面 ([ScrollTrigger Toggle Class](https://greensock.com/docs/v3/Plugins/ScrollTrigger)) 時的灰階上色互動效果，再透過 JS 監聽事件結合兩者，使其能夠和諧地發揮功能
 - 針對觸控設備做互動效果優化：將鼠標碰觸作品時的灰階上色效果以使用者設備為條件做分離，使用非觸控設備開啟網頁才會加入
 - 使用 JS 做表單驗證，並在驗證結果為不通過時加入提示動畫，減少輸入錯誤的挫折感，並加入自適應設計：Textarea 能隨著文字量做擴展或內縮，以及表單自動復原設計：表單提交後轉換為感謝視窗，捲動頁面離開感謝視窗畫面時，自動換回連絡表單<!-- - 將長度為 2:54 的音樂 [Touch - Svyat Illin](https://icons8.com/music/search/touch) 剪輯為 00:31 並在網頁載入後無限循環播放。此外，在點擊連結、填寫連絡表單時加入不同音效，讓網站變得有聲有色 -->
 - 使用自訂網域名稱 [rayc.dev](https://rayc.dev)
-- [Ray Chang Space](https://rayc2045.github.io/raychang-space/)

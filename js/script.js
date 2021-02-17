@@ -98,12 +98,13 @@ class Portfolio {
     if (!this.isTouchDevice) {
       // document.onmousemove = e => this.antiMouseMove(e, this.nameEl, 80);
       this.activateHoverInteraction(this.worksEl, this.footerEl);
-      // Combine scroll and hover interactions
+      
       this.worksEl.childNodes.forEach(el => {
+        // Combine scroll and hover interactions
         el.childNodes[1].onmouseenter = () =>
-          this.worksEl.childNodes.forEach(el => this.toggleGrayscale(el))
+          this.worksEl.childNodes.forEach(el => this.toggleGrayscale(el));
         el.childNodes[1].onmouseout = () =>
-          this.worksEl.childNodes.forEach(el => el.classList.remove('grayscale'))
+          this.worksEl.childNodes.forEach(el => el.classList.remove('grayscale'));
       });
       this.parallax();
       if (!this.isFirefox) this.smoothScroll();

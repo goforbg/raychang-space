@@ -29,6 +29,13 @@ class Portfolio {
     this.footerEl = document.querySelector('footer');
     this.works = [
       {
+        title: 'Ghibli Crawler',
+        subtitle: 'Automatically download 1,178 studio Ghibli\'s work photos',
+        cover: '../img/webp/puppeteer_logo_transparent.webp',
+        info: 'https://github.com/rayc2045/ghibli-crawler',
+        link: 'https://github.com/rayc2045/ghibli-crawler',
+      },
+      {
         title: 'Ghibli Gallery App',
         subtitle: 'Remaster studio Ghibli\'s work album with Vue 3.0',
         cover: '../img/webp/ghibli_gallery_app.webp',

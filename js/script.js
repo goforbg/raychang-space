@@ -36,7 +36,7 @@ class Portfolio {
         link: 'https://github.com/rayc2045/ghibli-crawler',
       },
       {
-        title: 'Ghibli Gallery App',
+        title: 'Ghibli Gallery',
         subtitle: 'Remaster studio Ghibli\'s work album with Vue 3.0',
         cover: '../img/webp/ghibli_gallery_app.webp',
         info: 'https://github.com/rayc2045/ghibli-gallery',

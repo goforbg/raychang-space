@@ -117,16 +117,6 @@ class Portfolio {
       if (!this.isFirefox) this.smoothScroll();
     }
 
-    document.onselectstart = () => false;
-    document.ondragstart = () => false;
-    document.oncontextmenu = () => false;
-    document.onmouseup = e => {
-      if (e.target.hasAttribute('href')) {
-        this.soundPlay(this.pagingSound);
-        if (e.which === 3) window.open(e.target.href, '_blank');
-      }
-    };
-
     this.containerEl.onmousedown = e => this.appendCircle(e);
 
     this.contactButton.onmouseup = () => {
@@ -158,24 +148,6 @@ class Portfolio {
     this.sendButton.onclick = e => {
       this.submitForm(e);
       this.resizeBodyHeight();
-    };
-
-    window.onscroll = () => this.putPackForm();
-
-    window.onload = () => {
-      this.resizeBodyHeight();
-      this.endLoading();
-      this.enableScroll();
-      // this.backgroundMusicEl.play();
-    };
-
-    // window.onblur = () => this.backgroundMusicEl.pause();
-    // window.onfocus = () => this.backgroundMusicEl.play();
-
-    window.onresize = () => {
-      if (!this.isTouchDevice) this.resetParallax();
-      this.scrollToggleClass(this.worksEl.childNodes, 'color');
-      setTimeout(() => this.resizeBodyHeight(), 500);
     };
   }
 
@@ -498,4 +470,29 @@ class Portfolio {
   // }
 }
 
-new Portfolio();
+const portfolio = new Portfolio();
+
+document.onselectstart = () => false;
+document.ondragstart = () => false;
+document.oncontextmenu = () => false;
+document.onmouseup = e => {
+  if (e.target.hasAttribute('href')) {
+    portfolio.soundPlay(portfolio.pagingSound);
+    if (e.which === 3) window.open(e.target.href, '_blank');
+  }
+};
+
+window.onscroll = () => portfolio.putPackForm();
+window.onload = () => {
+  portfolio.resizeBodyHeight();
+  portfolio.endLoading();
+  portfolio.enableScroll();
+  // portfolio.backgroundMusicEl.play();
+};
+// window.onblur = () => portfolio.backgroundMusicEl.pause();
+// window.onfocus = () => portfolio.backgroundMusicEl.play();
+window.onresize = () => {
+  if (!portfolio.isTouchDevice) portfolio.resetParallax();
+  portfolio.scrollToggleClass(portfolio.worksEl.childNodes, 'color');
+  setTimeout(() => portfolio.resizeBodyHeight(), 500);
+};

@@ -1,5 +1,66 @@
 'use strict';
 
+const worksData = [
+  {
+    title: 'Ghibli Crawler',
+    subtitle: 'Automatically download 1,178 studio Ghibli\'s work photos',
+    cover: '../img/webp/puppeteer_logo_transparent.webp',
+    info: 'https://github.com/rayc2045/ghibli-crawler',
+    link: 'https://github.com/rayc2045/ghibli-crawler',
+  },
+  {
+    title: 'Ghibli Gallery',
+    subtitle: 'Remaster studio Ghibli\'s work album with Vue 3.0',
+    cover: '../img/webp/ghibli_gallery_app.webp',
+    info: 'https://github.com/rayc2045/ghibli-gallery',
+    link: 'https://rayc2045.github.io/ghibli-gallery/',
+  },
+  {
+    title: 'Horizontal Scrolling Theater',
+    subtitle: 'Enjoy the movie purchasing',
+    cover: '../img/webp/horizontal_scrolling_theater.webp',
+    info: 'https://github.com/rayc2045/horizontal-scrolling-theater',
+    link: 'https://rayc2045.github.io/horizontal-scrolling-theater/',
+  },
+  {
+    title: 'Block Memory Game',
+    subtitle: 'How many levels can you accomplish?',
+    cover: '../img/webp/block_memory_game.webp',
+    video: '../video/webm/block_memory_game.webm',
+    info: 'https://github.com/rayc2045/block-memory-game',
+    link: 'https://rayc2045.github.io/block-memory-game/',
+  },
+  {
+    title: 'Vanilla Calculator',
+    subtitle: 'Elegantly shows the result immediately',
+    cover: '../img/webp/vanilla_calculator.webp',
+    // video: '../video/webm/vanilla_calculator.webm',
+    info: 'https://github.com/rayc2045/vanilla-calculator',
+    link: 'https://rayc2045.github.io/vanilla-calculator/',
+  },
+  {
+    title: 'Draggable To-do List',
+    subtitle: 'Featured by autosave and markdown support',
+    cover: '../img/webp/draggable_todo_list.webp',
+    video: '../video/webm/draggable_todo_list.webm',
+    info: 'https://github.com/rayc2045/draggable-todoList',
+    link: 'https://rayc2045.github.io/draggable-todoList/',
+  },
+  {
+    title: 'Codewars Challenge',
+    subtitle: 'Join the journey of achieving code mastery',
+    cover: '../img/webp/codewars.webp',
+    info: 'https://github.com/rayc2045/codewars-challenge',
+    link: 'https://github.com/rayc2045/codewars-challenge',
+  },
+  {
+    title: 'Medium Blog',
+    subtitle: 'Read my latest technical article',
+    cover: '../img/webp/medium_logo_transparent.webp',
+    link: 'https://medium.com/@raychangdesign/',
+  },
+];
+
 class Portfolio {
   constructor() {
     this.backgroundMusicEl = document.querySelector('.background-music');
@@ -27,66 +88,6 @@ class Portfolio {
     this.sayHelloEl = document.querySelector('.say-hello');
     this.appreciationEl = document.querySelector('.appreciation');
     this.footerEl = document.querySelector('footer');
-    this.works = [
-      {
-        title: 'Ghibli Crawler',
-        subtitle: 'Automatically download 1,178 studio Ghibli\'s work photos',
-        cover: '../img/webp/puppeteer_logo_transparent.webp',
-        info: 'https://github.com/rayc2045/ghibli-crawler',
-        link: 'https://github.com/rayc2045/ghibli-crawler',
-      },
-      {
-        title: 'Ghibli Gallery',
-        subtitle: 'Remaster studio Ghibli\'s work album with Vue 3.0',
-        cover: '../img/webp/ghibli_gallery_app.webp',
-        info: 'https://github.com/rayc2045/ghibli-gallery',
-        link: 'https://rayc2045.github.io/ghibli-gallery/',
-      },
-      {
-        title: 'Horizontal Scrolling Theater',
-        subtitle: 'Enjoy the movie purchasing',
-        cover: '../img/webp/horizontal_scrolling_theater.webp',
-        info: 'https://github.com/rayc2045/horizontal-scrolling-theater',
-        link: 'https://rayc2045.github.io/horizontal-scrolling-theater/',
-      },
-      {
-        title: 'Block Memory Game',
-        subtitle: 'How many levels can you accomplish?',
-        cover: '../img/webp/block_memory_game.webp',
-        video: '../video/webm/block_memory_game.webm',
-        info: 'https://github.com/rayc2045/block-memory-game',
-        link: 'https://rayc2045.github.io/block-memory-game/',
-      },
-      {
-        title: 'Vanilla Calculator',
-        subtitle: 'Elegantly shows the result immediately',
-        cover: '../img/webp/vanilla_calculator.webp',
-        // video: '../video/webm/vanilla_calculator.webm',
-        info: 'https://github.com/rayc2045/vanilla-calculator',
-        link: 'https://rayc2045.github.io/vanilla-calculator/',
-      },
-      {
-        title: 'Draggable To-do List',
-        subtitle: 'Featured by autosave and markdown support',
-        cover: '../img/webp/draggable_todo_list.webp',
-        video: '../video/webm/draggable_todo_list.webm',
-        info: 'https://github.com/rayc2045/draggable-todoList',
-        link: 'https://rayc2045.github.io/draggable-todoList/',
-      },
-      {
-        title: 'Codewars Challenge',
-        subtitle: 'Join the journey of achieving code mastery',
-        cover: '../img/webp/codewars.webp',
-        info: 'https://github.com/rayc2045/codewars-challenge',
-        link: 'https://github.com/rayc2045/codewars-challenge',
-      },
-      {
-        title: 'Medium Blog',
-        subtitle: 'Read my latest technical article',
-        cover: '../img/webp/medium_logo_transparent.webp',
-        link: 'https://medium.com/@raychangdesign/',
-      },
-    ];
     // this.workEls = document.querySelectorAll('.work');
     this.isTouchDevice = 'ontouchstart' in document.documentElement;
     this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
@@ -100,18 +101,16 @@ class Portfolio {
     this.preventScroll();
     this.updateDate();
     this.updateWorks();
-    this.scrollToggleClass(this.worksEl.childNodes, 'color');
+    this.scrollToggleClass([...this.worksEl.childNodes], 'color');
 
     if (!this.isTouchDevice) {
       // document.onmousemove = e => this.antiMouseMove(e, this.nameEl, 80);
-      this.activateHoverInteraction(this.worksEl, this.footerEl);
-      
-      this.worksEl.childNodes.forEach(el => {
+      this.activateHoverInteraction([this.worksEl, this.footerEl]);
+
+      [...this.worksEl.childNodes].forEach(el => {
         // Combine scroll and hover interactions
-        el.childNodes[1].onmouseenter = () =>
-          this.worksEl.childNodes.forEach(el => this.toggleGrayscale(el));
-        el.childNodes[1].onmouseout = () =>
-          this.worksEl.childNodes.forEach(el => el.classList.remove('grayscale'));
+        [...el.childNodes][1].onmouseenter = () => [...this.worksEl.childNodes].forEach(el => this.toggleGrayscale(el));
+        [...el.childNodes][1].onmouseout = () => [...this.worksEl.childNodes].forEach(el => el.classList.remove('grayscale'));
       });
       this.parallax();
       if (!this.isFirefox) this.smoothScroll();
@@ -137,7 +136,7 @@ class Portfolio {
       this.soundPlay(this.typingSound, 0.65);
     };
 
-    this.textareaEls.forEach(el => {
+    [...this.textareaEls].forEach(el => {
       el.oninput = e => {this.autoExpand(e); this.resizeBodyHeight();};
       el.onkeyup = e => {this.autoExpand(e); this.resizeBodyHeight();};
       el.oncut = e => {this.autoExpand(e); this.resizeBodyHeight();};
@@ -278,27 +277,27 @@ class Portfolio {
   // }
 
   updateWorks() {
-    for (const i in this.works) {
+    for (const i in worksData) {
       const listEl = document.createElement('li');
       listEl.classList.add('work');
 
       listEl.innerHTML = `
-				<a href="${this.works[i].link}" target="_blank" rel="noreferrer noopener">
-					${this.works[i].video
+				<a href="${worksData[i].link}" target="_blank" rel="noreferrer noopener">
+					${worksData[i].video
             ?`<video autoplay loop muted playsinline>
-                <source src="${this.works[i].video}">
-                <source src="${this.works[i].video.replace(/webm/g, 'original').replace('.original', '.mov')}">
+                <source src="${worksData[i].video}">
+                <source src="${worksData[i].video.replace(/webm/g, 'original').replace('.original', '.mov')}">
               </video>`
             :`<picture>
-                <source srcset="${this.works[i].cover}" type="image/webp">
-                <source srcset="${this.works[i].cover.replace(/webp/g, 'original').replace('.original', '.png')}" type="image/png"> 
-                <img src="${this.works[i].cover.replace(/webp/g, 'original').replace('.original', '.png')}" alt="${this.works[i].title}" loading="lazy">
+                <source srcset="${worksData[i].cover}" type="image/webp">
+                <source srcset="${worksData[i].cover.replace(/webp/g, 'original').replace('.original', '.png')}" type="image/png"> 
+                <img src="${worksData[i].cover.replace(/webp/g, 'original').replace('.original', '.png')}" alt="${worksData[i].title}" loading="lazy">
               </picture>`}_
         </a>
         <section>
-          <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>
-          <div class="title">${this.works[i].title}</div>
-          <div class="subtitle">${this.works[i].subtitle}${this.works[i].info ? ` (<a class="info" href="${this.works[i].info}" target="_blank" rel="noreferrer noopener">info</a>)` : ''}</div>
+          <div class="number">${this.addZeroToNumberUnderTen(worksData.length - i)}</div>
+          <div class="title">${worksData[i].title}</div>
+          <div class="subtitle">${worksData[i].subtitle}${worksData[i].info ? ` (<a class="info" href="${worksData[i].info}" target="_blank" rel="noreferrer noopener">info</a>)` : ''}</div>
 				</section>`;
 
       this.worksEl.appendChild(listEl);
@@ -309,7 +308,7 @@ class Portfolio {
     return num < 10 ? '0' + num : '' + num;
   }
 
-  scrollToggleClass([...els], className) {
+  scrollToggleClass(els, className) {
     els.forEach((el, idx) => {
       // gsap.to(el, { autoAlpha: 1 });
 
@@ -336,7 +335,7 @@ class Portfolio {
       : el.classList.remove('grayscale');
   }
 
-  activateHoverInteraction(...els) {
+  activateHoverInteraction(els) {
     els.forEach(el => el.classList.add('hover-interaction'));
   }
 
@@ -436,8 +435,8 @@ class Portfolio {
   }
 
   emptyForm() {
-    this.inputEls.forEach(el => el.value = '');
-    this.textareaEls.forEach(el => {
+    [...this.inputEls].forEach(el => el.value = '');
+    [...this.textareaEls].forEach(el => {
       el.value = '';
       el.style.height = 'auto';
     });

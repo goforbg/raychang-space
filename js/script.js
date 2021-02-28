@@ -88,7 +88,7 @@ class Portfolio {
     this.sayHelloEl = document.querySelector('.say-hello');
     this.appreciationEl = document.querySelector('.appreciation');
     this.footerEl = document.querySelector('footer');
-    // this.workEls = document.querySelectorAll('.work');
+    this.works = worksData;
     this.isTouchDevice = 'ontouchstart' in document.documentElement;
     this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
     this.bodyWidth = document.body.getBoundingClientRect().width;
@@ -277,27 +277,27 @@ class Portfolio {
   // }
 
   updateWorks() {
-    for (const i in worksData) {
+    for (const i in this.works) {
       const listEl = document.createElement('li');
       listEl.classList.add('work');
 
       listEl.innerHTML = `
-				<a href="${worksData[i].link}" target="_blank" rel="noreferrer noopener">
-					${worksData[i].video
+				<a href="${this.works[i].link}" target="_blank" rel="noreferrer noopener">
+					${this.works[i].video
             ?`<video autoplay loop muted playsinline>
-                <source src="${worksData[i].video}">
-                <source src="${worksData[i].video.replace(/webm/g, 'original').replace('.original', '.mov')}">
+                <source src="${this.works[i].video}">
+                <source src="${this.works[i].video.replace(/webm/g, 'original').replace('.original', '.mov')}">
               </video>`
             :`<picture>
-                <source srcset="${worksData[i].cover}" type="image/webp">
-                <source srcset="${worksData[i].cover.replace(/webp/g, 'original').replace('.original', '.png')}" type="image/png"> 
-                <img src="${worksData[i].cover.replace(/webp/g, 'original').replace('.original', '.png')}" alt="${worksData[i].title}" loading="lazy">
+                <source srcset="${this.works[i].cover}" type="image/webp">
+                <source srcset="${this.works[i].cover.replace(/webp/g, 'original').replace('.original', '.png')}" type="image/png"> 
+                <img src="${this.works[i].cover.replace(/webp/g, 'original').replace('.original', '.png')}" alt="${this.works[i].title}" loading="lazy">
               </picture>`}_
         </a>
         <section>
-          <div class="number">${this.addZeroToNumberUnderTen(worksData.length - i)}</div>
-          <div class="title">${worksData[i].title}</div>
-          <div class="subtitle">${worksData[i].subtitle}${worksData[i].info ? ` (<a class="info" href="${worksData[i].info}" target="_blank" rel="noreferrer noopener">info</a>)` : ''}</div>
+          <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>
+          <div class="title">${this.works[i].title}</div>
+          <div class="subtitle">${this.works[i].subtitle}${this.works[i].info ? ` (<a class="info" href="${this.works[i].info}" target="_blank" rel="noreferrer noopener">info</a>)` : ''}</div>
 				</section>`;
 
       this.worksEl.appendChild(listEl);

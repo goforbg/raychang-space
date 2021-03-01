@@ -2,6 +2,13 @@
 
 const worksData = [
   {
+    title: 'Horizontal Scrolling Theater',
+    subtitle: 'Enjoy the movie purchasing',
+    cover: '../img/webp/horizontal_scrolling_theater.webp',
+    info: 'https://github.com/rayc2045/horizontal-scrolling-theater',
+    link: 'https://rayc2045.github.io/horizontal-scrolling-theater/',
+  },
+  {
     title: 'Ghibli Crawler',
     subtitle: 'Automatically download 1,178 studio Ghibli\'s work photos',
     cover: '../img/webp/puppeteer_logo_transparent.webp',
@@ -14,13 +21,6 @@ const worksData = [
     cover: '../img/webp/ghibli_gallery_app.webp',
     info: 'https://github.com/rayc2045/ghibli-gallery',
     link: 'https://rayc2045.github.io/ghibli-gallery/',
-  },
-  {
-    title: 'Horizontal Scrolling Theater',
-    subtitle: 'Enjoy the movie purchasing',
-    cover: '../img/webp/horizontal_scrolling_theater.webp',
-    info: 'https://github.com/rayc2045/horizontal-scrolling-theater',
-    link: 'https://rayc2045.github.io/horizontal-scrolling-theater/',
   },
   {
     title: 'Block Memory Game',

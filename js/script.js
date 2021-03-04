@@ -3,7 +3,7 @@
 const worksData = [
   {
     title: 'Horizontal-scrolling Theater',
-    subtitle: 'Enjoy the movie purchasing',
+    subtitle: 'Enjoy the online movie shopping',
     cover: '../img/webp/horizontal_scrolling_theater.webp',
     info: 'https://github.com/rayc2045/horizontal-scrolling-theater',
     link: 'https://rayc2045.github.io/horizontal-scrolling-theater/',

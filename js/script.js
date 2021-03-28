@@ -89,6 +89,7 @@ class Portfolio {
     this.sayHelloEl = document.querySelector('.say-hello');
     this.appreciationEl = document.querySelector('.appreciation');
     this.footerEl = document.querySelector('footer');
+    this.time = new Date();
     this.works = worksData;
     this.isTouchDevice = 'ontouchstart' in document.documentElement;
     this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
@@ -101,6 +102,12 @@ class Portfolio {
   events() {
     this.preventScroll();
     this.updateDate();
+
+    setTimeout(
+      () => this.checkDateEveryMinute(),
+      (60 - this.time.getSeconds()) * 1000
+    );
+
     this.updateWorks();
     this.scrollToggleClass([...this.worksEl.childNodes], 'color');
 
@@ -250,10 +257,23 @@ class Portfolio {
     // }, delay + 2000);
   }
 
+  checkDateEveryMinute() {
+    const time = new Date();
+
+    if (this.time.getDate() !== time.getDate()) {
+      this.time = time;
+      this.updateDate();
+    }
+
+    setTimeout(() => this.checkDateEveryMinute(), 60000);
+  }
+
   updateDate() {
-    const today = new Date();
-    let date = `${this.convertNumToMonth(today.getMonth() + 1)} ${today.getDate()}, ${today.getFullYear()}`;
-    this.dateEl.textContent = date;
+    this.dateEl.textContent = this.getFormatDate(this.time);
+  }
+
+  getFormatDate(time) {
+    return `${this.convertNumToMonth(time.getMonth() + 1)} ${time.getDate()}, ${time.getFullYear()}`;
   }
 
   convertNumToMonth(num) {

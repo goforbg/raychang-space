@@ -259,15 +259,20 @@ class Portfolio {
   }
 
   checkDateEveryMinute() {
-    let time = new Date();
+    const time = new Date();
 
     if (this.time.getDate() !== time.getDate()) {
       this.time = time;
       this.updateDate();
     }
 
-    time = null;
-    setTimeout(() => this.checkDateEveryMinute(), 60000);
+    // console.log(time.getSeconds());
+    // console.log(this.time.getSeconds());
+
+    setTimeout(
+      () => this.checkDateEveryMinute(),
+      (60 - time.getSeconds()) * 1000
+    );
   }
 
   updateDate() {

@@ -287,7 +287,7 @@ class Portfolio {
   // antiMouseMove(e, el, max = 20) {
   // 	const x = e.clientX;
   // 	const y = e.clientY;
-  // 	//console.log(x);
+  // 	// console.log(x);
   // 	const winWidth = window.innerWidth;
   // 	const winHeight = window.innerHeight;
   // 	const halfWidth = winWidth / 2;
@@ -305,12 +305,12 @@ class Portfolio {
     for (const i in this.works) {
       const workEl = document.createElement('li');
       workEl.classList.add('work');
-      workEl.innerHTML = this.getWorkInnerHTML(i);
+      workEl.innerHTML = this.getWorkElInnerHTML(i);
       this.worksEl.appendChild(workEl);
     }
   }
 
-  getWorkInnerHTML(idx) {
+  getWorkElInnerHTML(idx) {
     return `
       <a href="${this.works[idx].link}" target="_blank" rel="noreferrer noopener">
         ${this.works[idx].video

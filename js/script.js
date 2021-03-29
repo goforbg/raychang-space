@@ -220,7 +220,7 @@ class Portfolio {
   }
 
   parallax() {
-    // Best view on 16:10 full screen (MacBook)
+    // Based on 16:10 fullscreen (MacBook)
     this.gsapWithScrollTrigger('.circle-yellow', { y: 1200 * this.screenScale });
     this.gsapWithScrollTrigger('.circle-red', { y: 2400 * this.screenScale });
     this.gsapWithScrollTrigger('.article-left', { y: 200 * this.screenScale });
@@ -253,9 +253,9 @@ class Portfolio {
     setTimeout(() => this.loadingEl.classList.add('animated'), delay);
     setTimeout(() => this.removeElement(this.loadingEl), delay + 2000);
     // setTimeout(() => {
-    // 	this.loadingEl.classList.add('hide');
-    // 	this.loadingEl.classList.remove('animated');
-    // }, delay + 2000);
+    //   this.loadingEl.classList.add('hide');
+    //   this.loadingEl.classList.remove('animated');
+    // });
   }
 
   checkDateEveryMinute() {
@@ -265,9 +265,6 @@ class Portfolio {
       this.time = time;
       this.updateDate();
     }
-
-    // console.log(time.getSeconds());
-    // console.log(this.time.getSeconds());
 
     setTimeout(
       () => this.checkDateEveryMinute(),
@@ -306,30 +303,32 @@ class Portfolio {
 
   updateWorks() {
     for (const i in this.works) {
-      const listEl = document.createElement('li');
-      listEl.classList.add('work');
-
-      listEl.innerHTML = `
-				<a href="${this.works[i].link}" target="_blank" rel="noreferrer noopener">
-					${this.works[i].video
-            ?`<video autoplay loop muted playsinline>
-                <source src="${this.works[i].video}">
-                <source src="${this.works[i].video.replace(/webm/g, 'original').replace('.original', '.mov')}">
-              </video>`
-            :`<picture>
-                <source srcset="${this.works[i].cover}" type="image/webp">
-                <source srcset="${this.works[i].cover.replace(/webp/g, 'original').replace('.original', '.png')}" type="image/png"> 
-                <img src="${this.works[i].cover.replace(/webp/g, 'original').replace('.original', '.png')}" alt="${this.works[i].title}" loading="lazy">
-              </picture>`}_
-        </a>
-        <section>
-          <div class="number">${this.addZeroToNumberUnderTen(this.works.length - i)}</div>
-          <div class="title">${this.works[i].title}</div>
-          <div class="subtitle">${this.works[i].subtitle}${this.works[i].info ? ` (<a class="info" href="${this.works[i].info}" target="_blank" rel="noreferrer noopener">info</a>)` : ''}</div>
-				</section>`;
-
-      this.worksEl.appendChild(listEl);
+      const workEl = document.createElement('li');
+      workEl.classList.add('work');
+      workEl.innerHTML = this.getWorkInnerHTML(i);
+      this.worksEl.appendChild(workEl);
     }
+  }
+
+  getWorkInnerHTML(idx) {
+    return `
+      <a href="${this.works[idx].link}" target="_blank" rel="noreferrer noopener">
+        ${this.works[idx].video
+          ?`<video autoplay loop muted playsinline>
+              <source src="${this.works[idx].video}">
+              <source src="${this.works[idx].video.replace(/webm/g, 'original').replace('.original', '.mov')}">
+            </video>`
+          :`<picture>
+              <source srcset="${this.works[idx].cover}" type="image/webp">
+              <source srcset="${this.works[idx].cover.replace(/webp/g, 'original').replace('.original', '.png')}" type="image/png"> 
+              <img src="${this.works[idx].cover.replace(/webp/g, 'original').replace('.original', '.png')}" alt="${this.works[idx].title}" loading="lazy">
+            </picture>`}_
+      </a>
+      <section>
+        <div class="number">${this.addZeroToNumberUnderTen(this.works.length - idx)}</div>
+        <div class="title">${this.works[idx].title}</div>
+        <div class="subtitle">${this.works[idx].subtitle}${this.works[idx].info ? ` (<a class="info" href="${this.works[idx].info}" target="_blank" rel="noreferrer noopener">info</a>)` : ''}</div>
+      </section>`;
   }
 
   addZeroToNumberUnderTen(num) {
@@ -352,15 +351,15 @@ class Portfolio {
         },
         // markers: true
       })
-      // if (this.isVisible(el)) return el.classList.add(className)
-      // return el.classList.remove(className);
+
+      // if (this.isVisible(el)) return el.classList.add(className);
+      // el.classList.remove(className);
     })
   }
 
   toggleGrayscale(el) {
-    el.classList.contains('color')
-      ? el.classList.add('grayscale')
-      : el.classList.remove('grayscale');
+    if (el.classList.contains('color')) return el.classList.add('grayscale');
+    el.classList.remove('grayscale');
   }
 
   activateHoverInteraction(els) {

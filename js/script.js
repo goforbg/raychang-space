@@ -125,15 +125,15 @@ class Portfolio {
       if (!this.isFirefox) this.smoothScroll();
     }
 
-    this.containerEl.onmousedown = e => this.appendCircle(e);
+    this.containerEl.onmousedown = e => this.appendCircle(e, this.containerEl);
 
     this.contactButton.onmouseup = () => {
-      this.soundPlay(this.pagingSound);
+      this.playAudio(this.pagingSound);
       window.scrollTo(0, this.contactEl.getBoundingClientRect().top);
     };
 
     this.toTopButton.onmouseup = () => {
-      this.soundPlay(this.pagingSound);
+      this.playAudio(this.pagingSound);
       window.scrollTo(0, 0);
     };
 
@@ -142,7 +142,7 @@ class Portfolio {
       setTimeout(() => (e.target.value = this.cleanText(e.target.value)));
       if (e.target.classList.contains('input-email'))
       	setTimeout(() => (e.target.value = this.textWithoutWhiteSpace(e.target.value)));
-      this.soundPlay(this.typingSound, 0.65);
+      this.playAudio(this.typingSound, 0.65);
     };
 
     [...this.textareaEls].forEach(el => {
@@ -159,13 +159,13 @@ class Portfolio {
     };
   }
 
-  soundPlay(audio, volume = 1) {
+  playAudio(audio, volume = 1) {
     audio.currentTime = 0;
     audio.volume = volume;
     audio.play();
   }
 
-  appendCircle(e, duration = 1.5) {
+  appendCircle(e, element, duration = 1.5) {
     const circle = document.createElement('div');
     circle.classList.add('circle');
 
@@ -176,7 +176,7 @@ class Portfolio {
     circle.style.top = `${e.pageY - circleOffset - customCursorOffset}px`;
     circle.style.animationDuration = `${duration}s`;
 
-    this.containerEl.appendChild(circle);
+    element.appendChild(circle);
     setTimeout(() => this.removeElement(circle), duration * 1000);
   }
 
@@ -503,7 +503,7 @@ document.ondragstart = () => false;
 document.oncontextmenu = () => false;
 document.onmouseup = e => {
   if (e.target.hasAttribute('href')) {
-    portfolio.soundPlay(portfolio.pagingSound);
+    portfolio.playAudio(portfolio.pagingSound);
     if (e.which === 3) window.open(e.target.href, '_blank');
   }
 };

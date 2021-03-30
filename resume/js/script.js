@@ -3,32 +3,38 @@
 const isTouchDevice = 'ontouchstart' in document.documentElement;
 const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 const bodyWidth = document.body.getBoundingClientRect().width;
+const menuEl = document.querySelector('.menu');
 const containerEl = document.querySelector('.container');
 const resumeEl = document.querySelector('.resume');
+const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3')
 
+document.oncontextmenu = () => false;
 window.onscroll = e => e.preventDefault();
+window.onresize = () => hideMenu();
 
 window.onload = () => {
   if (bodyWidth < 768) resumeEl.classList.remove('slide');
   
   setTimeout(() => {
-    window.onscroll = null;
+    window.onscroll = () => hideMenu();
     if (!isTouchDevice && !isFirefox) smoothScroll();
+    document.oncontextmenu = e => showMenu(e);
   }, 1800);
 };
 
 document.onselectstart = () => false;
 document.ondragstart = () => false;
-document.oncontextmenu = () => false;
+
+document.onmousedown = e => {
+  if (!e.target.classList.contains('menu')) hideMenu();
+}
 
 document.onmouseup = e => {
   if (e.target.hasAttribute('href')) {
-    playAudio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3');
+    playAudio(pageAudio);
     if (e.which === 3) window.open(e.target.href, '_blank');
   }
 };
-
-resumeEl.onmousedown = e => appendCircle(e, resumeEl);
 
 function smoothScroll() {
   new SmoothScroll({
@@ -38,19 +44,15 @@ function smoothScroll() {
   });
 }
 
-function appendCircle(e, element, duration = 1.5) {
-  const circle = document.createElement('div');
-  circle.classList.add('circle');
+function showMenu(e) {
+  e.preventDefault();
+  menuEl.classList.add('show');
+  menuEl.style.left = `${e.pageX + 5}px`;
+  menuEl.style.top = `${e.pageY - 5}px`;
+}
 
-  const circleOffset = 0.25 * document.body.getBoundingClientRect().width;
-  let customCursorOffset = -(0.004 * document.body.getBoundingClientRect().width);
-  if (isTouchDevice) customCursorOffset = 0;
-  circle.style.left = `${e.pageX - circleOffset - customCursorOffset}px`;
-  circle.style.top = `${e.pageY - circleOffset - customCursorOffset}px`;
-  circle.style.animationDuration = `${duration}s`;
-
-  element.appendChild(circle);
-  setTimeout(() => removeElement(circle), duration * 1000);
+function hideMenu() {
+  menuEl.classList.remove('show');
 }
 
 function removeElement(el) {

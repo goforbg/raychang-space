@@ -11,10 +11,6 @@ $noise: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqA
   width: $w
   height: $h
 
-@mixin resumePrintHeight($h, $w: $h * 21 / 29.7)
-  height: $h
-  width: $w
-
 ::-webkit-scrollbar
   // width: 0.8vw
   width: 0
@@ -34,9 +30,12 @@ html
 
 body
   padding: 6.3rem 0
+  width: 100vw
   color: $black
   background-color: $lightGrey
   position: relative
+  @media screen and (max-width: 1024px) // <= 1024
+    padding: 0
 
 img
   width: 100%
@@ -68,7 +67,7 @@ a
       padding: 7.5px 10.5px
       font-size: 14px
 
-.viewport
+.viewport.SmoothScroll
   position: fixed
   left: 50%
   transform: translateX(-50%)
@@ -80,25 +79,15 @@ a
     transform: translateY(0)
 
 .resume
+  margin: 0 auto
   +resumeSize(73vw)
   box-shadow: $resumeShadow
   background-image: $noise
   background-color: white
   overflow: hidden
-  @media screen and (min-width: 768px) // >= 768px
+  @media screen and (min-width: 1080px) // >= 1080
     animation: slideUp 1.8s ease-in-out forwards
-
-
-
-@media print, (max-width: 767px) // < 768px
-
-  body
-    padding: 0
-
-  .resume
-    +resumeSize(100vw)
-    // +resumePrintHeight(100vh)
-    box-shadow: none
-
-  h1
+  @media screen and (max-width: 1024px) // <= 1024
     margin: 0
+    +resumeSize(100vw)
+    box-shadow: none

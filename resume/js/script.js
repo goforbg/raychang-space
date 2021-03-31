@@ -8,26 +8,23 @@ const containerEl = document.querySelector('.container');
 const resumeEl = document.querySelector('.resume');
 const pageAudio = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3')
 
+document.onselectstart = () => false;
+document.ondragstart = () => false;
 document.oncontextmenu = () => false;
-window.onscroll = e => e.preventDefault();
+window.onscroll = () => false;
 window.onresize = () => hideMenu();
 
 window.onload = () => {
-  if (bodyWidth < 768) resumeEl.classList.remove('slide');
-  
   setTimeout(() => {
-    window.onscroll = () => hideMenu();
-    if (!isTouchDevice && !isFirefox) smoothScroll();
     document.oncontextmenu = e => showMenu(e);
+    window.onscroll = () => hideMenu();
+    if (!isTouchDevice) smoothScroll();
   }, 1800);
 };
 
-document.onselectstart = () => false;
-document.ondragstart = () => false;
-
 document.onmousedown = e => {
   if (!e.target.classList.contains('menu')) hideMenu();
-}
+};
 
 document.onmouseup = e => {
   if (e.target.hasAttribute('href')) {

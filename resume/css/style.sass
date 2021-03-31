@@ -26,7 +26,7 @@ $noise: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqA
   background-color: $lightGrey
 
 html
-  font-family: Anvenir
+  font-family: Anvenir, sans-serif
   font-size: 1vw
   user-select: none
   scrollbar-width: none
@@ -53,17 +53,17 @@ a
   border-radius: 12px
   overflow: hidden
   box-shadow: $resumeShadow
-  opacity: 0
+  display: none
   &.show
-    opacity: 1
+    display: block
   li
     transition: background-color 0.3s
     &:hover
       background-color: $white
   a
-    padding: 0.5rem 0.75rem
+    padding: 0.55rem 0.8rem
     display: block
-    @media screen and (max-width: 767px)
+    @media screen and (max-width: 1279px)
       padding: 7px 10.5px
 
 .viewport

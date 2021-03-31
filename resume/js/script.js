@@ -23,13 +23,13 @@ window.onload = () => {
 };
 
 document.onmousedown = e => {
-  if (!e.target.classList.contains('menu')) hideMenu();
+  if (!e.target.hasAttribute('href')) hideMenu();
 };
 
 document.onmouseup = e => {
   if (e.target.hasAttribute('href')) {
     playAudio(pageAudio);
-    if (e.which === 3) window.open(e.target.href, '_blank');
+    hideMenu();
   }
 };
 

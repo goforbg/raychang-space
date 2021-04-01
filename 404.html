@@ -77,9 +77,11 @@
       document.ondragstart = () => false;
       document.oncontextmenu = () => false;
 
-      window.setTimeout(() => {
-        window.location.href = "https://rayc.dev/";
-      }, 1800);
+      window.onload = () => {
+        window.setTimeout(() => {
+          window.location.href = "https://rayc.dev/";
+        }, 1800);
+      };
     </script>
   </body>
 </html>

@@ -45,9 +45,9 @@ function smoothScroll() {
 function showMenu(e) {
   e.preventDefault();
   menuEl.classList.add('show');
-  console.log(e.pageX, e.pageY);
-  menuEl.style.left = `${e.pageX + 5}px`;
-  menuEl.style.top = `${e.pageY - 5}px`;
+  // console.log(e.clientX, e.clientY);
+  menuEl.style.left = `${e.clientX + 5}px`;
+  menuEl.style.top = `${e.clientY + 5}px`;
 }
 
 function hideMenu() {

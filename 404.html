@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Not Found</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      html {
+        font-size: 1vw;
+        font-family: "Nunito", sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        user-select: none;
+        cursor: url("../img/webp/arrow.webp"), url("../img/original/arrow.png"),
+          auto;
+      }
+
+      img {
+        width: 50%;
+        /* mix-blend-mode: multiply; */
+      }
+
+      .error-message {
+        margin-top: 1rem;
+        color: #2d373e;
+        font-size: 1.86rem;
+        font-weight: bold;
+        text-align: left;
+        text-transform: uppercase;
+        line-height: 1.5;
+      }
+
+      @media screen and (max-width: 1024px) {
+        img {
+          width: 80%;
+        }
+
+        .error-message {
+          /* font-size: 2.976rem; */
+          font-size: 3.45rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <picture>
+      <source srcset="./img/webp/not_found.webp" type="image/webp" />
+      <source srcset="./img/original/not_found.png" type="image/png" />
+      <img src="./img/original/not_found.png" />
+    </picture>
+    <div class="error-message">
+      Oops! Looks like you're lost : (<br />The location couldn't be found.
+    </div>
+    <script>
+      document.onselectstart = () => false;
+      document.ondragstart = () => false;
+      document.oncontextmenu = () => false;
+
+      window.setTimeout(() => {
+        window.location.href = "https://rayc.dev/";
+      }, 1800);
+    </script>
+  </body>
+</html>

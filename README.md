@@ -15,6 +15,7 @@
 - 為展示的作品封面加上鼠標碰觸 (CSS Hover) 和捲動頁面 ([ScrollTrigger Toggle Class](https://greensock.com/docs/v3/Plugins/ScrollTrigger)) 時的灰階上色互動效果，再透過監聽事件結合兩者，使其能夠和諧地發揮功能
 - 針對觸控設備做互動效果優化：將鼠標碰觸作品時的灰階上色效果以使用者設備為條件做分離，使用非觸控設備開啟網頁才會加入
 - 使用 JS 做表單驗證，並在驗證結果為不通過時加入提示動畫，減少輸入錯誤的挫折感，並加入 Textarea 能隨著文字量做擴展或內縮的自適應設計；以及在表單提交、捲動頁面離開感謝視窗後，自動換回連絡表單的復原設計<!-- - 將長度為 2:54 的音樂 [Touch - Svyat Illin](https://icons8.com/music/search/touch) 剪輯為 00:31 並在網頁載入後無限循環播放。此外，在點擊連結、填寫連絡表單時加入不同音效，讓網站變得有聲有色 -->
+- 主頁中採用使用者在不同裝置尺寸時，以純 CSS 做到在兩個 About 連結中切換顯示；使用手機將前往 GitHub README 頁面，使用平板或電腦將前往履歷頁面
 - 在 About 頁面中使用自製右鍵選單，解決導覽列 (Navbar) 佔版面、鼠標移動距離較長 (費茲定律) 的問題，達到更簡潔的視覺版面與更加順暢的使用體驗
 - 使用 [Kit8 付費插畫](https://kit8.net/illustrations/web-online-page-with-404-not-found-error/) 後製陰影並搭配 [Nunito 字體](https://fonts.google.com/specimen/Nunito?preview.text_type=custom) 和噪點背景，客製化重定向 [404 Not Found 頁面](https://rayc.dev/whatever)
 - 使用自訂網域名稱 [rayc.dev](https://rayc.dev)

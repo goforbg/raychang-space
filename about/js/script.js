@@ -17,7 +17,7 @@ window.onresize = () => {
   hideMenu();
   windowWidth = window.innerWidth;
   windowHeight = window.innerHeight;
-}
+};
 
 window.onload = () => {
   setTimeout(() => {
@@ -37,6 +37,12 @@ document.onmouseup = e => {
     hideMenu();
   }
 };
+
+function convertToAnchor(str) {
+  return str
+    .replace(/(<([^>]+)>)/gi, '')
+    .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer noopener">$1</a>');
+}
 
 function smoothScroll() {
   document.querySelector('.viewport').classList.add('SmoothScroll');
@@ -69,10 +75,6 @@ function showMenu(e) {
 
 function hideMenu() {
   menuEl.classList.remove('show');
-}
-
-function removeElement(el) {
-  el.parentNode.removeChild(el);
 }
 
 function playAudio(audio, volume = 1) {

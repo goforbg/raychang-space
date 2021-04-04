@@ -261,7 +261,6 @@ main
       &:hover
         filter: grayscale(0%)
         background-color: $lightGrey2
-          
   .work
     margin-bottom: $gapSize
     list-style: none
@@ -323,71 +322,73 @@ main
   section
     margin-left: 7.5rem
     width: 42.5%
-  .say-hello
-    &.hide
-      display: none
-    .title
-      font-size: 4.5rem
-      font-weight: 400
-    .note
-      margin: 1.6rem 0
-      display: flex
-      flex-direction: row
-      p
-        margin-left: 0.3rem
-        font-size: 1.1rem
-        font-weight: 300
-        color: $mediumGrey
-    .star
-      color: $darkYellow
+
+.say-hello
+  &.hide
+    display: none
+  .title
+    font-size: 4.5rem
+    font-weight: 400
+  .note
+    margin: 1.6rem 0
+    display: flex
+    flex-direction: row
+    p
+      margin-left: 0.3rem
       font-size: 1.1rem
-    form
-      font-size: 1.22rem
-      font-weight: 400
-      letter-spacing: normal
-      label
-        margin-bottom: 2.3rem
-        list-style: none
-        +flexLeft
-        border-bottom: 0.1rem solid $mediumGrey
-        &:nth-of-type(5)
-          margin-bottom: 0
-          border: none
-        &:nth-of-type(6)
-          margin-bottom: 0
-        input, textarea
-          padding: 0.55rem 0
-          font-size: 1.2rem
-          color: $mediumGrey
-          width: 100%
-          word-break: break-all // input 為單行元件
-        input
-          margin-left: 0.55rem
-        textarea
-          line-height: 1.45
-        &.alert
-          animation: shakeHorizontal $transitionTime ease forwards
-      .send
-        margin-top: 2.3rem
-        margin-left: auto
-        margin-right: 0.5rem
-        display: block
-        text-decoration: underline
-        font-size: inherit
-  .appreciation
-    margin-left: 3rem
-    +flexCenter
-    flex-direction: column
-    +size(36.2rem, 42rem)
-    &.hide
-      display: none
-    h1
-      margin-bottom: 1rem
-      font-size: 2.2rem
-      font-weight: 400
-    h3
-      font-size: 1.35rem
-      font-weight: 400
+      font-weight: 300
+      color: $mediumGrey
+  .star
+    color: $darkYellow
+    font-size: 1.1rem
+  form
+    font-size: 1.22rem
+    font-weight: 400
+    letter-spacing: normal
+    label
+      margin-bottom: 2.3rem
+      list-style: none
+      +flexLeft
+      border-bottom: 0.1rem solid $mediumGrey
+      &:nth-of-type(5)
+        margin-bottom: 0
+        border: none
+      &:nth-of-type(6)
+        margin-bottom: 0
+      input, textarea
+        padding: 0.55rem 0
+        font-size: 1.2rem
+        color: $mediumGrey
+        width: 100%
+        word-break: break-all // input 為單行元件
+      input
+        margin-left: 0.55rem
+      textarea
+        line-height: 1.45
+      &.alert
+        animation: shakeHorizontal $transitionTime ease forwards
+    .send
+      margin-top: 2.3rem
+      margin-left: auto
+      margin-right: 0.5rem
+      display: block
+      text-decoration: underline
+      font-size: inherit
+
+.appreciation
+  margin-left: 3rem
+  +flexCenter
+  flex-direction: column
+  +size(36.2rem, 42rem)
+  &.hide
+    display: none
+  h1
+    margin-bottom: 1rem
+    font-size: 2.2rem
+    font-weight: 400
+  h3
+    font-size: 1.35rem
+    font-weight: 400
 
 footer
   position: relative

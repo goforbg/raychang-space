@@ -63,7 +63,7 @@ const worksData = [
   {
     title: 'Medium Blog',
     subtitle: 'Read my latest technical article',
-    cover: '../img/webp/medium_logo_transparent.webp',
+    cover: '../img/webp/medium_membership.webp',
     link: 'https://raychangdesign.medium.com/',
   },
 ];

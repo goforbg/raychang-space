@@ -71,6 +71,18 @@ a
     +resumeSize(100vw)
     box-shadow: none
 
+.tip
+  margin-top: 2rem
+  text-align: center
+  font-size: 20px
+  font-size: 1.15rem
+  &.hide
+    display: none
+  @media screen and (min-width: 1080px) // >= 1080
+    animation: slideUp 1.8s ease-in-out forwards
+  @media screen and (max-width: 1280px) // <= 1280
+    font-size: 18px
+
 .menu
   margin: 0
   padding: 0

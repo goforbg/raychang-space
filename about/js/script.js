@@ -2,6 +2,7 @@
 
 const isTouchDevice = 'ontouchstart' in document.documentElement;
 const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+const tipEl = document.querySelector('.tip');
 let windowWidth = window.innerWidth;
 let windowHeight = window.innerHeight;
 const menuEl = document.querySelector('.menu');
@@ -20,9 +21,14 @@ window.onresize = () => {
 };
 
 window.onload = () => {
+  if (!isTouchDevice) tipEl.textContent = '※點擊右鍵呼叫選單';
+
   setTimeout(() => {
     document.body.removeAttribute('style');
-    document.oncontextmenu = e => showMenu(e);
+    document.oncontextmenu = e => {
+      hideTip();
+      showMenu(e);
+    };
     if (!isTouchDevice) smoothScroll();
   }, 1800);
 };
@@ -52,6 +58,10 @@ function smoothScroll() {
     scrollEase: 0.08,
     maxOffset: 500,
   });
+}
+
+function hideTip() {
+  tipEl.classList.add('hide');
 }
 
 function showMenu(e) {

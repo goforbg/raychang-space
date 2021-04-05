@@ -77,8 +77,9 @@ a
   margin-top: 2rem
   text-align: center
   font-size: 1.15rem
-  &.hide
-    display: none
+  transition: color 0.5s
+  &.transparent
+    color: transparent
   @media screen and (min-width: 1080px) // >= 1080
     animation: slideUp 1.8s ease-in-out forwards
   @media screen and (max-width: 1280px) // <= 1280
@@ -95,8 +96,6 @@ a
   overflow: hidden
   box-shadow: $menuShadow
   display: block
-  &.hide
-    display: none
   li
     transition: background-color 0.1s
     &:hover
@@ -107,3 +106,6 @@ a
     @media screen and (max-width: 1280px) // < 1281
       padding: 10.4px 16px
       font-size: 16px
+
+.hide
+  display: none

@@ -25,7 +25,10 @@ window.onload = () => {
 
   setTimeout(() => {
     document.body.removeAttribute('style');
-    document.oncontextmenu = e => showMenu(e);
+    document.oncontextmenu = e => {
+      showMenu(e);
+      tipEl.classList.add('transparent');
+    };
     if (!isTouchDevice) smoothScroll();
   }, 1800);
 };

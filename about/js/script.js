@@ -25,10 +25,7 @@ window.onload = () => {
 
   setTimeout(() => {
     document.body.removeAttribute('style');
-    document.oncontextmenu = e => {
-      hideEl(tipEl);
-      showMenu(e);
-    };
+    document.oncontextmenu = e => showMenu(e);
     if (!isTouchDevice) smoothScroll();
   }, 1800);
 };

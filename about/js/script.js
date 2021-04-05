@@ -12,10 +12,10 @@ document.onselectstart = () => false;
 document.ondragstart = () => false;
 document.oncontextmenu = () => false;
 document.body.style.overflow = 'hidden';
-window.onscroll = () => hideMenu();
+window.onscroll = () => hideEl(menuEl);
 
 window.onresize = () => {
-  hideMenu();
+  hideEl(menuEl);
   windowWidth = window.innerWidth;
   windowHeight = window.innerHeight;
 };
@@ -26,7 +26,7 @@ window.onload = () => {
   setTimeout(() => {
     document.body.removeAttribute('style');
     document.oncontextmenu = e => {
-      hideTip();
+      hideEl(tipEl);
       showMenu(e);
     };
     if (!isTouchDevice) smoothScroll();
@@ -34,13 +34,13 @@ window.onload = () => {
 };
 
 document.onmousedown = e => {
-  if (!e.target.hasAttribute('href')) hideMenu();
+  if (!e.target.hasAttribute('href')) hideEl(menuEl);
 };
 
 document.onmouseup = e => {
   if (e.target.hasAttribute('href')) {
     playAudio(pageAudio);
-    hideMenu();
+    hideEl(menuEl);
   }
 };
 
@@ -60,13 +60,9 @@ function smoothScroll() {
   });
 }
 
-function hideTip() {
-  tipEl.classList.add('hide');
-}
-
 function showMenu(e) {
   e.preventDefault();
-  menuEl.classList.add('show');
+  menuEl.classList.remove('hide');
   const menuWidth = menuEl.getBoundingClientRect().width;
   const menuHeight = menuEl.getBoundingClientRect().height;
   const offset = 5;
@@ -83,8 +79,8 @@ function showMenu(e) {
   menuEl.style.top = menuPosY;
 }
 
-function hideMenu() {
-  menuEl.classList.remove('show');
+function hideEl(el){
+  el.classList.add('hide');
 }
 
 function playAudio(audio, volume = 1) {

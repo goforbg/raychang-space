@@ -102,7 +102,9 @@ class Portfolio {
     this.time = new Date();
     this.works = worksData;
     this.isTouchDevice = 'ontouchstart' in document.documentElement;
+    this.isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
     this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+    this.isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1;
     this.isLoadingEnd = false;
     this.bodyWidth = document.body.getBoundingClientRect().width;
     this.screenScale = this.bodyWidth / 1280;
@@ -559,9 +561,12 @@ document.onmouseup = e => {
 window.onscroll = () => portfolio.putPackForm();
 window.onload = () => {
   portfolio.resizeBodyHeight();
-  portfolio.isTouchDevice
-    ? portfolio.endLoading(0.5)
-    : portfolio.askFullScreen();
+  if (
+    !portfolio.isTouchDevice &&
+    (portfolio.isChrome || portfolio.isFirefox)
+  )
+    return portfolio.askFullScreen();
+  portfolio.endLoading(0.5);
 };
 window.onblur = () => {
   if (portfolio.isLoadingEnd && !portfolio.isTouchDevice)

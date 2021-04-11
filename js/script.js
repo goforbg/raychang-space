@@ -74,6 +74,10 @@ class Portfolio {
     this.pagingSound = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/page.mp3');
     this.typingSound = new Audio('https://raw.githubusercontent.com/rayc2045/raychang-space/master/audio/type.mp3');
     this.loadingEl = document.querySelector('.loading');
+    this.fullScreenQuestionSection = this.loadingEl.querySelector('.question-section');
+    this.fullScreenYesButton = this.fullScreenQuestionSection.querySelector('.button-yes');
+    this.fullScreenNoButton = this.fullScreenQuestionSection.querySelector('.button-no');
+    this.loadingAnimationEl = this.loadingEl.querySelector('.loading-animation');
     this.viewportEl = document.querySelector('.viewport');
     this.containerEl = document.querySelector('.container');
     this.contactButton = document.querySelector('.contact');
@@ -99,6 +103,7 @@ class Portfolio {
     this.works = worksData;
     this.isTouchDevice = 'ontouchstart' in document.documentElement;
     this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+    this.isLoadingEnd = false;
     this.bodyWidth = document.body.getBoundingClientRect().width;
     this.screenScale = this.bodyWidth / 1280;
     this.isValidated = false;
@@ -119,7 +124,11 @@ class Portfolio {
 
     if (!this.isTouchDevice) {
       // document.onmousemove = e => this.antiMouseMove(e, this.nameEl, 80);
-      this.activateHoverInteraction([this.worksEl, this.footerEl]);
+      this.activateHoverInteraction([
+        this.fullScreenQuestionSection,
+        this.worksEl,
+        this.footerEl
+      ]);
 
       [...this.worksEl.childNodes].forEach(el => {
         // Combine scroll and hover interactions
@@ -163,6 +172,48 @@ class Portfolio {
       this.submitForm(e);
       this.resizeBodyHeight();
     };
+  }
+
+  askFullScreen() {
+    this.fullScreenQuestionSection.classList.remove('hide');
+    this.loadingAnimationEl.classList.add('hide');
+    // Answer "Yes"
+    this.fullScreenYesButton.onclick = () => {
+      this.fullScreenQuestionSection.classList.add('hide');
+      this.loadingAnimationEl.classList.remove('hide');
+      this.fullScreen();
+      
+      setTimeout(() => {
+        this.playAudio(this.backgroundMusicEl, 0.5);
+        this.endLoading();
+      }, 1000);
+    };
+    // Answer "No"
+    this.fullScreenNoButton.onclick = () => {
+      this.fullScreenQuestionSection.classList.add('hide');
+      this.loadingAnimationEl.classList.remove('hide');
+      this.playAudio(this.backgroundMusicEl, 0.5);
+      this.endLoading();
+      this.resizeBodyHeight();
+    };
+  }
+
+  fullScreen() {
+    document.documentElement.requestFullscreen();
+  }
+
+  endLoading(delay = 0) {
+    setTimeout(() => {
+      this.loadingEl.classList.add('animated');
+    }, delay * 1000);
+
+    setTimeout(() => {
+      this.removeElement(this.loadingEl);
+      // this.loadingEl.classList.add('hide');
+      // this.loadingEl.classList.remove('animated');
+      this.isLoadingEnd = true;
+      this.enableScroll();
+    }, delay * 1000 + 1500);
   }
 
   playAudio(audio, volume = 1) {
@@ -253,16 +304,6 @@ class Portfolio {
   // 	el.classList.add('rellax');
   // 	el.setAttribute('data-rellax-speed', rellaxSpeed);
   // }
-
-  endLoading() {
-    const delay = 500;
-    setTimeout(() => this.loadingEl.classList.add('animated'), delay);
-    setTimeout(() => this.removeElement(this.loadingEl), delay + 2000);
-    // setTimeout(() => {
-    //   this.loadingEl.classList.add('hide');
-    //   this.loadingEl.classList.remove('animated');
-    // });
-  }
 
   checkDateEveryMinute() {
     const time = new Date();
@@ -507,6 +548,7 @@ const portfolio = new Portfolio();
 document.onselectstart = () => false;
 document.ondragstart = () => false;
 document.oncontextmenu = () => false;
+document.onfullscreenchange = () => portfolio.resizeBodyHeight();
 document.onmouseup = e => {
   if (e.target.hasAttribute('href')) {
     portfolio.playAudio(portfolio.pagingSound);
@@ -517,14 +559,20 @@ document.onmouseup = e => {
 window.onscroll = () => portfolio.putPackForm();
 window.onload = () => {
   portfolio.resizeBodyHeight();
-  portfolio.endLoading();
-  portfolio.enableScroll();
-  // portfolio.backgroundMusicEl.play();
+  portfolio.isTouchDevice
+    ? portfolio.endLoading(0.5)
+    : portfolio.askFullScreen();
 };
-// window.onblur = () => portfolio.backgroundMusicEl.pause();
-// window.onfocus = () => portfolio.backgroundMusicEl.play();
+window.onblur = () => {
+  if (portfolio.isLoadingEnd && !portfolio.isTouchDevice)
+    portfolio.backgroundMusicEl.pause();
+}
+window.onfocus = () => {
+  if (portfolio.isLoadingEnd && !portfolio.isTouchDevice)
+    portfolio.backgroundMusicEl.play();
+}
 window.onresize = () => {
   if (!portfolio.isTouchDevice) portfolio.resetParallax();
   portfolio.scrollToggleClass(portfolio.worksEl.childNodes, 'color');
-  setTimeout(() => portfolio.resizeBodyHeight(), 500);
+  portfolio.resizeBodyHeight();
 };

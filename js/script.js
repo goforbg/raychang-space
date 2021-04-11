@@ -105,7 +105,7 @@ class Portfolio {
     this.isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
     this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
     this.isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1;
-    this.isLoadingEnd = false;
+    this.isFullScreenAnswered = false;
     this.bodyWidth = document.body.getBoundingClientRect().width;
     this.screenScale = this.bodyWidth / 1280;
     this.isValidated = false;
@@ -181,6 +181,7 @@ class Portfolio {
     this.loadingAnimationEl.classList.add('hide');
     // Answer "Yes"
     this.fullScreenYesButton.onclick = () => {
+      this.isFullScreenAnswered = true;
       this.fullScreenQuestionSection.classList.add('hide');
       this.loadingAnimationEl.classList.remove('hide');
       this.fullScreen();
@@ -192,6 +193,7 @@ class Portfolio {
     };
     // Answer "No"
     this.fullScreenNoButton.onclick = () => {
+      this.isFullScreenAnswered = true;
       this.fullScreenQuestionSection.classList.add('hide');
       this.loadingAnimationEl.classList.remove('hide');
       this.playAudio(this.backgroundMusicEl, 0.5);
@@ -213,7 +215,6 @@ class Portfolio {
       this.removeElement(this.loadingEl);
       // this.loadingEl.classList.add('hide');
       // this.loadingEl.classList.remove('animated');
-      this.isLoadingEnd = true;
       this.enableScroll();
     }, delay * 1000 + 1500);
   }
@@ -569,12 +570,10 @@ window.onload = () => {
   portfolio.endLoading(0.5);
 };
 window.onblur = () => {
-  if (portfolio.isLoadingEnd && !portfolio.isTouchDevice)
-    portfolio.backgroundMusicEl.pause();
+  if (portfolio.isFullScreenAnswered) portfolio.backgroundMusicEl.pause();
 }
 window.onfocus = () => {
-  if (portfolio.isLoadingEnd && !portfolio.isTouchDevice)
-    portfolio.backgroundMusicEl.play();
+  if (portfolio.isFullScreenAnswered) portfolio.backgroundMusicEl.play();
 }
 window.onresize = () => {
   if (!portfolio.isTouchDevice) portfolio.resetParallax();

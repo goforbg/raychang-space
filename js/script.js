@@ -177,29 +177,32 @@ class Portfolio {
   }
 
   askFullScreen() {
-    this.fullScreenQuestionSection.classList.remove('hide');
     this.loadingAnimationEl.classList.add('hide');
+    this.fullScreenQuestionSection.classList.remove('hide');
+
     // Answer "Yes"
     this.fullScreenYesButton.onclick = () => {
-      this.isFullScreenAnswered = true;
-      this.fullScreenQuestionSection.classList.add('hide');
-      this.loadingAnimationEl.classList.remove('hide');
+      this.endFullScreenQuestion();
       this.fullScreen();
-      
+
       setTimeout(() => {
         this.playAudio(this.backgroundMusicEl, 0.5);
         this.endLoading();
       }, 1000);
     };
+
     // Answer "No"
     this.fullScreenNoButton.onclick = () => {
-      this.isFullScreenAnswered = true;
-      this.fullScreenQuestionSection.classList.add('hide');
-      this.loadingAnimationEl.classList.remove('hide');
+      this.endFullScreenQuestion();
       this.playAudio(this.backgroundMusicEl, 0.5);
       this.endLoading();
-      this.resizeBodyHeight();
     };
+  }
+
+  endFullScreenQuestion() {
+    this.isFullScreenAnswered = true;
+    this.fullScreenQuestionSection.classList.add('hide');
+    this.loadingAnimationEl.classList.remove('hide');
   }
 
   fullScreen() {
@@ -562,10 +565,7 @@ document.onmouseup = e => {
 window.onscroll = () => portfolio.putPackForm();
 window.onload = () => {
   portfolio.resizeBodyHeight();
-  if (
-    !portfolio.isTouchDevice &&
-    (portfolio.isChrome || portfolio.isFirefox)
-  )
+  if (!portfolio.isTouchDevice && (portfolio.isChrome || portfolio.isFirefox))
     return portfolio.askFullScreen();
   portfolio.endLoading(0.5);
 };

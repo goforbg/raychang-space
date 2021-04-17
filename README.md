@@ -9,6 +9,7 @@
 - 網頁以報紙風格為基礎，並搭配聖保羅教堂點出自己對設計與開發的想法，再以自製格式輸出當前時間到網頁主畫面，以及使用 `data:image` [噪點](http://noisepng.com/) 填充頁面，增添紙張印刷的質感
 - 網頁元素以 `rem` 做單位，達成在任何尺寸的設備上，顯示一致的絕佳比例<!-- - 使用 CSS `@media` 和 `transform` 讓使用者設備為手機時，自動旋轉 90 度以提供最佳瀏覽體驗 -->
 - 封鎖任何破壞瀏覽體驗的使用者操作事件，如文字選取、圖片拖移和右鍵點擊，並加入點擊頁面時的互動效果作為補償
+- 使用 `@font-face` + `font-display: swap` 方式加載自託管 (self-hosted) 字體，減少網頁請求數、加快字體載入速度
 - 大型圖片、影片資源採用 [WebP](https://developers.google.com/speed/webp)/[WebM](https://web.dev/efficient-animated-content/) 格式呈現，檔案大小減少 82%！並使用 [Lazy loading](https://web.dev/browser-level-image-lazy-loading/) 延遲載入技術，網頁載入效率提升 2.85 倍
 - 加入 [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/) 平滑滾動功能，使用滑鼠捲動網頁就像滑手機一樣順；以及使用 [GSAP](https://greensock.com/gsap/) 達成滾動視差，再透過過 [ScrollTrigger](https://greensock.com/scrolltrigger/) 綁定平滑滾動與滾動視差功能，實現立體感網站<!-- - 使用 [Rellax](https://dixonandmoe.com/rellax/) 做滾動視差 -->
 - 使用雙層 `setTimeout` 定時器配上秒數校準，達成精準的整點 (00:00:00) 日期更新

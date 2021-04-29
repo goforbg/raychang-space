@@ -1,16 +1,10 @@
 # Ray Chang Space
 ## 2.5D Portfolio Website with Smooth-scrolling
 
-<br>
-
 [![Photo](https://raw.githubusercontent.com/rayc2045/raychang-space/master/img/demo/01.png)](https://dribbble.com/raychangdesign)
-
-<br>
 
 ### 簡介
 我始終認為，設計與開發是一體兩面，設計本是為開發而存在，開發也是為了完成設計，兩者相輔相成、互相影響。因此在網站的主頁中，我使用建築圖與對設計和開發的解釋，來表現自己在前端學習上，執著於同時兼顧清晰的設計與流暢的開發；網站設計上，我以報紙風格做為基礎，加入噪點以實現擬真的閱讀體驗，並刻意封鎖毫不必要的使用者事件（如文字選取、圖片拖移、右鍵點擊），也更換易於操作的鼠標圖案、加入元素的鼠標反向移動、滾動視差、鼠標觸碰作品圖的漸變效果，以及連絡表單輸入錯誤的微互動。
-
-<br>
 
 ### 外觀與互動設計
 - 網頁以報紙風格為基礎，並搭配聖保羅教堂點出自己對設計與開發的想法，再以自製格式輸出當前時間到網頁主畫面，以及使用 `data:image` [噪點](http://noisepng.com/) 填充頁面，增添紙張印刷的質感
@@ -21,8 +15,6 @@
 - 在履歷頁面中使用自製右鍵選單，解決導覽列 (Navbar) 佔版面、鼠標移動距離較長 (費茲定律) 的問題，達到更簡潔的視覺版面與更加順暢的使用體驗
 - 使用 [Kit8 付費插畫](https://kit8.net/illustrations/web-online-page-with-404-not-found-error/) 後製陰影並搭配 [Nunito 字體](https://fonts.google.com/specimen/Nunito?preview.text_type=custom) 和噪點背景，客製化重定向 [404 Not Found 頁面](https://rayc.dev/whatever)
 - 使用自訂網域名稱 [rayc.dev](https://rayc.dev)
-
-<br>
 
 ### 開發紀錄
 - 使用預處理器 Sass 撰寫 CSS、使用 JavaScript `class` 物件導向式開發
